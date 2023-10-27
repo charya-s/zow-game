@@ -1,0 +1,294 @@
+[gd_scene load_steps=29 format=3 uid="uid://dc6y5p8d0w2y8"]
+
+[ext_resource type="Script" path="res://assets/ui/menus/multiplayer/lobby/Lobby.gd" id="1_6c6vm"]
+[ext_resource type="PackedScene" uid="uid://cy14hlyb888wd" path="res://assets/components/SpawnHandler.tscn" id="1_7nek3"]
+[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="1_orrsm"]
+[ext_resource type="PackedScene" uid="uid://cg3ddqtk38sxj" path="res://assets/characters/player/Player.tscn" id="2_87fhd"]
+[ext_resource type="Texture2D" uid="uid://dwcfgs8oiyuge" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_gray.png" id="4_7pks1"]
+[ext_resource type="Texture2D" uid="uid://udpbsuq8lmwh" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_green.png" id="5_m8r6g"]
+[ext_resource type="Texture2D" uid="uid://dbehj3pe803v4" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_orange.png" id="6_lxsmd"]
+[ext_resource type="Texture2D" uid="uid://d001ap3g0qxww" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_red.png" id="7_unukq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbmmw"]
+bg_color = Color(1, 1, 1, 0.168627)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_layoy"]
+atlas = ExtResource("4_7pks1")
+region = Rect2(0, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtqmx"]
+atlas = ExtResource("4_7pks1")
+region = Rect2(18, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4xv6"]
+atlas = ExtResource("4_7pks1")
+region = Rect2(36, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0o1s"]
+atlas = ExtResource("4_7pks1")
+region = Rect2(54, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdh8j"]
+atlas = ExtResource("5_m8r6g")
+region = Rect2(0, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1p3w"]
+atlas = ExtResource("5_m8r6g")
+region = Rect2(18, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bedop"]
+atlas = ExtResource("5_m8r6g")
+region = Rect2(36, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryn83"]
+atlas = ExtResource("5_m8r6g")
+region = Rect2(54, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gibev"]
+atlas = ExtResource("6_lxsmd")
+region = Rect2(0, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05c0y"]
+atlas = ExtResource("6_lxsmd")
+region = Rect2(18, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxnyt"]
+atlas = ExtResource("6_lxsmd")
+region = Rect2(36, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbkxc"]
+atlas = ExtResource("6_lxsmd")
+region = Rect2(54, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f4iu"]
+atlas = ExtResource("7_unukq")
+region = Rect2(0, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk0w2"]
+atlas = ExtResource("7_unukq")
+region = Rect2(18, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5won"]
+atlas = ExtResource("7_unukq")
+region = Rect2(36, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgti0"]
+atlas = ExtResource("7_unukq")
+region = Rect2(54, 0, 18, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ckwyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_layoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtqmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4xv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0o1s")
+}],
+"loop": true,
+"name": &"gray",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdh8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1p3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bedop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryn83")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gibev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05c0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxnyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbkxc")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f4iu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk0w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5won")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgti0")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1pv3"]
+bg_color = Color(0, 0, 0, 0.333333)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1sst"]
+
+[node name="Lobby" type="Control" node_paths=PackedStringArray("_spawn_handler")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6c6vm")
+_spawn_handler = NodePath("Compositions/SpawnHandler")
+
+[node name="Players" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 101.0
+offset_bottom = 34.0
+scale = Vector2(5, 5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_dbmmw")
+
+[node name="SpawnPoints" type="Node2D" parent="Players"]
+
+[node name="0" type="Node2D" parent="Players/SpawnPoints" groups=["PlayerSpawnPoints"]]
+position = Vector2(9, 11)
+
+[node name="1" type="Node2D" parent="Players/SpawnPoints" groups=["PlayerSpawnPoints"]]
+position = Vector2(30, 11)
+
+[node name="2" type="Node2D" parent="Players/SpawnPoints" groups=["PlayerSpawnPoints"]]
+position = Vector2(50, 11)
+
+[node name="3" type="Node2D" parent="Players/SpawnPoints" groups=["PlayerSpawnPoints"]]
+position = Vector2(70, 11)
+
+[node name="Player1" type="AnimatedSprite2D" parent="Players"]
+position = Vector2(9, 12)
+sprite_frames = SubResource("SpriteFrames_ckwyo")
+animation = &"gray"
+autoplay = "gray"
+
+[node name="PlayerName" type="Label" parent="Players/Player1"]
+offset_left = -5.0
+offset_top = 7.0
+offset_right = 45.0
+offset_bottom = 31.0
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+text = "BBBBBBBB"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player2" type="AnimatedSprite2D" parent="Players"]
+position = Vector2(30, 12)
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_ckwyo")
+animation = &"gray"
+autoplay = "gray"
+
+[node name="PlayerName" type="Label" parent="Players/Player2"]
+offset_left = -5.0
+offset_top = 7.0
+offset_right = 45.0
+offset_bottom = 31.0
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+text = "BBBBBBBB"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player3" type="AnimatedSprite2D" parent="Players"]
+position = Vector2(51, 12)
+sprite_frames = SubResource("SpriteFrames_ckwyo")
+animation = &"gray"
+autoplay = "gray"
+
+[node name="PlayerName" type="Label" parent="Players/Player3"]
+offset_left = -5.0
+offset_top = 7.0
+offset_right = 45.0
+offset_bottom = 31.0
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+text = "BBBBBBBB"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player4" type="AnimatedSprite2D" parent="Players"]
+position = Vector2(72, 12)
+sprite_frames = SubResource("SpriteFrames_ckwyo")
+animation = &"gray"
+autoplay = "gray"
+
+[node name="PlayerName" type="Label" parent="Players/Player4"]
+offset_left = -5.0
+offset_top = 7.0
+offset_right = 45.0
+offset_bottom = 31.0
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+text = "BBBBBBBB"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Chat" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 140.0
+offset_right = 620.0
+offset_bottom = 315.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r1pv3")
+
+[node name="MessageBox" type="LineEdit" parent="Chat"]
+layout_mode = 0
+offset_top = 180.0
+offset_right = 495.0
+offset_bottom = 205.0
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+placeholder_text = "Say hello!"
+max_length = 80
+
+[node name="SendChat" type="Button" parent="Chat"]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 180.0
+offset_right = 600.0
+offset_bottom = 205.0
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c1sst")
+text = "Send"
+
+[node name="Compositions" type="Node" parent="."]
+
+[node name="SpawnHandler" parent="Compositions" node_paths=PackedStringArray("_base_node") instance=ExtResource("1_7nek3")]
+_player_scene = ExtResource("2_87fhd")
+_base_node = NodePath("../../Players")

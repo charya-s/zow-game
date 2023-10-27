@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfim0ye6xhest"]
+
+[ext_resource type="Script" path="res://assets/tracks/Track0.gd" id="1_m7irt"]
+[ext_resource type="PackedScene" uid="uid://cihuamamapxkt" path="res://assets/ui/camera/MainCamera.tscn" id="2_5c5oa"]
+[ext_resource type="Script" path="res://assets/ui/camera/CameraHandler.gd" id="3_yl618"]
+
+[node name="Track0" type="Node2D"]
+script = ExtResource("1_m7irt")
+
+[node name="MainCamera" parent="." instance=ExtResource("2_5c5oa")]
+script = ExtResource("3_yl618")

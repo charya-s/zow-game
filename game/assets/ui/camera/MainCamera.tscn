@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cihuamamapxkt"]
+
+[ext_resource type="Script" path="res://assets/ui/camera/CameraHandler.gd" id="1_p11d0"]
+
+[node name="MainCamera" type="Camera2D"]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("1_p11d0")
