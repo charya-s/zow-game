@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cg3ddqtk38sxj" path="res://assets/characters/player/Player.tscn" id="5_eq4uy"]
 [ext_resource type="Texture2D" uid="uid://c5k643o2uunsn" path="res://assets/tracks/tilesets/finish_line.png" id="5_g845t"]
 [ext_resource type="Texture2D" uid="uid://d2nflfcabyqka" path="res://assets/tracks/tilesets/direction_indicators.png" id="6_3mm7s"]
-[ext_resource type="PackedScene" uid="uid://cy14hlyb888wd" path="res://assets/components/SpawnHandler.tscn" id="6_ch241"]
+[ext_resource type="PackedScene" uid="uid://cy14hlyb888wd" path="res://assets/tracks/components/SpawnHandler.tscn" id="6_ch241"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tk7a"]
 texture = ExtResource("4_r1mk4")
@@ -53,7 +53,7 @@ sources/1 = SubResource("TileSetAtlasSource_j8gte")
 
 [node name="Track0" type="Node2D" node_paths=PackedStringArray("_spawn_handler")]
 script = ExtResource("1_m7irt")
-_spawn_handler = NodePath("Compositions/SpawnHandler")
+_spawn_handler = NodePath("Components/SpawnHandler")
 
 [node name="MainCamera" parent="." instance=ExtResource("2_5c5oa")]
 
@@ -88,8 +88,8 @@ position = Vector2(440, 180)
 [node name="3" type="Node2D" parent="SpawnPoints" groups=["PlayerSpawnPoints"]]
 position = Vector2(440, 220)
 
-[node name="Compositions" type="Node" parent="."]
+[node name="Components" type="Node" parent="."]
 
-[node name="SpawnHandler" parent="Compositions" node_paths=PackedStringArray("_base_node") instance=ExtResource("6_ch241")]
+[node name="SpawnHandler" parent="Components" node_paths=PackedStringArray("_base_node") instance=ExtResource("6_ch241")]
 _player_scene = ExtResource("5_eq4uy")
 _base_node = NodePath("../..")

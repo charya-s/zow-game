@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cy14hlyb888wd"]
-
-[ext_resource type="Script" path="res://assets/components/SpawnHandler.gd" id="1_u4fi3"]
-
-[node name="SpawnHandler" type="Node2D"]
-script = ExtResource("1_u4fi3")

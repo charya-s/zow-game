@@ -1,7 +1,9 @@
-res://assets/ui/menus/multiplayer/lobby/Lobby.tscn
-res://assets/tracks/Track0.tscn
+res://assets/ui/menus/multiplayer/Mult.tscn
 res://assets/characters/player/Player.tscn
-res://assets/components/SpawnHandler.tscn
-res://assets/ui/camera/MainCamera.tscn
-res://assets/characters/player/PlayerController.gd
-res://assets/ui/menus/multiplayer/lobby/Lobby.gd
+res://assets/tracks/Track0.tscn
+res://assets/tracks/components/TrackController.gd
+res://assets/characters/components/CharacterAnimationHandler.gd
+res://assets/globals/GameManager.gd
+res://assets/ui/menus/multiplayer/Server.gd
+res://assets/ui/menus/multiplayer/Client.gd
+res://assets/ui/menus/multiplayer/Lobby.gd

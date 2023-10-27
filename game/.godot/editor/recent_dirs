@@ -1,6 +1,6 @@
-res://assets/ui/menus/multiplayer/lobby
 res://assets/globals
-res://assets/components
+res://assets/ui/menus/multiplayer
+res://assets/ui/menus/multiplayer/lobby
 res://assets/ui/camera
 res://assets/tracks
 res://assets/characters/player

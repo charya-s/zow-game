@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://assets/characters/player/PlayerController.gd" id="1_3f1t7"]
 [ext_resource type="Texture2D" uid="uid://de2oqx30vhxsq" path="res://assets/characters/sprites/bob_sprite.png" id="2_lk24l"]
 [ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="3_umgos"]
-[ext_resource type="PackedScene" uid="uid://b626nolb7wsp8" path="res://assets/components/PlayerInputHandler.tscn" id="4_ih5gw"]
-[ext_resource type="PackedScene" uid="uid://cm1skwrit5fjy" path="res://assets/components/MovementHandler.tscn" id="5_3k0dg"]
-[ext_resource type="PackedScene" uid="uid://c03pi8job8od6" path="res://assets/components/AnimationHandler.tscn" id="6_65mao"]
+[ext_resource type="PackedScene" uid="uid://b626nolb7wsp8" path="res://assets/characters/components/PlayerInputHandler.tscn" id="4_iowlo"]
+[ext_resource type="PackedScene" uid="uid://cm1skwrit5fjy" path="res://assets/characters/components/MovementHandler.tscn" id="5_kvxyj"]
+[ext_resource type="PackedScene" uid="uid://c03pi8job8od6" path="res://assets/characters/components/CharacterAnimationHandler.tscn" id="6_3hvla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mq4l2"]
 size = Vector2(10, 8)
@@ -248,6 +248,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 
 [node name="Player" type="CharacterBody2D" groups=["Players"]]
 z_index = 4
+position = Vector2(0.11, 0)
 script = ExtResource("1_3f1t7")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
@@ -283,16 +284,15 @@ active = true
 parameters/Idle/blend_position = Vector2(-0.00639999, 1.08079)
 parameters/Move/blend_position = Vector2(0, 0)
 
-[node name="Compositions" type="Node" parent="."]
+[node name="Components" type="Node" parent="."]
 
-[node name="PlayerInputHandler" parent="Compositions" node_paths=PackedStringArray("_player", "_movement_handler") instance=ExtResource("4_ih5gw")]
+[node name="PlayerInputHandler" parent="Components" node_paths=PackedStringArray("_player", "_movement_handler") instance=ExtResource("4_iowlo")]
 _player = NodePath("../..")
 _movement_handler = NodePath("../MovementHandler")
 
-[node name="MovementHandler" parent="Compositions" node_paths=PackedStringArray("_body") instance=ExtResource("5_3k0dg")]
-_body = NodePath("../..")
+[node name="MovementHandler" parent="Components" node_paths=PackedStringArray("move_body") instance=ExtResource("5_kvxyj")]
+move_body = NodePath("../..")
 
-[node name="AnimationHandler" parent="Compositions" node_paths=PackedStringArray("_character", "_movement_handler", "_anim_tree") instance=ExtResource("6_65mao")]
-_character = NodePath("../..")
+[node name="AnimationHandler" parent="Components" node_paths=PackedStringArray("_movement_handler", "_anim_tree") instance=ExtResource("6_3hvla")]
 _movement_handler = NodePath("../MovementHandler")
 _anim_tree = NodePath("../../AnimationTree")

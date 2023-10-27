@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://dc6y5p8d0w2y8"]
 
 [ext_resource type="Script" path="res://assets/ui/menus/multiplayer/lobby/Lobby.gd" id="1_6c6vm"]
-[ext_resource type="PackedScene" uid="uid://cy14hlyb888wd" path="res://assets/components/SpawnHandler.tscn" id="1_7nek3"]
+[ext_resource type="PackedScene" uid="uid://cy14hlyb888wd" path="res://assets/tracks/components/SpawnHandler.tscn" id="1_7nek3"]
 [ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="1_orrsm"]
 [ext_resource type="PackedScene" uid="uid://cg3ddqtk38sxj" path="res://assets/characters/player/Player.tscn" id="2_87fhd"]
 [ext_resource type="Texture2D" uid="uid://dwcfgs8oiyuge" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_gray.png" id="4_7pks1"]
@@ -205,7 +205,6 @@ vertical_alignment = 1
 
 [node name="Player2" type="AnimatedSprite2D" parent="Players"]
 position = Vector2(30, 12)
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_ckwyo")
 animation = &"gray"
 autoplay = "gray"

@@ -6,20 +6,18 @@ class_name PlayerController
 
 
 # Internal variables.
-var is_ready : int = 0;
-
 
 
 # On-ready function.
 func _ready() -> void:
-	if get_parent().name.contains("Track"): # Checks if player is on tracks and performs set up if so.
-		_setup_player_track();
+	pass
 
 # Physics process - runs 60 times a second.
 func _physics_process(_delta:float) -> void:
 	move_and_slide();
 
 
-# Runs on ready only if the player is spawned onto a track.
-func _setup_player_track():
-	$PlayerName.visible = true
+# Set up the player based on whether they're on a track or not.
+func setup_player(is_on_track:bool, player_name:String) -> void:
+	$PlayerName.visible = is_on_track;
+	$PlayerName.text = player_name;

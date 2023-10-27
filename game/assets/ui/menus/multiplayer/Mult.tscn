@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhjv0yad7p5lb"]
+
+[ext_resource type="Script" path="res://assets/ui/menus/multiplayer/Client.gd" id="1_4c6cq"]
+[ext_resource type="Script" path="res://assets/ui/menus/multiplayer/Server.gd" id="2_qb4t4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Client" type="Node" parent="."]
+script = ExtResource("1_4c6cq")
+
+[node name="JoinLobby" type="Button" parent="Client"]
+offset_left = 10.0
+offset_top = 55.0
+offset_right = 130.0
+offset_bottom = 90.0
+text = "Join Lobby"
+
+[node name="JoinLobbyId" type="LineEdit" parent="Client"]
+offset_left = 140.0
+offset_top = 55.0
+offset_right = 500.0
+offset_bottom = 90.0
+
+[node name="CreateLobby" type="Button" parent="Client"]
+offset_left = 260.0
+offset_top = 10.0
+offset_right = 380.0
+offset_bottom = 45.0
+text = "Create Lobby"
+
+[node name="Server" type="Node" parent="."]
+script = ExtResource("2_qb4t4")
+
+[node name="StartClient" type="Button" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 130.0
+offset_bottom = 45.0
+text = "Start Client
+"
+
+[node name="StartServer" type="Button" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 10.0
+offset_right = 630.0
+offset_bottom = 45.0
+text = "Start Server"
+
+[node name="ServerTest" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 510.0
+offset_top = 55.0
+offset_right = 630.0
+offset_bottom = 90.0
+text = "<- Send Test"
+
+[connection signal="pressed" from="Client/JoinLobby" to="Client" method="_on_join_lobby_pressed"]
+[connection signal="pressed" from="Client/CreateLobby" to="Client" method="_on_create_lobby_pressed"]
+[connection signal="pressed" from="StartClient" to="Client" method="_on_start_client_pressed"]
+[connection signal="pressed" from="StartServer" to="Server" method="_on_start_server_pressed"]
