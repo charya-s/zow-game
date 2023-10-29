@@ -78,9 +78,11 @@ func _parseMessage(message:Dictionary) -> void:
 		
 	if (message.type == MessageTypes.USER_CONNECTED):
 		_create_rtc_peer(message.user_id);
+		_lobby_menu.check_all_ready();
 		
 	if (message.type == MessageTypes.USER_DISCONNECTED):
 		print("user dc-d: " + str(message.user_id))
+		
 		
 	if (message.type == MessageTypes.LOBBY_CREATE_REQUEST):
 		pass
@@ -135,7 +137,7 @@ func _parseMessage(message:Dictionary) -> void:
 	if (message.type == MessageTypes.LOBBY_READY_STATUS):	
 		GameManager.players[str(message.user_id)].ready = int(message.ready_status);
 		_lobby_menu.change_portrait_color(message.player_index, int(message.ready_status));
-		_lobby_menu._check_all_ready();
+		_lobby_menu.check_all_ready();
 
 # Send a message to all players.
 func _sendMessageToAll(message:Dictionary) -> void:
@@ -366,6 +368,7 @@ func _reset_all_ready() -> void:
 	for player in GameManager.players:
 		GameManager.players[player].ready = int(GameManager.ReadyStatus.WAITING);
 	_lobby_menu.reset_portrait_colors();
+	_lobby_menu.check_all_ready();
 
 # When all players are ready, host can start the game.
 func _on_host_start_btn_pressed():

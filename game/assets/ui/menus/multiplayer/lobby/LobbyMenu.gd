@@ -75,7 +75,7 @@ func _on_right_pressed() -> void: # Scroll down the track list.
 
 
 # Check if all players are ready and prepare to start.
-func _check_all_ready() -> void:
+func check_all_ready() -> void:
 	var ready_result = 0;
 	for player in GameManager.players: # Increment the result value by the ready status.
 			ready_result += int(GameManager.players[player].ready);
