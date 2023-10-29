@@ -114,7 +114,7 @@ func _parseMessage(message:Dictionary) -> void:
 		
 	if (message.type == MessageTypes.LOBBY_CHAT_MESSAGE):
 		print("CHAT: " + str(message))
-		_lobby_menu._add_chat_message(message.sender_name, message.chat_message)
+		_lobby_menu.add_chat_message(message.sender_name, message.chat_message)
 		
 	if (message.type == MessageTypes.OFFER):
 		if _rtc_peer.has_peer(message.org_peer_id): # Check if we have connected to the original peer.
@@ -281,7 +281,6 @@ func _on_create_lobby_pressed() -> void:
 
 # Go back to the main menu.
 func _on_back_btn_pressed() -> void:
-	_peer.create_client("127.0.0.1" + ":" + str(server_port));
 	pass
 
 # Enter the lobby screen.
@@ -303,10 +302,15 @@ func _exit_lobby() -> void:
 	_self_name = "";
 	_curr_host_id = 0;
 	_curr_lobby_id = "";
+	_lobby_menu.reset_chat();
 	_lobby_menu.deactivate_lobby_menu();
 	_lobby_browser.activate_lobby_browser();
 	GameManager.players = {};
 	_remove_rtc_peers();
+
+
+
+
 
 
 # Sending a chat message to the server for distribution.
@@ -332,10 +336,11 @@ func _input(event) -> void:
 	if Input.is_action_just_pressed("enter_key"):
 		if _lobby_menu.get_node("Chat/MessageBox").has_focus():
 			_send_chat_message();
-			
-		
-			
-	
+
+
+
+
+
 
 # Readying up.
 func _on_player_ready_btn_pressed():
@@ -355,12 +360,16 @@ func _on_player_ready_btn_pressed():
 		"ready_status": GameManager.players[str(_self_id)].ready,
 	}
 	_sendMessageToAll(ready_status_message);
-	
+
 # Resetting ready statuses of everyone in the lobby.
 func _reset_all_ready() -> void:
 	for player in GameManager.players:
 		GameManager.players[player].ready = int(GameManager.ReadyStatus.WAITING);
+	_lobby_menu.reset_portrait_colors();
 
+# When all players are ready, host can start the game.
+func _on_host_start_btn_pressed():
+	_start_game.rpc();
 
 # RPC call to start the game on the selected track.
 @rpc("any_peer", "call_local")
@@ -370,5 +379,10 @@ func _start_game() -> void:
 	get_parent().get_parent().queue_free()
 
 
-func _on_host_start_btn_pressed():
-	_start_game.rpc();
+
+
+
+
+# TESTING BUTTONS.
+func _on_start_client_pressed():
+	_peer.create_client("127.0.0.1" + ":" + str(server_port));

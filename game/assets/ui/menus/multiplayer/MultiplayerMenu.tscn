@@ -33,13 +33,24 @@ script = ExtResource("2_qb4t4")
 
 [node name="StartServer" type="Button" parent="."]
 layout_mode = 0
-offset_left = 523.0
-offset_top = 16.0
-offset_right = 623.0
-offset_bottom = 41.0
+offset_left = 522.0
+offset_top = 15.0
+offset_right = 622.0
+offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("6_v25c6")
 theme_override_font_sizes/font_size = 9
 text = "Start Server
+"
+
+[node name="StartClient" type="Button" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 17.0
+offset_right = 197.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("6_v25c6")
+theme_override_font_sizes/font_size = 9
+text = "Start Client
 "
 
 [connection signal="join_lobby_pressed" from="LobbyBrowser" to="Components/Client" method="_on_lobby_browser_join_lobby_pressed"]
@@ -50,6 +61,7 @@ text = "Start Server
 [connection signal="pressed" from="LobbyMenu/MapSelection/PlayerReadyBtn" to="Components/Client" method="_on_player_ready_btn_pressed"]
 [connection signal="pressed" from="LobbyMenu/MapSelection/HostStartBtn" to="Components/Client" method="_on_host_start_btn_pressed"]
 [connection signal="pressed" from="StartServer" to="Components/Server" method="_on_start_server_pressed"]
+[connection signal="pressed" from="StartClient" to="Components/Client" method="_on_start_client_pressed"]
 
 [editable path="LobbyBrowser"]
 [editable path="LobbyMenu"]

@@ -9,18 +9,13 @@ class_name LobbyMenu
 var _is_host := false;
 
 # Internal variables.
-#const TRACKS = {
-#	0: {
-#		"path": "res://assets/tracks/Track0.tscn",
-#		"name": "Tester",
-#		"img_path": "res://assets/tracks/thumbnails/track0_thumbnail.png",
-#	},
-#	1: {
-#		"path": "",
-#		"name": "The Lap",
-#		"img_path": "",
-#	},
-#}
+const PORTRAIT_COLORS = {
+		int(GameManager.ReadyStatus.WAITING): "gray", 
+		int(GameManager.ReadyStatus.DISCONNECTED): "orange",
+		int(GameManager.ReadyStatus.ERROR): "red",
+		int(GameManager.ReadyStatus.READY): "green",
+	}
+	
 var selected_track : int;
 
 # On-ready function.
@@ -55,10 +50,14 @@ func spawn_players() -> void:
 
 
 # Add chat messages to the message box.
-func _add_chat_message(sender_name:String, chat_message:String) -> void:
+func add_chat_message(sender_name:String, chat_message:String) -> void:
 	$Chat/ChatDisplay.text += sender_name + ": " + chat_message + "\n";
-	
-	
+
+# Reset chat message display box.
+func reset_chat() -> void:
+	$Chat/ChatDisplay.text = "";
+
+
 # Set the track selection displayed track.
 func set_displayed_track(track_id:int) -> void:
 	if (track_id < 0 || track_id > TrackList.TRACKS.size()-1): # Avoid underflow and overflow errors.
@@ -92,11 +91,10 @@ func _check_all_ready() -> void:
 
 
 # Change the portrait color at a specific index based on a ready status value.
-func change_portrait_color(player_index:int, ready_status:int):
-	const ANIMATIONS = {
-		int(GameManager.ReadyStatus.WAITING): "gray", 
-		int(GameManager.ReadyStatus.DISCONNECTED): "orange",
-		int(GameManager.ReadyStatus.ERROR): "red",
-		int(GameManager.ReadyStatus.READY): "green",
-	}
-	$Players.get_node("PlayerPortrait" + str(player_index)).animation = ANIMATIONS[ready_status];
+func change_portrait_color(player_index:int, ready_status:int) -> void:
+	$Players.get_node("PlayerPortrait" + str(player_index)).animation = PORTRAIT_COLORS[ready_status];
+
+# Reset all portrait colors to gray.
+func reset_portrait_colors() -> void:
+	for i in range(4):
+		$Players.get_node("PlayerPortrait" + str(i)).animation = PORTRAIT_COLORS[0];
