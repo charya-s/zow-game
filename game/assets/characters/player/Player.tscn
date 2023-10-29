@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cg3ddqtk38sxj"]
+[gd_scene load_steps=33 format=3 uid="uid://cg3ddqtk38sxj"]
 
 [ext_resource type="Script" path="res://assets/characters/player/PlayerController.gd" id="1_3f1t7"]
 [ext_resource type="Texture2D" uid="uid://de2oqx30vhxsq" path="res://assets/characters/sprites/bob_sprite.png" id="2_lk24l"]
@@ -246,6 +246,20 @@ states/Move/position = Vector2(465, 62)
 states/Start/position = Vector2(317, 130)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_7hmuf"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_2b3np"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_ymfrp")]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_al2ka"]
+properties/0/path = NodePath(".:sync_dir")
+properties/0/spawn = true
+properties/0/sync = true
+properties/0/watch = false
+properties/1/path = NodePath(".:sync_velocity")
+properties/1/spawn = true
+properties/1/sync = true
+properties/1/watch = false
+properties/2/path = NodePath(".:sync_pos")
+properties/2/spawn = true
+properties/2/sync = true
+properties/2/watch = false
+
 [node name="Player" type="CharacterBody2D" groups=["Players"]]
 z_index = 4
 position = Vector2(0.11, 0)
@@ -261,7 +275,6 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_mq4l2")
 
 [node name="PlayerName" type="Label" parent="."]
-visible = false
 offset_left = -30.0
 offset_top = -25.0
 offset_right = 30.0
@@ -286,13 +299,17 @@ parameters/Move/blend_position = Vector2(0, 0)
 
 [node name="Components" type="Node" parent="."]
 
-[node name="PlayerInputHandler" parent="Components" node_paths=PackedStringArray("_player", "_movement_handler") instance=ExtResource("4_iowlo")]
+[node name="PlayerInputHandler" parent="Components" node_paths=PackedStringArray("_player", "_movement_handler", "_multi_sync") instance=ExtResource("4_iowlo")]
 _player = NodePath("../..")
 _movement_handler = NodePath("../MovementHandler")
+_multi_sync = NodePath("../../MultiplayerSynchronizer")
 
 [node name="MovementHandler" parent="Components" node_paths=PackedStringArray("move_body") instance=ExtResource("5_kvxyj")]
 move_body = NodePath("../..")
 
-[node name="AnimationHandler" parent="Components" node_paths=PackedStringArray("_movement_handler", "_anim_tree") instance=ExtResource("6_3hvla")]
-_movement_handler = NodePath("../MovementHandler")
+[node name="AnimationHandler" parent="Components" node_paths=PackedStringArray("_anim_body", "_anim_tree") instance=ExtResource("6_3hvla")]
+_anim_body = NodePath("../..")
 _anim_tree = NodePath("../../AnimationTree")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_al2ka")

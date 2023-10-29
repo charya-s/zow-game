@@ -16,8 +16,15 @@ class_name MovementHandler
 
 
 # Internal variables.
-var move_dir := Vector2(-1, 0);
+var move_dir : Vector2;
 var new_velocity := Vector2.ZERO;
+
+
+# On-ready function.
+func _ready() -> void:
+	if move_body.get_parent().name.contains("Track"): # If on track, get track variables.
+		move_dir = move_body.get_parent().start_dir;
+		_friction = move_body.get_parent().friction;
 
 
 # Accelerate up to _max_speed at a rate of _forward_accel in _move_dir.

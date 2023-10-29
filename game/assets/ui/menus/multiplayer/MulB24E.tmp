@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhjv0yad7p5lb"]
+
+[ext_resource type="Script" path="res://assets/ui/menus/multiplayer/components/Client.gd" id="1_4c6cq"]
+[ext_resource type="PackedScene" uid="uid://dk1ar4he7csso" path="res://assets/ui/menus/multiplayer/lobby-browser/LobbyBrowser.tscn" id="1_decc8"]
+[ext_resource type="Script" path="res://assets/ui/menus/multiplayer/MultiplayerMenu.gd" id="1_tmcuv"]
+[ext_resource type="PackedScene" uid="uid://dc6y5p8d0w2y8" path="res://assets/ui/menus/multiplayer/lobby/LobbyMenu.tscn" id="2_pb6jt"]
+[ext_resource type="Script" path="res://assets/ui/menus/multiplayer/components/Server.gd" id="2_qb4t4"]
+
+[node name="MultiplayerMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tmcuv")
+
+[node name="LobbyBrowser" parent="." instance=ExtResource("1_decc8")]
+layout_mode = 1
+
+[node name="LobbyName" parent="LobbyBrowser" index="4"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 31.0
+
+[node name="LobbyMenu" parent="." instance=ExtResource("2_pb6jt")]
+layout_mode = 1
+
+[node name="Components" type="Node" parent="."]
+
+[node name="Client" type="Node" parent="Components" node_paths=PackedStringArray("_lobby_browser", "_lobby_meny")]
+script = ExtResource("1_4c6cq")
+_lobby_browser = NodePath("../../LobbyBrowser")
+_lobby_meny = NodePath("")
+
+[node name="Server" type="Node" parent="Components"]
+script = ExtResource("2_qb4t4")
+
+[connection signal="pressed" from="LobbyBrowser/CreateLobby" to="Components/Client" method="_on_create_lobby_pressed"]
+
+[editable path="LobbyBrowser"]
+[editable path="LobbyMenu"]

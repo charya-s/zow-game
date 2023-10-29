@@ -1,0 +1,401 @@
+[gd_scene load_steps=29 format=3 uid="uid://dc6y5p8d0w2y8"]
+
+[ext_resource type="Script" path="res://assets/ui/menus/multiplayer/lobby/LobbyMenu.gd" id="1_6c6vm"]
+[ext_resource type="PackedScene" uid="uid://cy14hlyb888wd" path="res://assets/tracks/components/SpawnHandler.tscn" id="1_7nek3"]
+[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="1_orrsm"]
+[ext_resource type="PackedScene" uid="uid://cg3ddqtk38sxj" path="res://assets/characters/player/Player.tscn" id="2_87fhd"]
+[ext_resource type="Texture2D" uid="uid://dwcfgs8oiyuge" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_gray.png" id="4_7pks1"]
+[ext_resource type="Texture2D" uid="uid://udpbsuq8lmwh" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_green.png" id="5_m8r6g"]
+[ext_resource type="Texture2D" uid="uid://dbehj3pe803v4" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_orange.png" id="6_lxsmd"]
+[ext_resource type="Texture2D" uid="uid://d001ap3g0qxww" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_red.png" id="7_unukq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbmmw"]
+bg_color = Color(1, 1, 1, 0.168627)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_layoy"]
+atlas = ExtResource("4_7pks1")
+region = Rect2(0, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtqmx"]
+atlas = ExtResource("4_7pks1")
+region = Rect2(18, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4xv6"]
+atlas = ExtResource("4_7pks1")
+region = Rect2(36, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0o1s"]
+atlas = ExtResource("4_7pks1")
+region = Rect2(54, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdh8j"]
+atlas = ExtResource("5_m8r6g")
+region = Rect2(0, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1p3w"]
+atlas = ExtResource("5_m8r6g")
+region = Rect2(18, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bedop"]
+atlas = ExtResource("5_m8r6g")
+region = Rect2(36, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryn83"]
+atlas = ExtResource("5_m8r6g")
+region = Rect2(54, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gibev"]
+atlas = ExtResource("6_lxsmd")
+region = Rect2(0, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05c0y"]
+atlas = ExtResource("6_lxsmd")
+region = Rect2(18, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxnyt"]
+atlas = ExtResource("6_lxsmd")
+region = Rect2(36, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbkxc"]
+atlas = ExtResource("6_lxsmd")
+region = Rect2(54, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f4iu"]
+atlas = ExtResource("7_unukq")
+region = Rect2(0, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk0w2"]
+atlas = ExtResource("7_unukq")
+region = Rect2(18, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5won"]
+atlas = ExtResource("7_unukq")
+region = Rect2(36, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgti0"]
+atlas = ExtResource("7_unukq")
+region = Rect2(54, 0, 18, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ckwyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_layoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtqmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4xv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0o1s")
+}],
+"loop": true,
+"name": &"gray",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdh8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1p3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bedop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryn83")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gibev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05c0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxnyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbkxc")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f4iu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk0w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5won")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgti0")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1pv3"]
+bg_color = Color(0, 0, 0, 0.333333)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1sst"]
+
+[node name="LobbyMenu" type="Control" node_paths=PackedStringArray("_spawn_handler")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6c6vm")
+_spawn_handler = NodePath("Compositions/SpawnHandler")
+
+[node name="LeaveLobbyBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 200.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+text = "Leave Lobby"
+
+[node name="CurrentLobbyInfo" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 200.0
+offset_bottom = 130.0
+
+[node name="LobbyName" type="Label" parent="CurrentLobbyInfo"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 170.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 18
+text = "AMVERTON PARKKK"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+uppercase = true
+
+[node name="HostName" type="Label" parent="CurrentLobbyInfo"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 60.0
+offset_right = 170.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+text = "Hosted by "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Players" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 10.0
+offset_right = 296.0
+offset_bottom = 34.0
+scale = Vector2(5, 5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_dbmmw")
+
+[node name="SpawnPoints" type="Node2D" parent="Players"]
+
+[node name="0" type="Node2D" parent="Players/SpawnPoints" groups=["PlayerSpawnPoints"]]
+position = Vector2(9, 11)
+
+[node name="1" type="Node2D" parent="Players/SpawnPoints" groups=["PlayerSpawnPoints"]]
+position = Vector2(30, 11)
+
+[node name="2" type="Node2D" parent="Players/SpawnPoints" groups=["PlayerSpawnPoints"]]
+position = Vector2(50, 11)
+
+[node name="3" type="Node2D" parent="Players/SpawnPoints" groups=["PlayerSpawnPoints"]]
+position = Vector2(70, 11)
+
+[node name="PlayerPortrait0" type="AnimatedSprite2D" parent="Players"]
+position = Vector2(9, 12)
+sprite_frames = SubResource("SpriteFrames_ckwyo")
+animation = &"gray"
+autoplay = "gray"
+
+[node name="PlayerPortrait1" type="AnimatedSprite2D" parent="Players"]
+position = Vector2(30, 12)
+sprite_frames = SubResource("SpriteFrames_ckwyo")
+animation = &"gray"
+autoplay = "gray"
+
+[node name="PlayerPortrait2" type="AnimatedSprite2D" parent="Players"]
+position = Vector2(51, 12)
+sprite_frames = SubResource("SpriteFrames_ckwyo")
+animation = &"gray"
+autoplay = "gray"
+
+[node name="PlayerPortrait3" type="AnimatedSprite2D" parent="Players"]
+position = Vector2(72, 12)
+sprite_frames = SubResource("SpriteFrames_ckwyo")
+animation = &"gray"
+autoplay = "gray"
+
+[node name="Chat" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 140.0
+offset_right = 410.0
+offset_bottom = 315.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r1pv3")
+
+[node name="ChatDisplay" type="RichTextLabel" parent="Chat"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 380.0
+offset_bottom = 165.0
+theme_override_fonts/normal_font = ExtResource("1_orrsm")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+
+[node name="MessageBox" type="LineEdit" parent="Chat"]
+layout_mode = 0
+offset_top = 180.0
+offset_right = 285.0
+offset_bottom = 205.0
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+placeholder_text = "Say hello!"
+max_length = 80
+
+[node name="SendChatBtn" type="Button" parent="Chat"]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 180.0
+offset_right = 390.0
+offset_bottom = 205.0
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c1sst")
+text = "Send"
+
+[node name="MapSelection" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 140.0
+offset_right = 620.0
+offset_bottom = 315.0
+
+[node name="MapSelectionHeading" type="Label" parent="MapSelection"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 185.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+text = "BBBBBBBB is selecting a track:"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TrackThumbnail" type="TextureRect" parent="MapSelection"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 45.0
+offset_right = 185.0
+offset_bottom = 145.0
+expand_mode = 1
+
+[node name="MapSelectors" type="Control" parent="MapSelection/TrackThumbnail"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = 175.0
+offset_bottom = 15.0
+grow_vertical = 2
+
+[node name="Left" type="Button" parent="MapSelection/TrackThumbnail/MapSelectors"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = 20.0
+offset_bottom = 15.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+text = "<"
+
+[node name="Right" type="Button" parent="MapSelection/TrackThumbnail/MapSelectors"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -15.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+text = ">"
+
+[node name="TrackName" type="Label" parent="MapSelection"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 145.0
+offset_right = 185.0
+offset_bottom = 165.0
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+text = "Track: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerReadyBtn" type="Button" parent="MapSelection"]
+layout_mode = 0
+offset_top = 180.0
+offset_right = 195.0
+offset_bottom = 205.0
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+text = "Ready"
+metadata/_edit_lock_ = true
+
+[node name="HostStartBtn" type="Button" parent="MapSelection"]
+visible = false
+layout_mode = 0
+offset_top = 180.0
+offset_right = 195.0
+offset_bottom = 205.0
+theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_font_sizes/font_size = 9
+text = "Start"
+metadata/_edit_lock_ = true
+
+[node name="Compositions" type="Node" parent="."]
+
+[node name="SpawnHandler" parent="Compositions" node_paths=PackedStringArray("_base_node") instance=ExtResource("1_7nek3")]
+_player_scene = ExtResource("2_87fhd")
+_base_node = NodePath("../../Players")
+
+[connection signal="pressed" from="MapSelection/TrackThumbnail/MapSelectors/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="MapSelection/TrackThumbnail/MapSelectors/Right" to="." method="_on_right_pressed"]

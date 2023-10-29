@@ -1,0 +1,152 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk1ar4he7csso"]
+
+[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="1_eq5rv"]
+[ext_resource type="PackedScene" uid="uid://xxan6uwyuv4y" path="res://assets/ui/menus/multiplayer/lobby-browser/LobbyInfoRow.tscn" id="1_lu2dm"]
+[ext_resource type="Script" path="res://assets/ui/menus/multiplayer/lobby-browser/LobbyBrowser.gd" id="1_umml5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vwcfq"]
+bg_color = Color(0, 0, 0, 0.152941)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[node name="LobbyBrowser" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_umml5")
+_lobby_info_row = ExtResource("1_lu2dm")
+
+[node name="BackBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 70.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("1_eq5rv")
+theme_override_font_sizes/font_size = 9
+text = "Back"
+
+[node name="BrowserTitle" type="Label" parent="."]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 640.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("1_eq5rv")
+theme_override_font_sizes/font_size = 18
+text = "Lobby Browser"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PlayerName" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 55.0
+offset_right = 180.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("1_eq5rv")
+theme_override_font_sizes/font_size = 9
+placeholder_text = "Player name"
+max_length = 8
+
+[node name="StatusBar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 55.0
+offset_right = 345.0
+offset_bottom = 80.0
+
+[node name="StatusMsg" type="Label" parent="StatusBar"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("1_eq5rv")
+theme_override_font_sizes/font_size = 9
+text = "Status message..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LobbyName" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 55.0
+offset_right = 515.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("1_eq5rv")
+theme_override_font_sizes/font_size = 9
+placeholder_text = "Lobby name"
+max_length = 16
+
+[node name="CreateLobby" type="Button" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 55.0
+offset_right = 620.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("1_eq5rv")
+theme_override_font_sizes/font_size = 9
+text = "Create Lobby"
+
+[node name="LobbyList" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 90.0
+offset_right = 620.0
+offset_bottom = 340.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LobbyList"]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 250.0
+theme_override_constants/separation = 0
+
+[node name="ListHeading" type="HBoxContainer" parent="LobbyList/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LobbyNameHeading" type="Label" parent="LobbyList/VBoxContainer/ListHeading"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_eq5rv")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxFlat_vwcfq")
+text = "Lobby Name
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LobbyHostHeading" type="Label" parent="LobbyList/VBoxContainer/ListHeading"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_eq5rv")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxFlat_vwcfq")
+text = "Host"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LobbyCountHeading" type="Label" parent="LobbyList/VBoxContainer/ListHeading"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_eq5rv")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxFlat_vwcfq")
+text = "Player Count"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LobbyJoinHeading" type="Label" parent="LobbyList/VBoxContainer/ListHeading"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_eq5rv")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxFlat_vwcfq")
+text = "Join Lobby"
+horizontal_alignment = 1
+vertical_alignment = 1

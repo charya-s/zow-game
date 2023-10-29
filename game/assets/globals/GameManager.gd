@@ -1,24 +1,32 @@
 extends Node
 
-# Entity parameters.
 
 
-# Components and nodes.
+# Player information
+var players := {}; # List of players connected to the lobby.
+var local_player : CharacterBody2D; # Local player.
 
+# Lobby information.
+var lobby_name := ""; # Name of connected lobby.
+var host_name := ""; # Name of the host.
+var host_id := 0; # ID of the host.
 
-# Internal variables.
-var players : Dictionary = {};
-var local_player : CharacterBody2D;
-var server_ip : String = "127.0.0.1";
-var server_port : int = 8915;
-var is_dedicated_server : bool = false;
-var player_ready : ReadyStatus = ReadyStatus.WAITING;
+# True if launched as a server.
+var is_dedicated_server := false; 
+
+# Is the local player ready to start the game? 
 enum ReadyStatus {
 	WAITING,
 	DISCONNECTED,
 	ERROR,
 	READY,
 }
+
+
+# Initialization function.
+func _init() -> void:
+	if "--server" in OS.get_cmdline_args():
+		is_dedicated_server = true;
 
 
 # Physics process.

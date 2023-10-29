@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://xxan6uwyuv4y"]
+
+[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="1_456r2"]
+[ext_resource type="Script" path="res://assets/ui/menus/multiplayer/lobby-browser/LobbyInfoRow.gd" id="1_hyioq"]
+
+[node name="LobbyInfoRow" type="HBoxContainer" groups=["LobbyInfoRows"]]
+custom_minimum_size = Vector2(600, 25)
+theme_override_constants/separation = 0
+script = ExtResource("1_hyioq")
+
+[node name="LobbyName" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_456r2")
+theme_override_font_sizes/font_size = 9
+text = "<LobbyName>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LobbyHostName" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_456r2")
+theme_override_font_sizes/font_size = 9
+text = "<HostName>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LobbyPlayerCount" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_456r2")
+theme_override_font_sizes/font_size = 9
+text = "<PlayerCount>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JoinLobbyBtn" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_456r2")
+theme_override_font_sizes/font_size = 9
+text = "Join Lobby"
+
+[connection signal="pressed" from="JoinLobbyBtn" to="." method="_on_join_lobby_btn_pressed"]

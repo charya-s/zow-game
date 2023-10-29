@@ -3,8 +3,8 @@ class_name TrackController;
 
 
 # Entity parameters.
-@export var _friction : float = 0.5; # Track friction.
-@export var _start_dir : Vector2 = Vector2(-1, 0); # The direction the player faces at the start.
+@export var friction : float = 0.5; # Track friction.
+@export var start_dir : Vector2 = Vector2(-1, 0); # The direction the player faces at the start.
 @export var _start_timer : float = 5.0; # 5 seconds of prep before the race starts.
 
 # Components and nodes.

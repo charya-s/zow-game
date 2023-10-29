@@ -1,0 +1,63 @@
+MultiplayerMenu
+--------------------------
+- MultiplayerMenu : Control -> ROOT
+	- LobbyBrowser : Control -> SCENE
+	- Lobby : Control -> SCENE
+	- Components : Node
+		- ClientHandler : ClientHandler -> SCENE
+		- ServerHandler : ServerHandler -> SCENE
+
+
+LobbyBrowser
+--------------------------
+- LobbyBrowser : Control -> ROOT
+	- BackBtn : Button
+	- BrowserTitle : Label
+	- PlayerName : LineEdit
+	- StatusBar : TextureRect
+		- StatusMsg : Label
+	- LobbyName : LineEdit
+	- CreateLobbyBtn : Button
+	- LobbyList : Panel
+		- VBoxContainer : VBoxContainer
+			- ListHeading : HBoxContainer
+				- LobbyNameHeading : Label
+				- LobbyHostHeading : Label
+				- LobbyCountHeading : Label
+				- LobbyJoinHeading : Label
+			- LobbyInfoRow : HBoxContainer -> SCENE
+
+
+		
+LobbyInfoRow 
+--------------------------
+- LobbyInfoRow : HBoxContainer -> SCENE
+	- LobbyName : Label
+	- LobbyHostName : Label
+	- LobbyPlayerCount : Label
+	- JoinLobbyBtn : Button
+
+
+Lobby
+--------------------------
+- Lobby : Control
+	- LeaveLobbyBtn : Button 
+	- CurrentLobbyInfo : Panel
+		- LobbyName : Label
+		- LobbyHostName : Label
+		- LobbyPlayerCount : Label
+	- Players : Panel
+		- SpawnPoints : Node
+			- 0 : Node
+			- 1 : Node
+			- 2 : Node
+			- 3 : Node
+		- PlayerPortrait0 : AnimatedSprite
+		- PlayerPortrait1 : AnimatedSprite
+		- PlayerPortrait2 : AnimatedSprite
+		- PlayerPortrait3 : AnimatedSprite
+	- Chat : Panel
+		- ChatDisplay : RichTextLabel
+		- MessageBox : LineEdit
+		- SendChatBtn : Button
+	- PlayerReadyBtn : Button

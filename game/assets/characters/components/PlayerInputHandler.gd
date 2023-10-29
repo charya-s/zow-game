@@ -8,6 +8,7 @@ class_name PlayerInputHandler
 # Components and nodes.
 @export var _player : PlayerController;
 @export var _movement_handler : MovementHandler;
+@export var _multi_sync : MultiplayerSynchronizer;
 
 # Internal variables.
 
@@ -15,6 +16,10 @@ class_name PlayerInputHandler
 # Physics process - runs 60 times a second.
 func _physics_process(_delta:float) -> void:
 	if !_player.get_parent().name.contains("Track"): # Don't check for movement if the player is not on a track.
+		return
+		
+	# Only take inputs if client is the owner of this player character.
+	if _multi_sync.get_multiplayer_authority() != multiplayer.get_unique_id():
 		return
 	
 	if (Input.get_action_strength("brake") == 1): # Braking takes precedence over accelerating.
