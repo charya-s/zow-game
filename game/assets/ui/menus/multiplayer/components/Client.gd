@@ -110,7 +110,7 @@ func _parseMessage(message:Dictionary) -> void:
 		
 	if (message.type == MessageTypes.LOBBY_DESTROYED):
 		_lobby_browser.remove_lobby_row(message.lobby_id); # Whenever a lobby is deleted, update the list of lobbies.
-		_exit_lobby();
+		if _curr_lobby_id == message.lobby_id: _exit_lobby();
 		
 	if (message.type == MessageTypes.LOBBY_CHAT_MESSAGE):
 		print("CHAT: " + str(message))
@@ -134,6 +134,7 @@ func _parseMessage(message:Dictionary) -> void:
 		
 	if (message.type == MessageTypes.LOBBY_READY_STATUS):	
 		GameManager.players[str(message.user_id)].ready = int(message.ready_status);
+		_lobby_menu.change_portrait_color(message.player_index, int(message.ready_status));
 		_lobby_menu._check_all_ready();
 
 # Send a message to all players.
@@ -308,8 +309,11 @@ func _exit_lobby() -> void:
 	_remove_rtc_peers();
 
 
-# Sending a chat message.
-func _on_send_chat_btn_pressed():
+# Sending a chat message to the server for distribution.
+func _send_chat_message() -> void:
+	if _lobby_menu.get_node("Chat/MessageBox").text == "": # Only send if message exists.
+		return
+		
 	var chat_message = {
 		"type": MessageTypes.LOBBY_CHAT_MESSAGE,
 		"lobby_id": _curr_lobby_id,
@@ -317,7 +321,21 @@ func _on_send_chat_btn_pressed():
 		"chat_message": _lobby_menu.get_node("Chat/MessageBox").text,
 	}
 	_sendMessageToAll(chat_message);
+	_lobby_menu.get_node("Chat/MessageBox").text = ""; # Clear message box after sending message.
 
+# Sending a chat message by pressing "Send".
+func _on_send_chat_btn_pressed() -> void:
+	_send_chat_message();
+
+# Sending a chat message by hit "Enter" while the message box is focused.
+func _input(event) -> void:
+	if Input.is_action_just_pressed("enter_key"):
+		if _lobby_menu.get_node("Chat/MessageBox").has_focus():
+			_send_chat_message();
+			
+		
+			
+	
 
 # Readying up.
 func _on_player_ready_btn_pressed():

@@ -89,5 +89,14 @@ func _check_all_ready() -> void:
 		else:
 			$MapSelection/PlayerReadyBtn.visible = true;
 			$MapSelection/HostStartBtn.visible = false;
-			
-			
+
+
+# Change the portrait color at a specific index based on a ready status value.
+func change_portrait_color(player_index:int, ready_status:int):
+	const ANIMATIONS = {
+		int(GameManager.ReadyStatus.WAITING): "gray", 
+		int(GameManager.ReadyStatus.DISCONNECTED): "orange",
+		int(GameManager.ReadyStatus.ERROR): "red",
+		int(GameManager.ReadyStatus.READY): "green",
+	}
+	$Players.get_node("PlayerPortrait" + str(player_index)).animation = ANIMATIONS[ready_status];

@@ -11,3 +11,4 @@ res://assets/characters/components/MovementHandler.gd
 res://assets/globals/GameManager.gd
 res://assets/tracks/components/TrackController.gd
 res://assets/tracks/Track0.gd
+res://assets/ui/menus/multiplayer/components/Server.gd

@@ -289,6 +289,7 @@ func _set_ready_status(lobby_id:String, user_id:int, ready_status:GameManager.Re
 		var ready_status_message = { 
 			"type": MessageTypes.LOBBY_READY_STATUS,
 			"user_id": user_id,
+			"player_index": _lobbies[lobby_id].players[user_id].index,
 			"ready_status": ready_status, # Stringify to prevent errors.
 		};
 		_sendMessageToPlayer(p, ready_status_message); # Send the full list to each player.
