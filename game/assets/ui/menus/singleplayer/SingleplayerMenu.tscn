@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cc4ju4627gpv3"]
+[gd_scene load_steps=30 format=3 uid="uid://cc4ju4627gpv3"]
 
 [ext_resource type="Texture2D" uid="uid://dwcfgs8oiyuge" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_gray.png" id="1_l7yku"]
 [ext_resource type="Script" path="res://assets/ui/menus/singleplayer/SingleplayerMenu.gd" id="1_y55ef"]
@@ -148,6 +148,43 @@ animations = [{
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5eiv"]
 bg_color = Color(0, 0, 0, 0.207843)
 
+[sub_resource type="Animation" id="Animation_y1sic"]
+resource_name = "PlayerName"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerName:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(97.5, 70), Vector2(97.5, 68), Vector2(97.5, 70), Vector2(97.5, 68), Vector2(97.5, 70)]
+}
+
+[sub_resource type="Animation" id="Animation_rosdg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerName:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(97.5, 70)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m15l0"]
+_data = {
+"PlayerName": SubResource("Animation_y1sic"),
+"RESET": SubResource("Animation_rosdg")
+}
+
 [node name="SingleplayerMenu" type="Control" node_paths=PackedStringArray("_spawn_handler")]
 layout_mode = 3
 anchors_preset = 15
@@ -158,22 +195,42 @@ grow_vertical = 2
 script = ExtResource("1_y55ef")
 _spawn_handler = NodePath("Compositions/SpawnHandler")
 
+[node name="BackBtn" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 70.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("6_mxwl3")
+theme_override_font_sizes/font_size = 9
+text = "Back"
+
+[node name="BrowserTitle" type="Label" parent="."]
+offset_top = 20.0
+offset_right = 640.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("6_mxwl3")
+theme_override_font_sizes/font_size = 18
+text = "SINGLEPLAYER TIME ATTACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
 [node name="PlayerName" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 198.0
-offset_top = 40.0
-offset_right = 443.0
-offset_bottom = 65.0
+offset_left = 97.5
+offset_top = 70.0
+offset_right = 342.5
+offset_bottom = 95.0
 theme_override_fonts/font = ExtResource("6_mxwl3")
 theme_override_font_sizes/font_size = 9
 placeholder_text = "Player name"
 
 [node name="Player" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 125.0
-offset_top = 90.0
-offset_right = 143.0
-offset_bottom = 114.0
+offset_left = 148.0
+offset_top = 120.0
+offset_right = 166.0
+offset_bottom = 144.0
 scale = Vector2(8, 8)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_nu3lc")
 
@@ -190,10 +247,10 @@ autoplay = "gray"
 
 [node name="MapSelection" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 90.0
-offset_right = 515.0
-offset_bottom = 282.0
+offset_left = 347.5
+offset_top = 120.0
+offset_right = 542.5
+offset_bottom = 312.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_v5eiv")
 
 [node name="TrackThumbnail" type="TextureRect" parent="MapSelection"]
@@ -257,10 +314,10 @@ vertical_alignment = 1
 
 [node name="StartBtn" type="Button" parent="."]
 layout_mode = 0
-offset_left = 223.0
-offset_top = 310.0
-offset_right = 418.0
-offset_bottom = 335.0
+offset_left = 347.5
+offset_top = 70.0
+offset_right = 542.5
+offset_bottom = 95.0
 theme_override_fonts/font = ExtResource("6_mxwl3")
 theme_override_font_sizes/font_size = 9
 text = "Start"
@@ -270,6 +327,12 @@ text = "Start"
 [node name="SpawnHandler" parent="Compositions" node_paths=PackedStringArray("_base_node") instance=ExtResource("6_k15ex")]
 _base_node = NodePath("../../Player")
 
+[node name="ErrorShake" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m15l0")
+}
+
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
 [connection signal="pressed" from="MapSelection/TrackThumbnail/MapSelectors/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="MapSelection/TrackThumbnail/MapSelectors/Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="StartBtn" to="." method="_on_start_btn_pressed"]

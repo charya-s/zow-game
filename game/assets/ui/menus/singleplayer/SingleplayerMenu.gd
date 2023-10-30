@@ -53,6 +53,18 @@ func _on_right_pressed() -> void:
 	
 # Start the game.
 func _on_start_btn_pressed():
+	if $PlayerName.text.length() < 3:
+		$PlayerName.modulate = Color("ff0000");
+		$ErrorShake.play("PlayerName");
+		return;
+		
+	GameManager.players["1"].name = $PlayerName.text;
 	var track_scene = load(TrackList.TRACKS[selected_track].path).instantiate();
 	get_tree().root.add_child(track_scene);
 	queue_free();
+
+
+func _on_back_btn_pressed():
+	var main_menu_scene = load("res://assets/ui/menus/main-menu/MainMenu.tscn").instantiate();
+	get_tree().root.add_child(main_menu_scene);
+	queue_free()
