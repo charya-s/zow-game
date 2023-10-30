@@ -36,6 +36,12 @@ var _self_id := 0;
 var _self_name := "";
 var _curr_lobby_id := "";
 var _curr_host_id := 0;
+enum Status {
+	INFO,
+	ERROR,
+	WARNING,
+	SUCCESS,
+}
 
 # On-ready function.
 func _ready() -> void:
@@ -46,6 +52,8 @@ func _ready() -> void:
 	multiplayer.connected_to_server.connect(_rtc_server_connected);
 	multiplayer.peer_connected.connect(_rtc_peer_connected);
 	multiplayer.peer_disconnected.connect(_rtc_peer_disconnected);
+	
+	
 
 
 # Physics process.
@@ -256,6 +264,7 @@ func _rtc_peer_disconnected(id:int) -> void:
 func _on_lobby_browser_join_lobby_pressed(lobby_id:String) -> void:
 	# Don't create a lobby if the player name is not set.
 	if _lobby_browser.get_node("PlayerName").text.length() < 3:
+		_show_name_error("player_name");
 		return
 	var message : Dictionary = {
 		"type": MessageTypes.LOBBY_JOIN_REQUEST,
@@ -269,9 +278,11 @@ func _on_lobby_browser_join_lobby_pressed(lobby_id:String) -> void:
 func _on_create_lobby_pressed() -> void:
 	# Don't create a lobby if the player name and lobby name are not set.
 	if _lobby_browser.get_node("PlayerName").text.length() < 3:
-		return
+		_show_name_error("player_name");
+		return;
 	if _lobby_browser.get_node("LobbyName").text.length() < 3:
-		return
+		_show_name_error("lobby_name");
+		return;
 	
 	var message : Dictionary = {
 		"type": MessageTypes.LOBBY_CREATE_REQUEST,
@@ -382,10 +393,17 @@ func _on_host_start_btn_pressed():
 func _start_game() -> void:
 	var track_scene = load(TrackList.TRACKS[_lobby_menu.selected_track].path).instantiate();
 	get_tree().root.add_child(track_scene);
-	get_parent().get_parent().queue_free()
+	get_parent().get_parent().queue_free();
 
-
-
+# Highlights the player name or lobby name field if names don't meet requirements.
+func _show_name_error(field:String) -> void:
+	if (field == "player_name"):
+		_lobby_browser.get_node("PlayerName").modulate = Color("ff0000");
+		_lobby_browser.get_node("ErrorShake").play("PlayerName");
+	
+	elif (field == "lobby_name"):
+		_lobby_browser.get_node("LobbyName").modulate = Color("ff0000");
+		_lobby_browser.get_node("ErrorShake").play("LobbyName");
 
 
 

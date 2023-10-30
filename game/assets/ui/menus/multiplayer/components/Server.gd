@@ -162,7 +162,13 @@ func _create_lobby(lobby_name:String, host_id:int, host_name:String) -> void:
 # Join a lobby.
 func _join_lobby(user_id:int, user_name:String, lobby_id:String) -> void:
 	# Add new user to the players list for the specified lobby.
-	_lobbies[lobby_id].players[user_id] = { "id":user_id, "name":user_name, "index": _lobbies[lobby_id].players.size(), "ready": GameManager.ReadyStatus.WAITING };
+	_lobbies[lobby_id].players[user_id] = { 
+		"id":user_id, 
+		"name":user_name, 
+		"index": _lobbies[lobby_id].players.size(), 
+		"ready": GameManager.ReadyStatus.WAITING, 
+		"char": GameManager.Characters.BOB,
+	};
 
 	# Tell everyone to update the count for this lobby by one.
 	var lobby_count_message = {

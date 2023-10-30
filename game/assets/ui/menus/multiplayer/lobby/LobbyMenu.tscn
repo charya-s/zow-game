@@ -1,16 +1,15 @@
-[gd_scene load_steps=29 format=3 uid="uid://dc6y5p8d0w2y8"]
+[gd_scene load_steps=28 format=3 uid="uid://dc6y5p8d0w2y8"]
 
 [ext_resource type="Script" path="res://assets/ui/menus/multiplayer/lobby/LobbyMenu.gd" id="1_6c6vm"]
 [ext_resource type="PackedScene" uid="uid://cy14hlyb888wd" path="res://assets/tracks/components/SpawnHandler.tscn" id="1_7nek3"]
 [ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="1_orrsm"]
-[ext_resource type="PackedScene" uid="uid://cg3ddqtk38sxj" path="res://assets/characters/player/Player.tscn" id="2_87fhd"]
 [ext_resource type="Texture2D" uid="uid://dwcfgs8oiyuge" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_gray.png" id="4_7pks1"]
 [ext_resource type="Texture2D" uid="uid://udpbsuq8lmwh" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_green.png" id="5_m8r6g"]
 [ext_resource type="Texture2D" uid="uid://dbehj3pe803v4" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_orange.png" id="6_lxsmd"]
 [ext_resource type="Texture2D" uid="uid://d001ap3g0qxww" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_red.png" id="7_unukq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbmmw"]
-bg_color = Color(1, 1, 1, 0.168627)
+bg_color = Color(1, 1, 1, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_layoy"]
 atlas = ExtResource("4_7pks1")
@@ -394,7 +393,6 @@ metadata/_edit_lock_ = true
 [node name="Compositions" type="Node" parent="."]
 
 [node name="SpawnHandler" parent="Compositions" node_paths=PackedStringArray("_base_node") instance=ExtResource("1_7nek3")]
-_player_scene = ExtResource("2_87fhd")
 _base_node = NodePath("../../Players")
 
 [connection signal="pressed" from="MapSelection/TrackThumbnail/MapSelectors/Left" to="." method="_on_left_pressed"]

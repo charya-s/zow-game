@@ -22,6 +22,11 @@ enum ReadyStatus {
 	READY,
 }
 
+# Available characters.
+enum Characters {
+	BOB,
+}
+
 
 # Initialization function.
 func _init() -> void:

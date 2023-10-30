@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dk1ar4he7csso"]
+[gd_scene load_steps=9 format=3 uid="uid://dk1ar4he7csso"]
 
 [ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="1_eq5rv"]
 [ext_resource type="PackedScene" uid="uid://xxan6uwyuv4y" path="res://assets/ui/menus/multiplayer/lobby-browser/LobbyInfoRow.tscn" id="1_lu2dm"]
@@ -11,6 +11,72 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_ahdy0"]
+resource_name = "PlayerName"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerName:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(20, 55), Vector2(20, 53), Vector2(20, 55), Vector2(20, 53), Vector2(20, 55)]
+}
+
+[sub_resource type="Animation" id="Animation_d82w1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerName:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, 55)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LobbyName:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(270, 55)]
+}
+
+[sub_resource type="Animation" id="Animation_v46k0"]
+resource_name = "LobbyName"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LobbyName:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(270, 55), Vector2(270, 53), Vector2(270, 55), Vector2(270, 53), Vector2(270, 55)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rv8n4"]
+_data = {
+"LobbyName": SubResource("Animation_v46k0"),
+"PlayerName": SubResource("Animation_ahdy0"),
+"RESET": SubResource("Animation_d82w1")
+}
 
 [node name="LobbyBrowser" type="Control"]
 layout_mode = 3
@@ -48,33 +114,16 @@ uppercase = true
 layout_mode = 0
 offset_left = 20.0
 offset_top = 55.0
-offset_right = 180.0
-offset_bottom = 80.0
+offset_right = 265.0
+offset_bottom = 80.0002
 theme_override_fonts/font = ExtResource("1_eq5rv")
 theme_override_font_sizes/font_size = 9
 placeholder_text = "Player name"
 max_length = 8
 
-[node name="StatusBar" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 185.0
-offset_top = 55.0
-offset_right = 345.0
-offset_bottom = 80.0
-
-[node name="StatusMsg" type="Label" parent="StatusBar"]
-layout_mode = 0
-offset_right = 160.0
-offset_bottom = 25.0
-theme_override_fonts/font = ExtResource("1_eq5rv")
-theme_override_font_sizes/font_size = 9
-text = "Status message..."
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="LobbyName" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 355.0
+offset_left = 270.0
 offset_top = 55.0
 offset_right = 515.0
 offset_bottom = 80.0
@@ -150,3 +199,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vwcfq")
 text = "Join Lobby"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ErrorShake" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rv8n4")
+}

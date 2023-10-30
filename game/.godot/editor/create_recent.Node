@@ -1,3 +1,6 @@
+LineEdit
+AnimationPlayer
+AnimatedSprite2D
 Button
 Panel
 VBoxContainer
@@ -9,17 +12,14 @@ HBoxContainer
 MultiplayerSynchronizer
 Control
 Node
-LineEdit
 Line2D
 RichTextLabel
-AnimatedSprite2D
 SpawnHandler
 Node2D
 Timer
 TileMap
 Camera2D
 TrackController
-AnimationPlayer
 AnimationTree
 CollisionShape2D
 CharacterBody2D

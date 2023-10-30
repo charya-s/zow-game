@@ -3,8 +3,10 @@ class_name SpawnHandler;
 
 
 # Entity parameters.
-@export var _player_scene : PackedScene; # Player scene for spawning players.
 @export var _base_node : Node; # The node to which spawned players are added.
+
+# Internal variables.
+@onready var _player_scene := load("res://assets/characters/player/Player.tscn");
 
 
 # Spawn players according to the GameManager. Returns the local player as a CharacterBody2D.

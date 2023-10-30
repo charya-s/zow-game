@@ -1,0 +1,275 @@
+[gd_scene load_steps=27 format=3 uid="uid://cc4ju4627gpv3"]
+
+[ext_resource type="Texture2D" uid="uid://dwcfgs8oiyuge" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_gray.png" id="1_l7yku"]
+[ext_resource type="Script" path="res://assets/ui/menus/singleplayer/SingleplayerMenu.gd" id="1_y55ef"]
+[ext_resource type="Texture2D" uid="uid://udpbsuq8lmwh" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_green.png" id="2_ts2h3"]
+[ext_resource type="Texture2D" uid="uid://dbehj3pe803v4" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_orange.png" id="3_ct5ew"]
+[ext_resource type="Texture2D" uid="uid://d001ap3g0qxww" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_red.png" id="4_2fbxv"]
+[ext_resource type="PackedScene" uid="uid://cy14hlyb888wd" path="res://assets/tracks/components/SpawnHandler.tscn" id="6_k15ex"]
+[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="6_mxwl3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nu3lc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_layoy"]
+atlas = ExtResource("1_l7yku")
+region = Rect2(0, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtqmx"]
+atlas = ExtResource("1_l7yku")
+region = Rect2(18, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4xv6"]
+atlas = ExtResource("1_l7yku")
+region = Rect2(36, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0o1s"]
+atlas = ExtResource("1_l7yku")
+region = Rect2(54, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdh8j"]
+atlas = ExtResource("2_ts2h3")
+region = Rect2(0, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1p3w"]
+atlas = ExtResource("2_ts2h3")
+region = Rect2(18, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bedop"]
+atlas = ExtResource("2_ts2h3")
+region = Rect2(36, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryn83"]
+atlas = ExtResource("2_ts2h3")
+region = Rect2(54, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gibev"]
+atlas = ExtResource("3_ct5ew")
+region = Rect2(0, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05c0y"]
+atlas = ExtResource("3_ct5ew")
+region = Rect2(18, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxnyt"]
+atlas = ExtResource("3_ct5ew")
+region = Rect2(36, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbkxc"]
+atlas = ExtResource("3_ct5ew")
+region = Rect2(54, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f4iu"]
+atlas = ExtResource("4_2fbxv")
+region = Rect2(0, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk0w2"]
+atlas = ExtResource("4_2fbxv")
+region = Rect2(18, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5won"]
+atlas = ExtResource("4_2fbxv")
+region = Rect2(36, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgti0"]
+atlas = ExtResource("4_2fbxv")
+region = Rect2(54, 0, 18, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sjvjb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_layoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtqmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4xv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0o1s")
+}],
+"loop": true,
+"name": &"gray",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdh8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1p3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bedop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryn83")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gibev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05c0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxnyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbkxc")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f4iu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk0w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5won")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgti0")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5eiv"]
+bg_color = Color(0, 0, 0, 0.207843)
+
+[node name="SingleplayerMenu" type="Control" node_paths=PackedStringArray("_spawn_handler")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y55ef")
+_spawn_handler = NodePath("Compositions/SpawnHandler")
+
+[node name="PlayerName" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 40.0
+offset_right = 443.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("6_mxwl3")
+theme_override_font_sizes/font_size = 9
+placeholder_text = "Player name"
+
+[node name="Player" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 90.0
+offset_right = 143.0
+offset_bottom = 114.0
+scale = Vector2(8, 8)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nu3lc")
+
+[node name="SpawnPoints" type="Node2D" parent="Player"]
+
+[node name="0" type="Node2D" parent="Player/SpawnPoints" groups=["PlayerSpawnPoints"]]
+position = Vector2(9, 11)
+
+[node name="PlayerPortrait0" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(9, 12)
+sprite_frames = SubResource("SpriteFrames_sjvjb")
+animation = &"gray"
+autoplay = "gray"
+
+[node name="MapSelection" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 90.0
+offset_right = 515.0
+offset_bottom = 282.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v5eiv")
+
+[node name="TrackThumbnail" type="TextureRect" parent="MapSelection"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 45.0
+offset_right = 185.0
+offset_bottom = 145.0
+expand_mode = 1
+
+[node name="MapSelectors" type="Control" parent="MapSelection/TrackThumbnail"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = 175.0
+offset_bottom = 15.0
+grow_vertical = 2
+
+[node name="Left" type="Button" parent="MapSelection/TrackThumbnail/MapSelectors"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = 20.0
+offset_bottom = 15.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_mxwl3")
+theme_override_font_sizes/font_size = 9
+text = "<"
+
+[node name="Right" type="Button" parent="MapSelection/TrackThumbnail/MapSelectors"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -15.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_mxwl3")
+theme_override_font_sizes/font_size = 9
+text = ">"
+
+[node name="TrackName" type="Label" parent="MapSelection"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 145.0
+offset_right = 185.0
+offset_bottom = 165.0
+theme_override_fonts/font = ExtResource("6_mxwl3")
+theme_override_font_sizes/font_size = 9
+text = "Track: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 310.0
+offset_right = 418.0
+offset_bottom = 335.0
+theme_override_fonts/font = ExtResource("6_mxwl3")
+theme_override_font_sizes/font_size = 9
+text = "Start"
+
+[node name="Compositions" type="Node" parent="."]
+
+[node name="SpawnHandler" parent="Compositions" node_paths=PackedStringArray("_base_node") instance=ExtResource("6_k15ex")]
+_base_node = NodePath("../../Player")
+
+[connection signal="pressed" from="MapSelection/TrackThumbnail/MapSelectors/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="MapSelection/TrackThumbnail/MapSelectors/Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="StartBtn" to="." method="_on_start_btn_pressed"]

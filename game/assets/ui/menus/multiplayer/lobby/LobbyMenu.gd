@@ -66,11 +66,12 @@ func set_displayed_track(track_id:int) -> void:
 	$MapSelection/TrackName.text = "Track: " + TrackList.TRACKS[track_id].name;
 	$MapSelection/TrackThumbnail.texture = load(TrackList.TRACKS[track_id].img_path);
 
-
-func _on_left_pressed() -> void: # Scroll up the track list.
+# Scroll up the track list.
+func _on_left_pressed() -> void: 
 	set_displayed_track(selected_track-1);
 
-func _on_right_pressed() -> void: # Scroll down the track list.
+# Scroll down the track list.
+func _on_right_pressed() -> void: 
 	set_displayed_track(selected_track+1);
 
 

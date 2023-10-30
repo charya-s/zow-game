@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Z.O.W Game"
-run/main_scene="res://assets/ui/menus/main-menu/MainMenu.tscn"
+run/main_scene="res://assets/ui/menus/multiplayer/MultiplayerMenu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 
 [autoload]
