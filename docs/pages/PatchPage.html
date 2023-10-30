@@ -5,8 +5,8 @@
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="/css/PatchPage.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/PatchPage.css">
     </head>
     <body>
         <div class="menu-cont"></div>
@@ -26,14 +26,14 @@
         <script>
             $(document).ready(function () {
                 // Load the top menu.
-                $(".menu-cont").load('/components/TopMenu.html');
+                $(".menu-cont").load('../components/TopMenu.html');
                 // Load the footer.
-                $(".footer-cont").load('/components/Footer.html');
+                $(".footer-cont").load('../components/Footer.html');
                 // Load patch notes.
-                var patch_list = jQuery.getJSON("/data/patch_list.json", function (data) {
+                var patch_list = jQuery.getJSON("../data/patch_list.json", function (data) {
                     $.each(data, function (i) {
                         $(".page-body").append("<div class='body-section'></div>");
-                        $(".body-section").last().append("<h2 class='patch_link'><a href='/data/patch_notes/" + data[i].code + ".html'>" + data[i].title + "</a></h2>");
+                        $(".body-section").last().append("<h2 class='patch_link'><a href='../data/patch_notes/" + data[i].code + ".html'>" + data[i].title + "</a></h2>");
                         $(".body-section").last().append("<p><b>" + data[i].date + "</b></p><p>" + data[i].summary + "</p>");
                     })
                 });
