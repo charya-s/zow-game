@@ -283,7 +283,10 @@ func _on_create_lobby_pressed() -> void:
 
 # Go back to the main menu.
 func _on_back_btn_pressed() -> void:
-	pass
+	var main_menu_scene = load("res://assets/ui/menus/main-menu/MainMenu.tscn").instantiate();
+	get_tree().root.add_child(main_menu_scene);
+	_peer.close();
+	get_parent().get_parent().queue_free()
 
 # Enter the lobby screen.
 func _enter_lobby(lobby_name:String, host_name:String) -> void:

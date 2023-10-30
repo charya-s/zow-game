@@ -11,6 +11,7 @@ class_name TrackController;
 @onready var _spawn_handler : SpawnHandler = $Components/SpawnHandler;
 @onready var _main_camera : Camera2D = $MainCamera;
 @onready var _timer : Timer = $StartTimer;
+@onready var _game_hud : GameHUD;
 
 # Internal variables.
 
@@ -18,6 +19,10 @@ class_name TrackController;
 # # On-ready function.
 func _ready():
 	_spawn_handler.spawn_players(true); # Spawn players and return the local player.
+	
+	# Instantiate the in-game HUD.
+	_game_hud = load("res://assets/ui/hud/GameHUD.tscn").instantiate();
+	add_child(_game_hud);
 	
 	
 # Physics process - runs 60 times a second.

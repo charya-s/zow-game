@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xn8kgcghwwl4"
-path="res://.godot/imported/host_button_normal.png-f207ec8082c37612f34f4a2e968e549c.ctex"
+uid="uid://d38r4sy1jnplu"
+path="res://.godot/imported/multiplayer_button_normal.png-f6532dd4d3a30aee54ea358d3118f0ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/menus/main-menu/host_button_normal.png"
-dest_files=["res://.godot/imported/host_button_normal.png-f207ec8082c37612f34f4a2e968e549c.ctex"]
+source_file="res://assets/ui/menus/main-menu/multiplayer_button_normal.png"
+dest_files=["res://.godot/imported/multiplayer_button_normal.png-f6532dd4d3a30aee54ea358d3118f0ac.ctex"]
 
 [params]
 

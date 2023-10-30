@@ -3,7 +3,11 @@ class_name PlayerController
 
 
 # Entity parameters.
-
+@export var max_speed : float = 200.0; # Maximum speed in pixels/frame.
+@export var forward_accel : float = 0.025; # Acceleration in pixels/frame2.
+@export var brake_decel : float = 0.05; # Braking deceleration in pixels/frame2.
+@export var reverse_multiplier : float = 0.33; # Reversing speed as a multiplier on _max_speed.
+@export var turn_angle : float = 0.08; # Turning angle in radians.
 
 # Internal variables.
 var sync_pos : Vector2;

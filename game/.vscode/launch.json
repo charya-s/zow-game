@@ -1,0 +1,19 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "GDScript Godot",
+            "type": "godot",
+            "request": "launch",
+            "project": "C:/Users/chary/Documents/Misc/Personal Projects/Godot/zow-game/game",
+            "port": 6005,
+            "address": "http://127.0.0.1",
+            "launch_game_instance": true,
+            "launch_scene": false
+        }
+    ]
+}

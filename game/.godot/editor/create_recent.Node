@@ -1,13 +1,15 @@
+Button
+Panel
+VBoxContainer
+Label
+CanvasLayer
+Sprite2D
+TextureRect
+HBoxContainer
 MultiplayerSynchronizer
 Control
-Button
-Label
-TextureRect
-Panel
 Node
 LineEdit
-HBoxContainer
-VBoxContainer
 Line2D
 RichTextLabel
 AnimatedSprite2D
@@ -20,5 +22,4 @@ TrackController
 AnimationPlayer
 AnimationTree
 CollisionShape2D
-Sprite2D
 CharacterBody2D

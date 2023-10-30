@@ -1,0 +1,167 @@
+[gd_scene load_steps=33 format=3 uid="uid://cbym2wtwosrm5"]
+
+[ext_resource type="Texture2D" uid="uid://c2uexw4iu0k4o" path="res://assets/ui/menus/main-menu/singleplayer_button_normal.png" id="1_5e0x2"]
+[ext_resource type="Script" path="res://assets/ui/menus/main-menu/MainMenu.gd" id="1_rs8to"]
+[ext_resource type="Texture2D" uid="uid://dwoxo73bp2xxs" path="res://assets/ui/menus/main-menu/singleplayer_button_pressed.png" id="2_ai1td"]
+[ext_resource type="Texture2D" uid="uid://d38r4sy1jnplu" path="res://assets/ui/menus/main-menu/multiplayer_button_normal.png" id="3_f3oqw"]
+[ext_resource type="Texture2D" uid="uid://buwgqe3fhur3c" path="res://assets/ui/menus/main-menu/multiplayer_button_pressed.png" id="4_biudm"]
+[ext_resource type="Texture2D" uid="uid://bklvqla8tgx60" path="res://assets/ui/menus/main-menu/characters_button_normal.png" id="5_gwkva"]
+[ext_resource type="Texture2D" uid="uid://dvowsc3q4aiak" path="res://assets/ui/menus/main-menu/characters_button_pressedl.png" id="6_bk3xe"]
+[ext_resource type="Texture2D" uid="uid://cop7efnuu8qk3" path="res://assets/ui/menus/main-menu/options_button_normal.png" id="7_j5fvh"]
+[ext_resource type="Texture2D" uid="uid://coifn1vr84o6q" path="res://assets/ui/menus/main-menu/options_button_pressed.png" id="8_07fe8"]
+[ext_resource type="Texture2D" uid="uid://bxql54egagk0e" path="res://assets/ui/menus/main-menu/quit_button_normal.png" id="9_wggak"]
+[ext_resource type="Texture2D" uid="uid://b5xshmh1xu2se" path="res://assets/ui/menus/main-menu/quit_button_pressed.png" id="10_n20u3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10umb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_igcel"]
+texture = ExtResource("1_5e0x2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0o43"]
+texture = ExtResource("2_ai1td")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fjgwc"]
+texture = ExtResource("2_ai1td")
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e54e0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7mikf"]
+texture = ExtResource("3_f3oqw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ik727"]
+texture = ExtResource("4_biudm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3e4h"]
+texture = ExtResource("4_biudm")
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ojpjf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jhlb5"]
+texture = ExtResource("5_gwkva")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c3sde"]
+texture = ExtResource("6_bk3xe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cutwt"]
+texture = ExtResource("6_bk3xe")
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iagri"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mp1cj"]
+texture = ExtResource("7_j5fvh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yxhda"]
+texture = ExtResource("8_07fe8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_45a5r"]
+texture = ExtResource("8_07fe8")
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_11ne6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1gkiq"]
+texture = ExtResource("9_wggak")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cx3t5"]
+texture = ExtResource("10_n20u3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h4e8i"]
+texture = ExtResource("10_n20u3")
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkfwf"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rs8to")
+
+[node name="MenuButtons" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 62.0
+offset_right = 320.0
+offset_bottom = 298.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_10umb")
+
+[node name="Singleplayer" type="Button" parent="MenuButtons"]
+layout_mode = 0
+offset_right = 91.0
+offset_bottom = 12.0
+scale = Vector2(3, 3)
+theme_override_styles/normal = SubResource("StyleBoxTexture_igcel")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j0o43")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fjgwc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e54e0")
+
+[node name="Multiplayer" type="Button" parent="MenuButtons"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 83.0
+offset_bottom = 62.0
+scale = Vector2(3, 3)
+theme_override_styles/normal = SubResource("StyleBoxTexture_7mikf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ik727")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p3e4h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ojpjf")
+
+[node name="Characters" type="Button" parent="MenuButtons"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 70.0
+offset_bottom = 112.0
+scale = Vector2(3, 3)
+theme_override_styles/normal = SubResource("StyleBoxTexture_jhlb5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c3sde")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cutwt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_iagri")
+
+[node name="Options" type="Button" parent="MenuButtons"]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 49.0
+offset_bottom = 162.0
+scale = Vector2(3, 3)
+theme_override_styles/normal = SubResource("StyleBoxTexture_mp1cj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yxhda")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_45a5r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_11ne6")
+
+[node name="Quit" type="Button" parent="MenuButtons"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 28.0
+offset_bottom = 212.0
+scale = Vector2(3, 3)
+theme_override_styles/normal = SubResource("StyleBoxTexture_1gkiq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cx3t5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_h4e8i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qkfwf")
+
+[connection signal="pressed" from="MenuButtons/Singleplayer" to="." method="_on_singleplayer_pressed"]
+[connection signal="pressed" from="MenuButtons/Multiplayer" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="MenuButtons/Characters" to="." method="_on_characters_pressed"]
+[connection signal="pressed" from="MenuButtons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MenuButtons/Quit" to="." method="_on_quit_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c67svgkg4f13m"
-path="res://.godot/imported/join_button_normal.png-42e721a5085950a8b5cddb4f7a38989f.ctex"
+uid="uid://d2r3lslnvqnp1"
+path="res://.godot/imported/back_button_normal.png-3467c656b0bd6f81edcc0f0d53ac8b27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/menus/main-menu/join_button_normal.png"
-dest_files=["res://.godot/imported/join_button_normal.png-42e721a5085950a8b5cddb4f7a38989f.ctex"]
+source_file="res://assets/ui/menus/main-menu/back_button_normal.png"
+dest_files=["res://.godot/imported/back_button_normal.png-3467c656b0bd6f81edcc0f0d53ac8b27.ctex"]
 
 [params]
 
