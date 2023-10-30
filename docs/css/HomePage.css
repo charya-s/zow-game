@@ -1,0 +1,10 @@
+.video-cont {
+    margin-top: 5vh;
+    text-align: center;
+}
+
+.video-cont iframe {
+    width: 50vw;
+    height: calc(50vw * 9/16); /* 16:9 aspect ratio */
+    border: 5px solid #e4fccc;
+}

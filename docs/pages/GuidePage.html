@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zombies On Wheels | Guide</title>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="menu-cont"></div>
+        <h1 class="page-heading">Zombies On Wheels</h1>
+        <p class="intro-p">Z.O.W is a top down racing game with simple keyboard controls.</p>
+
+
+        <div class="page-body">
+            <div class="body-section">
+                <h2><b>Game Mode Selection</h2></b>
+                <p>Z.O.W can be played in both single-player and multi-player modes.</p>
+            </div>
+        </div>
+
+        
+        <div class="footer-cont"></div>
+
+        
+        <script>
+            $(document).ready(function () {
+                // Load the top menu.
+                $(".menu-cont").load('/components/TopMenu.html');
+                // Load the footer.
+                $(".footer-cont").load('/components/Footer.html');
+            });
+        </script>
+    </body>
+
+</html>

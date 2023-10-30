@@ -1,0 +1,13 @@
+.body-section  {
+    margin: 5vh 0 !important;
+}
+
+.patch_link a {
+    color: #041c24;
+    text-decoration: none;
+}
+
+.patch_link a:hover {
+    color: #e4fccc;
+    transition: 0.5s;
+}

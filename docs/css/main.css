@@ -1,0 +1,34 @@
+@font-face {
+    font-family: DefaultFont;
+    src: url(default_font.ttf);
+  }
+
+body {
+    font-family: DefaultFont;
+    background-color: #94c878;
+    color: #041c24;
+}
+
+.page-heading {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.intro-p {
+    text-align: center;
+}
+
+.page-body {
+    margin: 0vh 10vw;
+}
+
+.body-section {
+    margin: 10vh 0;
+}
+
+.footer-cont {
+    position: absolute;
+    width: 99%;
+    text-align: center;
+    bottom: 2vh;
+}
