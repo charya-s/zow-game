@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dhjv0yad7p5lb"]
 
-[ext_resource type="Script" path="res://assets/ui/menus/multiplayer/components/Client.gd" id="1_4c6cq"]
-[ext_resource type="PackedScene" uid="uid://dk1ar4he7csso" path="res://assets/ui/menus/multiplayer/lobby-browser/LobbyBrowser.tscn" id="1_decc8"]
-[ext_resource type="PackedScene" uid="uid://dc6y5p8d0w2y8" path="res://assets/ui/menus/multiplayer/lobby/LobbyMenu.tscn" id="2_pb6jt"]
-[ext_resource type="Script" path="res://assets/ui/menus/multiplayer/components/Server.gd" id="2_qb4t4"]
-[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="6_v25c6"]
+[ext_resource type="PackedScene" uid="uid://dk1ar4he7csso" path="res://assets/ui/menus/multiplayer/lobby-browser/LobbyBrowser.tscn" id="1_qe5lc"]
+[ext_resource type="PackedScene" uid="uid://dc6y5p8d0w2y8" path="res://assets/ui/menus/multiplayer/lobby/LobbyMenu.tscn" id="2_vvso7"]
+[ext_resource type="Script" path="res://assets/ui/menus/multiplayer/components/Client.gd" id="3_ix1vx"]
+[ext_resource type="Script" path="res://assets/ui/menus/multiplayer/components/Server.gd" id="4_0vaio"]
+[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="5_5j1kh"]
 
 [node name="MultiplayerMenu" type="Control"]
 layout_mode = 3
@@ -14,22 +14,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LobbyBrowser" parent="." instance=ExtResource("1_decc8")]
+[node name="LobbyBrowser" parent="." instance=ExtResource("1_qe5lc")]
 layout_mode = 1
 
-[node name="LobbyMenu" parent="." instance=ExtResource("2_pb6jt")]
+[node name="LobbyMenu" parent="." instance=ExtResource("2_vvso7")]
 visible = false
 layout_mode = 1
 
 [node name="Components" type="Node" parent="."]
 
 [node name="Client" type="Node" parent="Components" node_paths=PackedStringArray("_lobby_browser", "_lobby_menu")]
-script = ExtResource("1_4c6cq")
+script = ExtResource("3_ix1vx")
 _lobby_browser = NodePath("../../LobbyBrowser")
 _lobby_menu = NodePath("../../LobbyMenu")
 
 [node name="Server" type="Node" parent="Components"]
-script = ExtResource("2_qb4t4")
+script = ExtResource("4_0vaio")
 
 [node name="StartServer" type="Button" parent="."]
 layout_mode = 0
@@ -37,7 +37,7 @@ offset_left = 487.0
 offset_top = 15.0
 offset_right = 587.0
 offset_bottom = 40.0
-theme_override_fonts/font = ExtResource("6_v25c6")
+theme_override_fonts/font = ExtResource("5_5j1kh")
 theme_override_font_sizes/font_size = 9
 text = "Start Server
 "
@@ -48,7 +48,7 @@ offset_left = 82.0
 offset_top = 15.0
 offset_right = 182.0
 offset_bottom = 40.0
-theme_override_fonts/font = ExtResource("6_v25c6")
+theme_override_fonts/font = ExtResource("5_5j1kh")
 theme_override_font_sizes/font_size = 9
 text = "Start Client
 "

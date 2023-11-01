@@ -17,7 +17,10 @@ func _ready() -> void:
 		var mult_scene = load("res://assets/ui/menus/multiplayer/MultiplayerMenu.tscn").instantiate();
 		get_tree().root.add_child.call_deferred(mult_scene);
 		self.queue_free()
-	
+		
+	# Play music.
+	MusicHandler.play_music("menu");
+
 
 # Menu button handlers.
 func _on_singleplayer_pressed():
@@ -28,6 +31,7 @@ func _on_singleplayer_pressed():
 func _on_multiplayer_pressed():
 	var mult_scene = load("res://assets/ui/menus/multiplayer/MultiplayerMenu.tscn").instantiate();
 	get_tree().root.add_child(mult_scene);
+	MusicHandler.stop_music();
 	self.queue_free()
 
 func _on_characters_pressed():
@@ -40,3 +44,6 @@ func _on_options_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit();
+
+func _on_patch_notes_pressed():
+	OS.shell_open("https://charya-s.github.io/zow-game/pages/PatchPage.html");

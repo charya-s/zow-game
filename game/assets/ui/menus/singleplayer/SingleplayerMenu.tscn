@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dbehj3pe803v4" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_orange.png" id="3_ct5ew"]
 [ext_resource type="Texture2D" uid="uid://d001ap3g0qxww" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_red.png" id="4_2fbxv"]
 [ext_resource type="PackedScene" uid="uid://cy14hlyb888wd" path="res://assets/tracks/components/SpawnHandler.tscn" id="6_k15ex"]
-[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="6_mxwl3"]
+[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="6_mxwl3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nu3lc"]
 

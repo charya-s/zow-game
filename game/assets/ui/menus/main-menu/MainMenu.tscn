@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://coifn1vr84o6q" path="res://assets/ui/menus/main-menu/options_button_pressed.png" id="8_07fe8"]
 [ext_resource type="Texture2D" uid="uid://bxql54egagk0e" path="res://assets/ui/menus/main-menu/quit_button_normal.png" id="9_wggak"]
 [ext_resource type="Texture2D" uid="uid://b5xshmh1xu2se" path="res://assets/ui/menus/main-menu/quit_button_pressed.png" id="10_n20u3"]
-[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="12_jax81"]
+[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="12_nim7u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10umb"]
 
@@ -90,15 +90,18 @@ expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkfwf"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okjrj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptwos"]
+bg_color = Color(0, 0, 0, 0.25098)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1h3l"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1ak6"]
+bg_color = Color(0, 0, 0, 0.25098)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nowk5"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53vd7"]
+bg_color = Color(0, 0, 0, 0.25098)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sacrg"]
 
@@ -180,22 +183,33 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -110.0
+offset_left = -60.0
 offset_top = -30.0
 offset_right = -10.0
 offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("12_jax81")
+theme_override_fonts/font = ExtResource("12_nim7u")
 theme_override_font_sizes/font_size = 9
-theme_override_styles/normal = SubResource("StyleBoxEmpty_okjrj")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_j1h3l")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_nowk5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ptwos")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e1ak6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_53vd7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_sacrg")
-text = "Patch Notes"
+
+[node name="Label" type="Label" parent="PatchNotes"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 45.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("12_nim7u")
+theme_override_font_sizes/font_size = 9
+text = "v0.0.5"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [connection signal="pressed" from="MenuButtons/Singleplayer" to="." method="_on_singleplayer_pressed"]
 [connection signal="pressed" from="MenuButtons/Multiplayer" to="." method="_on_multiplayer_pressed"]
 [connection signal="pressed" from="MenuButtons/Characters" to="." method="_on_characters_pressed"]
 [connection signal="pressed" from="MenuButtons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MenuButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PatchNotes" to="." method="_on_patch_notes_pressed"]

@@ -1,0 +1,103 @@
+[gd_scene load_steps=15 format=3 uid="uid://qsnh0wurjp68"]
+
+[ext_resource type="Texture2D" uid="uid://cqwglsybbb7na" path="res://assets/ui/common/mouse_cursor.png" id="1_g2x8r"]
+[ext_resource type="Script" path="res://assets/ui/common/CursorHandler.gd" id="1_yk4sh"]
+[ext_resource type="Texture2D" uid="uid://b437q3qk2x3am" path="res://assets/ui/common/empty_cursor.png" id="2_ftta0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1vvj"]
+atlas = ExtResource("1_g2x8r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg1yo"]
+atlas = ExtResource("1_g2x8r")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyaoa"]
+atlas = ExtResource("1_g2x8r")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v418t"]
+atlas = ExtResource("1_g2x8r")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0i12"]
+atlas = ExtResource("1_g2x8r")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhmj4"]
+atlas = ExtResource("1_g2x8r")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t5j6"]
+atlas = ExtResource("1_g2x8r")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdx1g"]
+atlas = ExtResource("1_g2x8r")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82bvj"]
+atlas = ExtResource("1_g2x8r")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65qme"]
+atlas = ExtResource("1_g2x8r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b7w31"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1vvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg1yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyaoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v418t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0i12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhmj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t5j6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdx1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82bvj")
+}],
+"loop": false,
+"name": &"Click",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65qme")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="CursorHandler" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_yk4sh")
+_empty_cursor = ExtResource("2_ftta0")
+
+[node name="Cursor" type="Node2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Cursor"]
+position = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_b7w31")
+animation = &"Click"
+autoplay = "Idle"
+frame = 8
+frame_progress = 1.0

@@ -4,3 +4,10 @@ res://assets/ui/menus/singleplayer/SingleplayerMenu.tscn
 res://assets/ui/menus/multiplayer/lobby-browser/LobbyBrowser.tscn
 res://assets/ui/menus/multiplayer/components/Client.gd
 res://assets/ui/menus/main-menu/MainMenu.tscn
+res://assets/ui/menus/main-menu/MainMenu.gd
+res://assets/ui/common/cursor_handler.tscn
+res://assets/ui/common/menus/main-menu/MainMenu.tscn
+res://assets/ui/common/CursorHandler.tscn
+res://assets/ui/common/CursorHandler.gd
+res://assets/ui/common/MusicHandler.tscn
+res://assets/ui/common/MusicHandler.gd

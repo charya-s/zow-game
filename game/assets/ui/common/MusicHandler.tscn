@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b20tk7mqnehpg"]
+
+[ext_resource type="Script" path="res://assets/ui/common/MusicHandler.gd" id="1_m7aj3"]
+
+[node name="MusicHandler" type="Node"]
+script = ExtResource("1_m7aj3")
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0

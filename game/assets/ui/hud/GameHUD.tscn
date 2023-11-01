@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dgdt3jh4d5vl1"]
 
-[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="1_5mk11"]
+[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="1_5mk11"]
 [ext_resource type="Texture2D" uid="uid://ngtsojrjphfi" path="res://assets/ui/hud/assets/speedometer_base.png" id="1_qivl6"]
 [ext_resource type="Script" path="res://assets/ui/hud/GameHUD.gd" id="1_wkl5x"]
 [ext_resource type="Texture2D" uid="uid://l67s721rf5ou" path="res://assets/ui/hud/assets/speedometer_needle.png" id="2_feqnw"]
