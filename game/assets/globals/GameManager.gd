@@ -5,6 +5,7 @@ extends Node
 # Player information
 var players := {}; # List of players connected to the lobby.
 var local_player : CharacterBody2D; # Local player.
+var selected_char : Characters = Characters.BOB;
 
 # Lobby information.
 var lobby_name := ""; # Name of connected lobby.
@@ -25,6 +26,9 @@ enum ReadyStatus {
 # Available characters.
 enum Characters {
 	BOB,
+	SKELEBOB,
+	CATBOB,
+	AMANDA,
 }
 
 

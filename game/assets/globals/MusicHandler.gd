@@ -18,10 +18,10 @@ func _process(delta):
 
 # Update the music played based on the current scene.
 func play_music(state:String) -> void:
-	# Last node in the root is the loaded scene.
-	var curr_scene = get_tree().root.get_children()[get_tree().root.get_children().size()-1];
-	$AudioPlayer.stream = load(MusicStates[state]);
-	$AudioPlayer.playing = true;
+	# Only change the track if a new track is requested (prevents resetting the track).
+	if $AudioPlayer.stream.resource_path != MusicStates[state]:
+		$AudioPlayer.stream = load(MusicStates[state]);
+		$AudioPlayer.playing = true;
 
 
 func stop_music() -> void:

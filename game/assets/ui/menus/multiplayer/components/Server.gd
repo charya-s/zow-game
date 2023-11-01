@@ -75,10 +75,10 @@ func _parseMessage(message:Dictionary) -> void:
 		pass
 		
 	if (message.type == MessageTypes.LOBBY_CREATE_REQUEST):
-		_create_lobby(message.lobby_name, message.host_id, message.host_name)
+		_create_lobby(message.lobby_name, message.host_id, message.host_name, message.character)
 		
 	if (message.type == MessageTypes.LOBBY_JOIN_REQUEST):
-		_join_lobby(message.user_id, message.user_name, message.lobby_id);
+		_join_lobby(message.user_id, message.user_name, message.character, message.lobby_id);
 		
 	if (message.type == MessageTypes.LOBBY_LEAVE_REQUEST):
 		_leave_lobby(message.user_id, message.lobby_id);
@@ -145,7 +145,7 @@ func _peer_disconnected(id:int) -> void:
 
 
 # Create a lobby.
-func _create_lobby(lobby_name:String, host_id:int, host_name:String) -> void:
+func _create_lobby(lobby_name:String, host_id:int, host_name:String, character:int) -> void:
 	var lobby_id : String = _generate_lobby_id(32); # Generate a 32-character Lobby ID.
 	print("Lobby ID: " + lobby_id);
 	
@@ -156,18 +156,18 @@ func _create_lobby(lobby_name:String, host_id:int, host_name:String) -> void:
 		"new_lobby": _lobbies[lobby_id],
 	}
 	_sendMessageToAll(add_lobby_message); # Send info of new lobby to all players.
-	_join_lobby(host_id, host_name, lobby_id) # Add the host to the lobby as a player themselves.
+	_join_lobby(host_id, host_name, character, lobby_id) # Add the host to the lobby as a player themselves.
 
 
 # Join a lobby.
-func _join_lobby(user_id:int, user_name:String, lobby_id:String) -> void:
+func _join_lobby(user_id:int, user_name:String, character:int, lobby_id:String) -> void:
 	# Add new user to the players list for the specified lobby.
 	_lobbies[lobby_id].players[user_id] = { 
 		"id":user_id, 
 		"name":user_name, 
 		"index": _lobbies[lobby_id].players.size(), 
 		"ready": GameManager.ReadyStatus.WAITING, 
-		"char": GameManager.Characters.BOB,
+		"character": character,
 	};
 
 	# Tell everyone to update the count for this lobby by one.

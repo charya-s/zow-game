@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/characters/player/PlayerController.gd" id="1_3f1t7"]
 [ext_resource type="Texture2D" uid="uid://de2oqx30vhxsq" path="res://assets/characters/sprites/bob_sprite.png" id="2_lk24l"]
-[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/default_font.ttf" id="3_umgos"]
+[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="3_umgos"]
 [ext_resource type="PackedScene" uid="uid://b626nolb7wsp8" path="res://assets/characters/components/PlayerInputHandler.tscn" id="4_iowlo"]
 [ext_resource type="PackedScene" uid="uid://cm1skwrit5fjy" path="res://assets/characters/components/MovementHandler.tscn" id="5_kvxyj"]
 [ext_resource type="PackedScene" uid="uid://c03pi8job8od6" path="res://assets/characters/components/CharacterAnimationHandler.tscn" id="6_3hvla"]

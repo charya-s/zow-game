@@ -17,8 +17,8 @@ config/features=PackedStringArray("4.1", "Mobile")
 [autoload]
 
 GameManager="*res://assets/globals/GameManager.gd"
-CursorHandler="*res://assets/ui/common/CursorHandler.tscn"
-MusicHandler="*res://assets/ui/common/MusicHandler.tscn"
+CursorHandler="*res://assets/globals/CursorHandler.tscn"
+MusicHandler="*res://assets/globals/MusicHandler.tscn"
 
 [display]
 

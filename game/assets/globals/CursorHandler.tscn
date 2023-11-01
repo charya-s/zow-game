@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://qsnh0wurjp68"]
 
 [ext_resource type="Texture2D" uid="uid://cqwglsybbb7na" path="res://assets/ui/common/mouse_cursor.png" id="1_g2x8r"]
-[ext_resource type="Script" path="res://assets/ui/common/CursorHandler.gd" id="1_yk4sh"]
+[ext_resource type="Script" path="res://assets/globals/CursorHandler.gd" id="1_yk4sh"]
 [ext_resource type="Texture2D" uid="uid://b437q3qk2x3am" path="res://assets/ui/common/empty_cursor.png" id="2_ftta0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1vvj"]

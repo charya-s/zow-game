@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/ui/menus/multiplayer/lobby/LobbyMenu.gd" id="1_6c6vm"]
 [ext_resource type="PackedScene" uid="uid://cy14hlyb888wd" path="res://assets/tracks/components/SpawnHandler.tscn" id="1_7nek3"]
-[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="1_orrsm"]
+[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="2_jbgo8"]
 [ext_resource type="Texture2D" uid="uid://dwcfgs8oiyuge" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_gray.png" id="4_7pks1"]
 [ext_resource type="Texture2D" uid="uid://udpbsuq8lmwh" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_green.png" id="5_m8r6g"]
 [ext_resource type="Texture2D" uid="uid://dbehj3pe803v4" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_orange.png" id="6_lxsmd"]
@@ -167,7 +167,7 @@ offset_left = 20.0
 offset_top = 10.0
 offset_right = 200.0
 offset_bottom = 35.0
-theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
 text = "Leave Lobby"
 
@@ -184,7 +184,7 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 170.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 18
 text = "AMVERTON PARKKK"
 horizontal_alignment = 1
@@ -199,7 +199,7 @@ offset_left = 10.0
 offset_top = 60.0
 offset_right = 170.0
 offset_bottom = 80.0
-theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
 text = "Hosted by "
 horizontal_alignment = 1
@@ -266,7 +266,7 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 380.0
 offset_bottom = 165.0
-theme_override_fonts/normal_font = ExtResource("1_orrsm")
+theme_override_fonts/normal_font = ExtResource("2_jbgo8")
 theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
 
@@ -275,7 +275,7 @@ layout_mode = 0
 offset_top = 180.0
 offset_right = 285.0
 offset_bottom = 205.0
-theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
 placeholder_text = "Say hello!"
 max_length = 80
@@ -286,7 +286,7 @@ offset_left = 290.0
 offset_top = 180.0
 offset_right = 390.0
 offset_bottom = 205.0
-theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
 theme_override_styles/focus = SubResource("StyleBoxEmpty_c1sst")
 text = "Send"
@@ -304,7 +304,7 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 185.0
 offset_bottom = 40.0
-theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
 text = "BBBBBBBB is selecting a track:"
 vertical_alignment = 1
@@ -337,7 +337,7 @@ offset_top = -15.0
 offset_right = 20.0
 offset_bottom = 15.0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
 text = "<"
 
@@ -353,7 +353,7 @@ offset_top = -15.0
 offset_bottom = 15.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
 text = ">"
 
@@ -363,7 +363,7 @@ offset_left = 10.0
 offset_top = 145.0
 offset_right = 185.0
 offset_bottom = 165.0
-theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
 text = "Track: "
 horizontal_alignment = 1
@@ -374,7 +374,7 @@ layout_mode = 0
 offset_top = 180.0
 offset_right = 195.0
 offset_bottom = 205.0
-theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
 text = "Ready"
 metadata/_edit_lock_ = true
@@ -385,7 +385,7 @@ layout_mode = 0
 offset_top = 180.0
 offset_right = 195.0
 offset_bottom = 205.0
-theme_override_fonts/font = ExtResource("1_orrsm")
+theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
 text = "Start"
 metadata/_edit_lock_ = true

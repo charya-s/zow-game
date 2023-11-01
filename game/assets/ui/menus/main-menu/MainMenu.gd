@@ -31,11 +31,12 @@ func _on_singleplayer_pressed():
 func _on_multiplayer_pressed():
 	var mult_scene = load("res://assets/ui/menus/multiplayer/MultiplayerMenu.tscn").instantiate();
 	get_tree().root.add_child(mult_scene);
-	MusicHandler.stop_music();
 	self.queue_free()
 
 func _on_characters_pressed():
-	pass # Replace with function body.
+	var chars_scene = load("res://assets/ui/menus/characters/CharactersMenu.tscn").instantiate();
+	get_tree().root.add_child(chars_scene);
+	self.queue_free()
 
 func _on_options_pressed():
 	var options_scene = load("res://assets/ui/menus/options/OptionsMenu.tscn").instantiate();

@@ -273,7 +273,7 @@ offset_right = 175.0
 offset_bottom = 15.0
 grow_vertical = 2
 
-[node name="Left" type="Button" parent="MapSelection/TrackThumbnail/MapSelectors"]
+[node name="TrackLeft" type="Button" parent="MapSelection/TrackThumbnail/MapSelectors"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -286,7 +286,7 @@ theme_override_fonts/font = ExtResource("6_mxwl3")
 theme_override_font_sizes/font_size = 9
 text = "<"
 
-[node name="Right" type="Button" parent="MapSelection/TrackThumbnail/MapSelectors"]
+[node name="TrackRight" type="Button" parent="MapSelection/TrackThumbnail/MapSelectors"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -335,6 +335,6 @@ libraries = {
 }
 
 [connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
-[connection signal="pressed" from="MapSelection/TrackThumbnail/MapSelectors/Left" to="." method="_on_left_pressed"]
-[connection signal="pressed" from="MapSelection/TrackThumbnail/MapSelectors/Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="MapSelection/TrackThumbnail/MapSelectors/TrackLeft" to="." method="_on_track_left_pressed"]
+[connection signal="pressed" from="MapSelection/TrackThumbnail/MapSelectors/TrackRight" to="." method="_on_track_right_pressed"]
 [connection signal="pressed" from="StartBtn" to="." method="_on_start_btn_pressed"]

@@ -270,6 +270,7 @@ func _on_lobby_browser_join_lobby_pressed(lobby_id:String) -> void:
 		"type": MessageTypes.LOBBY_JOIN_REQUEST,
 		"user_id": _self_id,
 		"user_name": _lobby_browser.get_node("PlayerName").text,
+		"character": GameManager.selected_char,
 		"lobby_id": lobby_id,
 	};
 	_sendMessageToAll(message);
@@ -288,6 +289,7 @@ func _on_create_lobby_pressed() -> void:
 		"type": MessageTypes.LOBBY_CREATE_REQUEST,
 		"host_id": _self_id,
 		"host_name": _lobby_browser.get_node("PlayerName").text,
+		"character": GameManager.selected_char,
 		"lobby_name": _lobby_browser.get_node("LobbyName").text,
 	};
 	_sendMessageToAll(message);

@@ -13,11 +13,18 @@ class_name PlayerController
 var sync_pos : Vector2;
 var sync_velocity : int; # Only used for animations.
 var sync_dir := Vector2(0, 1); # Only used for animations. Default looking at user.
+var Sprites = {
+	GameManager.Characters.BOB: "res://assets/characters/sprites/bob_sprite.png",
+	GameManager.Characters.SKELEBOB: "res://assets/characters/sprites/skelebob_sprite.png",
+	GameManager.Characters.CATBOB: "",
+	GameManager.Characters.AMANDA: "",
+}
 
 # On-ready function.
 func _ready() -> void:
 	$MultiplayerSynchronizer.set_multiplayer_authority(int(str(name))); # Only give mult authority when on track.
-	
+	update_sprite(int(GameManager.players[str(name)].character)); # Start on the selected character.
+
 
 # Physics process - runs 60 times a second.
 func _physics_process(_delta:float) -> void:
@@ -36,7 +43,6 @@ func setup_player(is_on_track:bool, player_name:String) -> void:
 	if (!is_on_track): # Move the name below the player if not on track.
 		$PlayerName.scale = Vector2(0.2, 0.2);
 		$PlayerName.position = Vector2(-6, 8);
-		
 
 
 # Updating the synchronization variables.
@@ -48,3 +54,17 @@ func _update_sync_variables(mode:String):
 		
 	if mode == "get":
 		global_position = lerp(global_position, sync_pos, 0.5);
+
+
+
+#func change_character(scroll_dir:String):
+#	# Load the sprite based on the character selection.
+#	if scroll_dir == "left" && int(GameManager.players[str(name)].character) > 0:
+#		GameManager.players[str(name)].character = str(int(GameManager.players[str(name)].character) - 1)
+#	elif scroll_dir == "right" && int(GameManager.players[str(name)].character) < GameManager.Characters.size()-1:
+#		GameManager.players[str(name)].character = str(int(GameManager.players[str(name)].character) + 1)
+#	update_sprite(int(GameManager.players[str(name)].character))
+
+# Update character model (sprite).
+func update_sprite(selected_char:int):
+	$PlayerSprite.texture = load(Sprites[selected_char]);
