@@ -6,6 +6,10 @@ class_name LobbyMenu
 
 
 # Components and nodes.
+signal track_changed(selected_track:int);
+
+
+# Components and nodes.
 var _is_host := false;
 
 # Internal variables.
@@ -59,6 +63,8 @@ func reset_chat() -> void:
 
 
 # Set the track selection displayed track.
+# Every time the host scrolls up or down the map list, a signal is emitted.
+# The host sends the new track to the server who then calls set_displayed_track on the clients to show it.
 func set_displayed_track(track_id:int) -> void:
 	if (track_id < 0 || track_id > TrackList.TRACKS.size()-1): # Avoid underflow and overflow errors.
 		return
@@ -68,11 +74,11 @@ func set_displayed_track(track_id:int) -> void:
 
 # Scroll up the track list.
 func _on_left_pressed() -> void: 
-	set_displayed_track(selected_track-1);
+	track_changed.emit(selected_track-1);
 
 # Scroll down the track list.
 func _on_right_pressed() -> void: 
-	set_displayed_track(selected_track+1);
+	track_changed.emit(selected_track+1);
 
 
 # Check if all players are ready and prepare to start.

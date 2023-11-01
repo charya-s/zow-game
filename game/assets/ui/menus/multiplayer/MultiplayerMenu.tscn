@@ -56,6 +56,7 @@ text = "Start Client
 [connection signal="join_lobby_pressed" from="LobbyBrowser" to="Components/Client" method="_on_lobby_browser_join_lobby_pressed"]
 [connection signal="pressed" from="LobbyBrowser/BackBtn" to="Components/Client" method="_on_back_btn_pressed"]
 [connection signal="pressed" from="LobbyBrowser/CreateLobby" to="Components/Client" method="_on_create_lobby_pressed"]
+[connection signal="track_changed" from="LobbyMenu" to="Components/Client" method="_on_lobby_menu_track_changed"]
 [connection signal="pressed" from="LobbyMenu/LeaveLobbyBtn" to="Components/Client" method="_on_leave_lobby_btn_pressed"]
 [connection signal="pressed" from="LobbyMenu/Chat/SendChatBtn" to="Components/Client" method="_on_send_chat_btn_pressed"]
 [connection signal="pressed" from="LobbyMenu/MapSelection/PlayerReadyBtn" to="Components/Client" method="_on_player_ready_btn_pressed"]

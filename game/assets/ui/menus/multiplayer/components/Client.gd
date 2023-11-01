@@ -358,16 +358,17 @@ func _input(event) -> void:
 
 
 
+# Update the track selection when the host changes tracks.
+func _on_lobby_menu_track_changed(selected_track):
+	var track_select_message = {
+		"type": MessageTypes.LOBBY_TRACK_SELECTION,
+		"lobby_id": _curr_lobby_id,
+		"track_id": selected_track,
+	}
+	_sendMessageToAll(track_select_message);
+
 # Readying up.
-func _on_player_ready_btn_pressed():
-	if _self_id == _curr_host_id: # If I'm the host, broadcast the selected map.
-		var track_select_message = {
-			"type": MessageTypes.LOBBY_TRACK_SELECTION,
-			"lobby_id": _curr_lobby_id,
-			"track_id": _lobby_menu.selected_track,
-		}
-		_sendMessageToAll(track_select_message);
-		
+func _on_player_ready_btn_pressed():		
 	GameManager.players[str(_self_id)].ready = GameManager.ReadyStatus.READY;
 	var ready_status_message = {
 		"type": MessageTypes.LOBBY_READY_STATUS,

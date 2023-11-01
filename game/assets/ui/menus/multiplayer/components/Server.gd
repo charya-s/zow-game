@@ -285,6 +285,7 @@ func _set_selected_track(lobby_id:String, track_id:int) -> void:
 			"type": MessageTypes.LOBBY_TRACK_SELECTION,
 			"track_id": track_id,
 		}
+		#if _lobbies[lobby_id].players[p].id !=  _lobbies[lobby_id].host_id:
 		_sendMessageToPlayer(p, selected_track_message);
 
 

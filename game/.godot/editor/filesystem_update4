@@ -1,7 +1,7 @@
-res://assets/ui/menus/multiplayer/MultiplayerMenu.tscn
 res://assets/ui/menus/singleplayer/SingleplayerMenu.tscn
+res://assets/ui/menus/multiplayer/MultiplayerMenu.tscn
 res://assets/ui/menus/multiplayer/lobby/LobbyMenu.tscn
-res://assets/tracks/components/SpawnHandler.gd
-res://assets/ui/menus/singleplayer/SingleplayerMenu.gd
-res://assets/ui/menus/multiplayer/components/Client.gd
 res://assets/ui/menus/multiplayer/lobby-browser/LobbyBrowser.tscn
+res://assets/ui/menus/multiplayer/components/Client.gd
+res://assets/ui/menus/multiplayer/lobby/LobbyMenu.gd
+res://assets/ui/menus/multiplayer/components/Server.gd
