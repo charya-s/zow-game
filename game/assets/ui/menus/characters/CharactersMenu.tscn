@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cmynngbe54i8s"]
+[gd_scene load_steps=57 format=3 uid="uid://cmynngbe54i8s"]
 
 [ext_resource type="Script" path="res://assets/ui/menus/characters/CharactersMenu.gd" id="1_kut8j"]
 [ext_resource type="Texture2D" uid="uid://dwcfgs8oiyuge" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_gray.png" id="2_1mjtg"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cy14hlyb888wd" path="res://assets/tracks/components/SpawnHandler.tscn" id="6_tofuo"]
 [ext_resource type="Texture2D" uid="uid://bkij13ik54tlt" path="res://assets/ui/menus/characters/skelebob_portrait.png" id="7_vldln"]
 [ext_resource type="Texture2D" uid="uid://dg34tb4xpsc2x" path="res://assets/ui/menus/characters/portrait_selected.png" id="9_0a4en"]
+[ext_resource type="Texture2D" uid="uid://cm1jv78bnb4gg" path="res://assets/ui/menus/characters/catbob_portrait.png" id="9_fkvwa"]
+[ext_resource type="Texture2D" uid="uid://bb4ce6icpl5o7" path="res://assets/ui/menus/characters/amanda_portrait.png" id="10_yw17v"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ukcb"]
 
@@ -149,7 +151,7 @@ animations = [{
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b415c"]
-bg_color = Color(1, 1, 1, 0.12549)
+bg_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvfhp"]
 
@@ -229,6 +231,82 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8gfwf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtd55"]
+atlas = ExtResource("9_fkvwa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i62d7"]
+atlas = ExtResource("9_fkvwa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apdj1"]
+atlas = ExtResource("9_fkvwa")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r306g"]
+atlas = ExtResource("9_fkvwa")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tj68i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtd55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i62d7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apdj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r306g")
+}],
+"loop": true,
+"name": &"CatPortrait",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ycdfj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxtxo"]
+atlas = ExtResource("10_yw17v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onucv"]
+atlas = ExtResource("10_yw17v")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d74g4"]
+atlas = ExtResource("10_yw17v")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr0cw"]
+atlas = ExtResource("10_yw17v")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_utrkm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxtxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onucv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d74g4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr0cw")
+}],
+"loop": true,
+"name": &"AmandaPortrait",
+"speed": 5.0
+}]
+
 [node name="CharactersMenu" type="Control" node_paths=PackedStringArray("_spawn_handler")]
 layout_mode = 3
 anchors_preset = 15
@@ -304,6 +382,34 @@ sprite_frames = SubResource("SpriteFrames_y7x3t")
 animation = &"SkelePortrait"
 autoplay = "SkelePortrait"
 
+[node name="CharacterCatBob" type="Button" parent="SelectorMenu"]
+layout_mode = 0
+offset_left = 148.0
+offset_right = 212.0
+offset_bottom = 64.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8gfwf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SelectorMenu/CharacterCatBob"]
+position = Vector2(32, 32)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_tj68i")
+animation = &"CatPortrait"
+autoplay = "CatPortrait"
+
+[node name="CharacterAmanda" type="Button" parent="SelectorMenu"]
+layout_mode = 0
+offset_left = 222.0
+offset_right = 286.0
+offset_bottom = 64.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ycdfj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SelectorMenu/CharacterAmanda"]
+position = Vector2(32, 32)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_utrkm")
+animation = &"AmandaPortrait"
+autoplay = "AmandaPortrait"
+
 [node name="SelectionMarker" type="TextureRect" parent="SelectorMenu"]
 layout_mode = 0
 offset_top = -8.0
@@ -319,3 +425,5 @@ _base_node = NodePath("../../Player")
 [connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
 [connection signal="pressed" from="SelectorMenu/CharacterBob" to="." method="_on_character_bob_pressed"]
 [connection signal="pressed" from="SelectorMenu/CharacterSkeleBob" to="." method="_on_character_skele_bob_pressed"]
+[connection signal="pressed" from="SelectorMenu/CharacterCatBob" to="." method="_on_character_cat_bob_pressed"]
+[connection signal="pressed" from="SelectorMenu/CharacterAmanda" to="." method="_on_character_amanda_pressed"]

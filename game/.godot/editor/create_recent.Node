@@ -1,6 +1,6 @@
-TextureRect
 AnimatedSprite2D
 Button
+TextureRect
 TextureButton
 Panel
 AudioStreamPlayer

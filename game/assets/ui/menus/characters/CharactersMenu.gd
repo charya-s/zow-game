@@ -11,6 +11,8 @@ extends Control
 var CharNames = {
 	GameManager.Characters.BOB: "CharacterBob",
 	GameManager.Characters.SKELEBOB: "CharacterSkeleBob",
+	GameManager.Characters.CATBOB: "CharacterCatBob",
+	GameManager.Characters.AMANDA: "CharacterAmanda",
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -40,12 +42,20 @@ func _on_character_bob_pressed():
 	GameManager.local_player.update_sprite(int(GameManager.Characters.BOB));
 	_update_slection_marker();
 
-
 func _on_character_skele_bob_pressed():
 	GameManager.selected_char = GameManager.Characters.SKELEBOB;
 	GameManager.local_player.update_sprite(int(GameManager.Characters.SKELEBOB));
 	_update_slection_marker();
 
+func _on_character_cat_bob_pressed():
+	GameManager.selected_char = GameManager.Characters.CATBOB;
+	GameManager.local_player.update_sprite(int(GameManager.Characters.CATBOB));
+	_update_slection_marker();
+
+func _on_character_amanda_pressed():
+	GameManager.selected_char = GameManager.Characters.AMANDA;
+	GameManager.local_player.update_sprite(int(GameManager.Characters.AMANDA));
+	_update_slection_marker();
 
 # Selection user feedback marker.
 func _update_slection_marker():
