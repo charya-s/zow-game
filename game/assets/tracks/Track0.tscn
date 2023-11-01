@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cfim0ye6xhest"]
+[gd_scene load_steps=13 format=3 uid="uid://cfim0ye6xhest"]
 
 [ext_resource type="Script" path="res://assets/tracks/Track0.gd" id="1_m7irt"]
 [ext_resource type="PackedScene" uid="uid://cihuamamapxkt" path="res://assets/ui/camera/MainCamera.tscn" id="2_5c5oa"]
 [ext_resource type="Texture2D" uid="uid://kni4m4004q2" path="res://assets/tracks/tilesets/default_wall_front.png" id="4_r1mk4"]
-[ext_resource type="PackedScene" uid="uid://cg3ddqtk38sxj" path="res://assets/characters/player/Player.tscn" id="5_eq4uy"]
 [ext_resource type="Texture2D" uid="uid://c5k643o2uunsn" path="res://assets/tracks/tilesets/finish_line.png" id="5_g845t"]
 [ext_resource type="Texture2D" uid="uid://d2nflfcabyqka" path="res://assets/tracks/tilesets/direction_indicators.png" id="6_3mm7s"]
 [ext_resource type="PackedScene" uid="uid://cy14hlyb888wd" path="res://assets/tracks/components/SpawnHandler.tscn" id="6_ch241"]
@@ -95,5 +94,6 @@ position = Vector2(440, 220)
 
 [node name="SpawnHandler" parent="Components" node_paths=PackedStringArray("_base_node") instance=ExtResource("6_ch241")]
 position = Vector2(303, 29)
-_player_scene = ExtResource("5_eq4uy")
 _base_node = NodePath("../..")
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

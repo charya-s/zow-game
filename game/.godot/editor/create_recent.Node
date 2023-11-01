@@ -1,10 +1,10 @@
+Button
+Label
+Panel
 AnimationPlayer
 LineEdit
 AnimatedSprite2D
-Button
-Panel
 VBoxContainer
-Label
 CanvasLayer
 Sprite2D
 TextureRect

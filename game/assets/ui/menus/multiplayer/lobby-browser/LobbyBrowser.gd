@@ -22,7 +22,7 @@ func activate_lobby_browser() -> void:
 	
 
 # Deactivates the lobby by deleting all spawned players.
-func deactivate_lobby_browser() -> void:
+func deactivate_lobby_browser() -> void: 
 	visible = false;
 
 

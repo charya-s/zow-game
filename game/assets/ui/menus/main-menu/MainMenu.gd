@@ -10,6 +10,15 @@ extends Control
 # Internal variables.
 
 
+
+# On-ready function.
+func _ready() -> void:
+	if (GameManager.is_dedicated_server): # If server, immediately load the mult scene to host.
+		var mult_scene = load("res://assets/ui/menus/multiplayer/MultiplayerMenu.tscn").instantiate();
+		get_tree().root.add_child.call_deferred(mult_scene);
+		self.queue_free()
+	
+
 # Menu button handlers.
 func _on_singleplayer_pressed():
 	var singl_scene = load("res://assets/ui/menus/singleplayer/SingleplayerMenu.tscn").instantiate();

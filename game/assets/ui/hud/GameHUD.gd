@@ -15,11 +15,12 @@ class_name GameHUD
 # On-ready function.
 func _ready() -> void:
 	_create_player_list()
-
+	
 
 # Physics process.
 func _physics_process(_delta:float) -> void:
 	_update_speedometer(GameManager.local_player);
+	_update_timer(get_parent().get_node("StartTimer"));
 
 
 # Update the speedometer based on the local player's velocity.
@@ -55,3 +56,15 @@ func _create_player_list() -> void:
 		row.text = str(index) + ": " + GameManager.players[player].name; 
 		row.name = str(GameManager.players[player].id);
 		$PlayerList/VBoxContainer.add_child(row);
+
+
+# Update UI elements based on track information.
+func _update_timer(timer:Timer) -> void:
+	if !$StartCountdown: # Cancel update if the countdown has been removed.
+		return
+		
+	if timer.time_left == 0: # If the countdown is over, remove the panel.
+		$StartCountdown.free();
+		return;
+		
+	$StartCountdown/Label.text = str(ceil(timer.time_left)); # Update the countdown.

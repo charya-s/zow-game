@@ -24,6 +24,9 @@ func _ready():
 	_game_hud = load("res://assets/ui/hud/GameHUD.tscn").instantiate();
 	add_child(_game_hud);
 	
+	# Start the countdown for race start.
+	_timer.start(_start_timer);
+	
 	
 # Physics process - runs 60 times a second.
 func _physics_process(delta) -> void:

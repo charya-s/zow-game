@@ -165,8 +165,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_eq5rv")
 theme_override_font_sizes/font_size = 9
 theme_override_styles/normal = SubResource("StyleBoxFlat_vwcfq")
-text = "Lobby Name
-"
+text = "Lobby Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
