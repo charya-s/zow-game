@@ -16,8 +16,8 @@ var sync_dir := Vector2(0, 1); # Only used for animations. Default looking at us
 var Sprites = {
 	GameManager.Characters.BOB: "res://assets/characters/sprites/bob_sprite.png",
 	GameManager.Characters.SKELEBOB: "res://assets/characters/sprites/skelebob_sprite.png",
-	GameManager.Characters.CATBOB: "",
-	GameManager.Characters.AMANDA: "",
+	GameManager.Characters.CATBOB: "res://assets/characters/sprites/catbob_sprite.png",
+	GameManager.Characters.AMANDA: "res://assets/characters/sprites/amanda_sprite.png",
 }
 
 # On-ready function.

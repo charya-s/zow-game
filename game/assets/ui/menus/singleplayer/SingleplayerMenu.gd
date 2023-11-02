@@ -20,7 +20,7 @@ func _ready() -> void:
 		"name": "Playssers", 
 		"index": 0, 
 		"ready": GameManager.ReadyStatus.READY, 
-		"character": GameManager.Characters.BOB,
+		"character": GameManager.selected_char,
 	};
 	_spawn_handler.spawn_players(false);
 	_set_displayed_track(selected_track);

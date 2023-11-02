@@ -8,11 +8,11 @@ extends Control
 @export var _spawn_handler : SpawnHandler;
 
 # Internal variables.
-var CharNames = {
-	GameManager.Characters.BOB: "CharacterBob",
-	GameManager.Characters.SKELEBOB: "CharacterSkeleBob",
-	GameManager.Characters.CATBOB: "CharacterCatBob",
-	GameManager.Characters.AMANDA: "CharacterAmanda",
+var Chars = {
+	GameManager.Characters.BOB: {"name": "CharacterBob", "quote": "I'm Bob! Short for Bobe. Like the baseball player."},
+	GameManager.Characters.SKELEBOB: {"name": "CharacterSkeleBob", "quote": "Why was I given no flesh but a voice to scream?"},
+	GameManager.Characters.CATBOB: {"name": "CharacterCatBob", "quote": "I'm not a fucking bobcat! Dick..."},
+	GameManager.Characters.AMANDA: {"name": "CharacterAmanda", "quote": "Yaaaa I'm Amandaaaa. Waaaw. Is racing tiiiime."},
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -59,7 +59,12 @@ func _on_character_amanda_pressed():
 
 # Selection user feedback marker.
 func _update_slection_marker():
-	$SelectorMenu/SelectionMarker.position.x = $SelectorMenu.get_node(CharNames[GameManager.selected_char]).position.x
+	$SelectorMenu/SelectionMarker.position.x = $SelectorMenu.get_node(Chars[GameManager.selected_char].name).position.x
+	_set_quote();
+
+# Set the character's quote.
+func _set_quote():
+	$SpeechBubble/Label.text = Chars[GameManager.selected_char].quote;
 
 
 func _on_back_btn_pressed():

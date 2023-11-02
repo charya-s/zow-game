@@ -1,6 +1,7 @@
+Label
 AnimatedSprite2D
-Button
 TextureRect
+Button
 TextureButton
 Panel
 AudioStreamPlayer
@@ -8,7 +9,6 @@ Node
 Node2D
 Sprite2D
 CanvasLayer
-Label
 AnimationPlayer
 LineEdit
 VBoxContainer

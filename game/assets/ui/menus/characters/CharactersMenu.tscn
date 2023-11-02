@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://cmynngbe54i8s"]
+[gd_scene load_steps=63 format=3 uid="uid://cmynngbe54i8s"]
 
 [ext_resource type="Script" path="res://assets/ui/menus/characters/CharactersMenu.gd" id="1_kut8j"]
 [ext_resource type="Texture2D" uid="uid://dwcfgs8oiyuge" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_gray.png" id="2_1mjtg"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dg34tb4xpsc2x" path="res://assets/ui/menus/characters/portrait_selected.png" id="9_0a4en"]
 [ext_resource type="Texture2D" uid="uid://cm1jv78bnb4gg" path="res://assets/ui/menus/characters/catbob_portrait.png" id="9_fkvwa"]
 [ext_resource type="Texture2D" uid="uid://bb4ce6icpl5o7" path="res://assets/ui/menus/characters/amanda_portrait.png" id="10_yw17v"]
+[ext_resource type="Texture2D" uid="uid://8x4pwkxa1ury" path="res://assets/ui/menus/characters/speech_bubble.png" id="12_74rac"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ukcb"]
 
@@ -307,6 +308,42 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_35ucy"]
+atlas = ExtResource("12_74rac")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qmoq"]
+atlas = ExtResource("12_74rac")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi61m"]
+atlas = ExtResource("12_74rac")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnmes"]
+atlas = ExtResource("12_74rac")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hme6v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35ucy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qmoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi61m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnmes")
+}],
+"loop": true,
+"name": &"SpeechBubble",
+"speed": 5.0
+}]
+
 [node name="CharactersMenu" type="Control" node_paths=PackedStringArray("_spawn_handler")]
 layout_mode = 3
 anchors_preset = 15
@@ -318,6 +355,7 @@ script = ExtResource("1_kut8j")
 _spawn_handler = NodePath("Compositions/SpawnHandler")
 
 [node name="BackBtn" type="Button" parent="."]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 70.0
@@ -327,6 +365,7 @@ theme_override_font_sizes/font_size = 9
 text = "Back"
 
 [node name="Player" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 248.0
 offset_top = 40.0
 offset_right = 266.0
@@ -348,12 +387,13 @@ autoplay = "gray"
 [node name="SelectorMenu" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 177.0
-offset_top = 260.0
+offset_top = 250.0
 offset_right = 463.0
-offset_bottom = 324.0
+offset_bottom = 314.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_b415c")
 
 [node name="CharacterBob" type="Button" parent="SelectorMenu"]
+layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 theme_override_styles/pressed = SubResource("StyleBoxTexture_rvfhp")
@@ -367,6 +407,17 @@ animation = &"BobPortrait"
 autoplay = "BobPortrait"
 frame = 3
 frame_progress = 0.161758
+
+[node name="Label" type="Label" parent="SelectorMenu/CharacterBob"]
+layout_mode = 0
+offset_top = 75.0
+offset_right = 64.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("2_ooids")
+theme_override_font_sizes/font_size = 9
+text = "Bob"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CharacterSkeleBob" type="Button" parent="SelectorMenu"]
 layout_mode = 0
@@ -382,6 +433,16 @@ sprite_frames = SubResource("SpriteFrames_y7x3t")
 animation = &"SkelePortrait"
 autoplay = "SkelePortrait"
 
+[node name="Label" type="Label" parent="SelectorMenu/CharacterSkeleBob"]
+offset_top = 75.0
+offset_right = 64.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("2_ooids")
+theme_override_font_sizes/font_size = 9
+text = "Skelebob"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CharacterCatBob" type="Button" parent="SelectorMenu"]
 layout_mode = 0
 offset_left = 148.0
@@ -395,6 +456,16 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tj68i")
 animation = &"CatPortrait"
 autoplay = "CatPortrait"
+
+[node name="Label" type="Label" parent="SelectorMenu/CharacterCatBob"]
+offset_top = 75.0
+offset_right = 64.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("2_ooids")
+theme_override_font_sizes/font_size = 9
+text = "Catbob"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CharacterAmanda" type="Button" parent="SelectorMenu"]
 layout_mode = 0
@@ -410,12 +481,45 @@ sprite_frames = SubResource("SpriteFrames_utrkm")
 animation = &"AmandaPortrait"
 autoplay = "AmandaPortrait"
 
+[node name="Label" type="Label" parent="SelectorMenu/CharacterAmanda"]
+offset_top = 75.0
+offset_right = 64.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("2_ooids")
+theme_override_font_sizes/font_size = 9
+text = "Amanda"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SelectionMarker" type="TextureRect" parent="SelectorMenu"]
 layout_mode = 0
 offset_top = -8.0
 offset_right = 64.0
 offset_bottom = 72.0
 texture = ExtResource("9_0a4en")
+
+[node name="SpeechBubble" type="AnimatedSprite2D" parent="."]
+position = Vector2(440, 50)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_hme6v")
+animation = &"SpeechBubble"
+autoplay = "SpeechBubble"
+frame_progress = 0.133938
+
+[node name="Label" type="Label" parent="SpeechBubble"]
+offset_left = -21.0
+offset_top = -7.0
+offset_right = 149.0
+offset_bottom = 25.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_fonts/font = ExtResource("2_ooids")
+theme_override_font_sizes/font_size = 9
+text = "I'm not a fucking bobcat."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Compositions" type="Node" parent="."]
 
