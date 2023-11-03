@@ -17,7 +17,7 @@ var Sprites = {
 	GameManager.Characters.BOB: "res://assets/characters/sprites/bob_sprite.png",
 	GameManager.Characters.SKELEBOB: "res://assets/characters/sprites/skelebob_sprite.png",
 	GameManager.Characters.CATBOB: "res://assets/characters/sprites/catbob_sprite.png",
-	GameManager.Characters.AMANDA: "res://assets/characters/sprites/amanda_sprite.png",
+	GameManager.Characters.BOBBEE: "res://assets/characters/sprites/bobbee_sprite.png",
 }
 var can_move := false;
 

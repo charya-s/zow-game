@@ -29,7 +29,7 @@ enum Characters {
 	BOB,
 	SKELEBOB,
 	CATBOB,
-	AMANDA,
+	BOBBEE,
 }
 
 

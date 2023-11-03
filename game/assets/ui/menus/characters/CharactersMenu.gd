@@ -12,7 +12,7 @@ var Chars = {
 	GameManager.Characters.BOB: {"name": "CharacterBob", "quote": "I'm Bob! Short for Bobe. Like the baseball player."},
 	GameManager.Characters.SKELEBOB: {"name": "CharacterSkeleBob", "quote": "Why was I given no flesh but a voice to scream?"},
 	GameManager.Characters.CATBOB: {"name": "CharacterCatBob", "quote": "I'm not a fucking bobcat! Dick..."},
-	GameManager.Characters.AMANDA: {"name": "CharacterAmanda", "quote": "Yaaaa I'm Amandaaaa. Waaaw. Is racing tiiiime."},
+	GameManager.Characters.BOBBEE: {"name": "CharacterAmanda", "quote": "My name is Amanda."},
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -53,8 +53,8 @@ func _on_character_cat_bob_pressed():
 	_update_slection_marker();
 
 func _on_character_amanda_pressed():
-	GameManager.selected_char = GameManager.Characters.AMANDA;
-	GameManager.local_player.update_sprite(int(GameManager.Characters.AMANDA));
+	GameManager.selected_char = GameManager.Characters.BOBBEE;
+	GameManager.local_player.update_sprite(int(GameManager.Characters.BOBBEE));
 	_update_slection_marker();
 
 # Selection user feedback marker.

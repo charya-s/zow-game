@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr1b5f60if1l2"
-path="res://.godot/imported/amanda_sprite.png-7d567ece0eedcc003659a40dbafad2f3.ctex"
+uid="uid://bkpnix6h2bo7s"
+path="res://.godot/imported/bobbee_sprite.png-18e5861689f1afbeeef3d646d166eb64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/sprites/amanda_sprite.png"
-dest_files=["res://.godot/imported/amanda_sprite.png-7d567ece0eedcc003659a40dbafad2f3.ctex"]
+source_file="res://assets/characters/sprites/bobbee_sprite.png"
+dest_files=["res://.godot/imported/bobbee_sprite.png-18e5861689f1afbeeef3d646d166eb64.ctex"]
 
 [params]
 

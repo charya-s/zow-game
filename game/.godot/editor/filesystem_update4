@@ -18,3 +18,4 @@ res://assets/ui/hud/GameHUD.tscn
 res://assets/ui/hud/GameHUD.gd
 res://assets/globals/GameManager.gd
 res://assets/ui/menus/multiplayer/components/Client.gd
+res://assets/characters/player/PlayerController.gd

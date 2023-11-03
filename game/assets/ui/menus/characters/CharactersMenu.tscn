@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bkij13ik54tlt" path="res://assets/ui/menus/characters/skelebob_portrait.png" id="7_vldln"]
 [ext_resource type="Texture2D" uid="uid://dg34tb4xpsc2x" path="res://assets/ui/menus/characters/portrait_selected.png" id="9_0a4en"]
 [ext_resource type="Texture2D" uid="uid://cm1jv78bnb4gg" path="res://assets/ui/menus/characters/catbob_portrait.png" id="9_fkvwa"]
-[ext_resource type="Texture2D" uid="uid://bb4ce6icpl5o7" path="res://assets/ui/menus/characters/amanda_portrait.png" id="10_yw17v"]
+[ext_resource type="Texture2D" uid="uid://dm51gcdm6s3gm" path="res://assets/ui/menus/characters/bobbee_portrait.png" id="10_cavlv"]
 [ext_resource type="Texture2D" uid="uid://8x4pwkxa1ury" path="res://assets/ui/menus/characters/speech_bubble.png" id="12_74rac"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ukcb"]
@@ -272,39 +272,39 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ycdfj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dxtxo"]
-atlas = ExtResource("10_yw17v")
+[sub_resource type="AtlasTexture" id="AtlasTexture_otrid"]
+atlas = ExtResource("10_cavlv")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_onucv"]
-atlas = ExtResource("10_yw17v")
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr50a"]
+atlas = ExtResource("10_cavlv")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d74g4"]
-atlas = ExtResource("10_yw17v")
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcxbf"]
+atlas = ExtResource("10_cavlv")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jr0cw"]
-atlas = ExtResource("10_yw17v")
+[sub_resource type="AtlasTexture" id="AtlasTexture_368ws"]
+atlas = ExtResource("10_cavlv")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_utrkm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dxtxo")
+"texture": SubResource("AtlasTexture_otrid")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_onucv")
+"texture": SubResource("AtlasTexture_kr50a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d74g4")
+"texture": SubResource("AtlasTexture_kcxbf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jr0cw")
+"texture": SubResource("AtlasTexture_368ws")
 }],
 "loop": true,
-"name": &"AmandaPortrait",
+"name": &"BobbeePortrait",
 "speed": 5.0
 }]
 
@@ -480,8 +480,8 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ycdfj")
 position = Vector2(32, 32)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_utrkm")
-animation = &"AmandaPortrait"
-autoplay = "AmandaPortrait"
+animation = &"BobbeePortrait"
+autoplay = "BobbeePortrait"
 
 [node name="Label" type="Label" parent="SelectorMenu/CharacterAmanda"]
 layout_mode = 0
@@ -490,7 +490,7 @@ offset_right = 64.0
 offset_bottom = 95.0
 theme_override_fonts/font = ExtResource("2_ooids")
 theme_override_font_sizes/font_size = 9
-text = "Amanda"
+text = "Bobbee"
 horizontal_alignment = 1
 vertical_alignment = 1
 
