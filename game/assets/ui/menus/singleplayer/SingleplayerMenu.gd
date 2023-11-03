@@ -15,9 +15,9 @@ var selected_track := 0;
 # On-ready function.
 func _ready() -> void:
 	# Create a player and spawn them
-	GameManager.players["1"] = { 
-		"id": 1, 
-		"name": "Playssers", 
+	GameManager.players[str(multiplayer.get_unique_id())] = { 
+		"id": multiplayer.get_unique_id(), 
+		"name": "", 
 		"index": 0, 
 		"ready": GameManager.ReadyStatus.READY, 
 		"character": GameManager.selected_char,

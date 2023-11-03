@@ -18,11 +18,11 @@ var Chars = {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Create a player and spawn them
-	GameManager.players["1"] = { 
-		"id": 1, 
+	GameManager.players[str(multiplayer.get_unique_id())] = { 
+		"id": multiplayer.get_unique_id(), 
 		"name": "", 
 		"index": 0, 
-		"ready": GameManager.ReadyStatus.READY, 
+		"ready": GameManager.ReadyStatus.READY,
 		"character": GameManager.selected_char,
 	};
 	_spawn_handler.spawn_players(false);
