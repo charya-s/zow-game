@@ -31,7 +31,7 @@ func _ready():
 	
 	# Set up the player checkpoint and lap count.
 	for player in GameManager.players:
-		player_laps[player] = {"id": player, "checkpoints": 0, "laps": 0, "timer": Timer.new};
+		player_laps[player] = {"id": player, "checkpoints": 0, "laps": 0};
 	
 	# Have the camera follow the local player.
 	_main_camera.follow_player(GameManager.local_player);
@@ -50,9 +50,10 @@ func pass_checkpoint(player_id:String, checkpoint:int) -> void:
 
 # Pass the finish line for a player, resetting checkpoint count.
 func pass_finish_line(player_id:String) -> void:
-	if player_laps[player_id].checkpoints == 4: # Check if the last checkpoint was hit.
-		player_laps[player_id].checkpoints = 0; # Reset check point count at finish line.
-		player_laps[player_id].laps += 1;		# Increment lap count at finish line.
+	if player_laps[player_id].checkpoints == 4: 	# Check if the last checkpoint was hit.
+		player_laps[player_id].checkpoints = 0; 	# Reset check point count at finish line.
+		player_laps[player_id].laps += 1;			# Increment lap count at finish line.
+		_game_hud.update_player_list(player_laps);  # Update hud to show lap count.
 		
 	if player_laps[player_id].laps == lap_count:
 		finish_race(player_id);
@@ -71,4 +72,4 @@ func finish_race(player_id:String) -> void:
 	if players_finished.size() != GameManager.players.size():
 		_main_camera.follow_random_player();
 	else: # Else, if all players are finished, send the finished list to the HUD.
-		_game_hud.display_leaderboard(players_finished); 
+		_game_hud.display_leaderboard(players_finished);

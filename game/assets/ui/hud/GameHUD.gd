@@ -7,6 +7,7 @@ class_name GameHUD
 
 # Components and nodes.
 @export var _player_list_row : PackedScene;
+@export var _leaderboard_row : PackedScene;
 
 # Internal variables.
 
@@ -50,12 +51,18 @@ func _update_speedometer(player:CharacterBody2D) -> void:
 
 # Create player list.
 func _create_player_list() -> void:
-	var index := 1;
 	for player in GameManager.players:
 		var row = _player_list_row.instantiate();
-		row.text = str(index) + ": " + GameManager.players[player].name; 
+		row.text = GameManager.players[player].name + ": Lap 1"; 
 		row.name = str(GameManager.players[player].id);
 		$PlayerList/VBoxContainer.add_child(row);
+
+
+# Update the player list panel with the number of laps.
+# Called whenever a player finishes a lap.
+func update_player_list(player_laps:Dictionary) -> void:
+	for row in $PlayerList/VBoxContainer.get_children():
+		row.text = GameManager.players[row.name].name + ": Lap " + str(player_laps[row.name].laps+1); 
 
 
 # Update UI elements based on track information.
@@ -73,4 +80,20 @@ func _update_timer(timer:Timer) -> void:
 
 # Display/update the leaderboard at the end of the race.
 func display_leaderboard(players_finished:Dictionary):
-	print(players_finished);
+	$Leaderboard.visible = true; # Show the leaderboard.
+	$PlayerList.visible = false; # Hide the player list.
+	var position = 1; # The list is in order of who finished.
+	for player in players_finished:
+		var leader_row = _leaderboard_row.instantiate();
+		leader_row.get_node("Position").text = str(position);
+		leader_row.get_node("Name").text = GameManager.players[players_finished[player]].name;
+		leader_row.get_node("Time").text = "00:00:00";
+		$Leaderboard/VBoxContainer.add_child(leader_row);
+		position += 1; # Incremement position.
+
+
+# Send player back to the main menu from the leaderboard.
+func _on_back_to_menu_pressed():
+	var main_menu_scene = load("res://assets/ui/menus/main-menu/MainMenu.tscn").instantiate();
+	get_tree().root.add_child(main_menu_scene);
+	get_parent().queue_free(); # Remove the track scene from the game.

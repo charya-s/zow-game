@@ -2,7 +2,8 @@ extends Node
 
 
 # Entity parameters.
-@export var server_address := "167.172.85.190";
+#@export var server_address := "167.172.85.190";
+@export var server_address := "127.0.0.1";
 @export var server_port := 8915;
 
 # Components and nodes.
@@ -45,9 +46,9 @@ enum Status {
 
 # On-ready function.
 func _ready() -> void:
-#	if (!GameManager.is_dedicated_server):
-#		print("Connecting to: " + server_address + ":" + str(server_port));
-#		_peer.create_client(server_address + ":" + str(server_port));
+	if (!GameManager.is_dedicated_server):
+		print("Connecting to: " + server_address + ":" + str(server_port));
+		_peer.create_client(server_address + ":" + str(server_port));
 	
 	multiplayer.connected_to_server.connect(_rtc_server_connected);
 	multiplayer.peer_connected.connect(_rtc_peer_connected);
