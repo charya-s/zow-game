@@ -149,9 +149,8 @@ position = Vector2(440, 220)
 
 [node name="Components" type="Node" parent="."]
 
-[node name="SpawnHandler" parent="Components" node_paths=PackedStringArray("_base_node") instance=ExtResource("6_ch241")]
+[node name="SpawnHandler" parent="Components" instance=ExtResource("6_ch241")]
 position = Vector2(303, 29)
-_base_node = NodePath("../..")
 
 [connection signal="body_entered" from="Checkpoints/Checkpoint1" to="." method="_on_checkpoint_1_body_entered"]
 [connection signal="body_entered" from="Checkpoints/Checkpoint2" to="." method="_on_checkpoint_2_body_entered"]

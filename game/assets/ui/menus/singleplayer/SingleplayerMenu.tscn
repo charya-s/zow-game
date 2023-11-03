@@ -326,8 +326,7 @@ text = "Start"
 
 [node name="Compositions" type="Node" parent="."]
 
-[node name="SpawnHandler" parent="Compositions" node_paths=PackedStringArray("_base_node") instance=ExtResource("6_k15ex")]
-_base_node = NodePath("../../Player")
+[node name="SpawnHandler" parent="Compositions" instance=ExtResource("6_k15ex")]
 
 [node name="ErrorShake" type="AnimationPlayer" parent="."]
 libraries = {

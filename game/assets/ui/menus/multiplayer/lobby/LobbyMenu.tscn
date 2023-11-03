@@ -392,8 +392,7 @@ metadata/_edit_lock_ = true
 
 [node name="Compositions" type="Node" parent="."]
 
-[node name="SpawnHandler" parent="Compositions" node_paths=PackedStringArray("_base_node") instance=ExtResource("1_7nek3")]
-_base_node = NodePath("../../Players")
+[node name="SpawnHandler" parent="Compositions" instance=ExtResource("1_7nek3")]
 
 [connection signal="pressed" from="MapSelection/TrackThumbnail/MapSelectors/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="MapSelection/TrackThumbnail/MapSelectors/Right" to="." method="_on_right_pressed"]

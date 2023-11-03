@@ -20,7 +20,7 @@ var players_finished = {}
 
 # # On-ready function.
 func _ready():
-	_spawn_handler.spawn_players(true); # Spawn players and return the local player.
+	_spawn_handler.spawn_players(true, self); # Spawn players and return the local player.
 	
 	# Instantiate the in-game HUD.
 	_game_hud = load("res://assets/ui/hud/GameHUD.tscn").instantiate();

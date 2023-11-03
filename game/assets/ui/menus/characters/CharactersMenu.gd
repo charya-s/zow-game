@@ -25,7 +25,7 @@ func _ready():
 		"ready": GameManager.ReadyStatus.READY,
 		"character": GameManager.selected_char,
 	};
-	_spawn_handler.spawn_players(false);
+	_spawn_handler.spawn_players(false, $Player);
 	_update_slection_marker();
 
 

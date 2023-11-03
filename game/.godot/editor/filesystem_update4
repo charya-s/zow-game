@@ -1,10 +1,13 @@
 res://assets/ui/menus/multiplayer/lobby/LobbyMenu.tscn
+res://assets/tracks/components/SpawnHandler.gd
+res://assets/ui/menus/multiplayer/MultiplayerMenu.tscn
 res://assets/tracks/Track0.tscn
 res://assets/characters/player/Player.tscn
 res://assets/ui/menus/characters/CharactersMenu.tscn
 res://assets/ui/hud/components/LeaderboardRow.tscn
-res://assets/ui/menus/multiplayer/MultiplayerMenu.tscn
-res://assets/ui/menus/multiplayer/components/Client.gd
+res://assets/globals/MusicHandler.tscn
 res://assets/ui/menus/characters/CharactersMenu.gd
-res://assets/tracks/components/SpawnHandler.gd
+res://assets/tracks/components/TrackController.gd
+res://assets/ui/menus/multiplayer/lobby/LobbyMenu.gd
+res://assets/ui/menus/singleplayer/SingleplayerMenu.tscn
 res://assets/ui/menus/singleplayer/SingleplayerMenu.gd

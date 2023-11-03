@@ -50,7 +50,7 @@ func deactivate_lobby_menu() -> void:
 func spawn_players() -> void:
 	for player in get_tree().get_nodes_in_group("Players"):
 		player.free();
-	_spawn_handler.spawn_players(false); # Spawn players and return the local player.
+	_spawn_handler.spawn_players(false, $Players); # Spawn players and return the local player.
 
 
 # Add chat messages to the message box.

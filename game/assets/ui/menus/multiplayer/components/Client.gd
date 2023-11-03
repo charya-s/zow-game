@@ -2,8 +2,8 @@ extends Node
 
 
 # Entity parameters.
-#@export var server_address := "167.172.85.190";
-@export var server_address := "127.0.0.1";
+@export var server_address := "167.172.85.190";
+#@export var server_address := "127.0.0.1";
 @export var server_port := 8915;
 
 # Components and nodes.

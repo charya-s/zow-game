@@ -22,7 +22,7 @@ func _ready() -> void:
 		"ready": GameManager.ReadyStatus.READY, 
 		"character": GameManager.selected_char,
 	};
-	_spawn_handler.spawn_players(false);
+	_spawn_handler.spawn_players(false, $Player);
 	_set_displayed_track(selected_track);
 
 
