@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698945088
+::res://::1699003291
 export_presets.cfg::TextFile::-1::1698827113::0::1::::<><>::
 ::res://addons/::1698776146
 ::res://addons/webrtc/::1698776148
@@ -15,10 +15,10 @@ MovementHandler.gd::GDScript::-1::1698776148::0::1::::MovementHandler<>Node<>::
 MovementHandler.tscn::PackedScene::5669893258622427454::1698776148::0::1::::<><>::res://assets/characters/components/MovementHandler.gd
 PlayerInputHandler.gd::GDScript::-1::1698825091::0::1::::PlayerInputHandler<>Node<>::
 PlayerInputHandler.tscn::PackedScene::4619919230337077751::1698776148::0::1::::<><>::res://assets/characters/components/PlayerInputHandler.gd
-::res://assets/characters/player/::1698951932
-Player.tscn::PackedScene::5251965384906060711::1698951932::0::1::::<><>::res://assets/characters/player/PlayerController.gd<>uid://de2oqx30vhxsq::::res://assets/characters/sprites/bob_sprite.png<>uid://lsgrvo3ka24r::::res://assets/ui/common/default_font.ttf<>uid://b626nolb7wsp8::::res://assets/characters/components/PlayerInputHandler.tscn<>uid://cm1skwrit5fjy::::res://assets/characters/components/MovementHandler.tscn<>uid://c03pi8job8od6::::res://assets/characters/components/CharacterAnimationHandler.tscn
+::res://assets/characters/player/::1698952276
+Player.tscn::PackedScene::5251965384906060711::1698952276::0::1::::<><>::res://assets/characters/player/PlayerController.gd<>uid://de2oqx30vhxsq::::res://assets/characters/sprites/bob_sprite.png<>uid://lsgrvo3ka24r::::res://assets/ui/common/default_font.ttf<>uid://b626nolb7wsp8::::res://assets/characters/components/PlayerInputHandler.tscn<>uid://cm1skwrit5fjy::::res://assets/characters/components/MovementHandler.tscn<>uid://c03pi8job8od6::::res://assets/characters/components/CharacterAnimationHandler.tscn
 PlayerController.gd::GDScript::-1::1698948611::0::1::::PlayerController<>CharacterBody2D<>::
-::res://assets/characters/sprites/::1698951931
+::res://assets/characters/sprites/::1698952196
 amanda_sprite.png::CompressedTexture2D::8406260816993812097::1698952186::1698952196::1::::<><>::
 bob_sprite.png::CompressedTexture2D::7496635488048083448::1698921794::1698948592::1::::<><>::
 catbob_sprite.png::CompressedTexture2D::534912723018494281::1698948582::1698948592::1::::<><>::
@@ -66,12 +66,12 @@ PlayerListRow.tscn::PackedScene::2457334698126906161::1698835305::0::1::::<><>::
 speedometer_base.png::CompressedTexture2D::926027750986799414::1698776149::1698776149::1::::<><>::
 speedometer_needle.png::CompressedTexture2D::838049802114218528::1698776149::1698776149::1::::<><>::
 ::res://assets/ui/menus/::1698857260
-::res://assets/ui/menus/characters/::1698951932
+::res://assets/ui/menus/characters/::1698952268
 amanda_portrait.png::CompressedTexture2D::2516606700053692668::1698864226::1698864238::1::::<><>::
 bob_portrait.png::CompressedTexture2D::5048353684903658034::1698863644::1698863654::1::::<><>::
 catbob_portrait.png::CompressedTexture2D::5669366999043677054::1698863604::1698863654::1::::<><>::
-CharactersMenu.gd::GDScript::-1::1698950864::0::1::::<>Control<>::
-CharactersMenu.tscn::PackedScene::5665465410274640284::1698951932::0::1::::<><>::res://assets/ui/menus/characters/CharactersMenu.gd<>uid://dwcfgs8oiyuge::::res://assets/ui/menus/multiplayer/lobby/portrait_bg_gray.png<>uid://lsgrvo3ka24r::::res://assets/ui/common/default_font.ttf<>uid://udpbsuq8lmwh::::res://assets/ui/menus/multiplayer/lobby/portrait_bg_green.png<>uid://dbehj3pe803v4::::res://assets/ui/menus/multiplayer/lobby/portrait_bg_orange.png<>uid://d001ap3g0qxww::::res://assets/ui/menus/multiplayer/lobby/portrait_bg_red.png<>uid://cd6pwav6pq6mo::::res://assets/ui/menus/characters/bob_portrait.png<>uid://cy14hlyb888wd::::res://assets/tracks/components/SpawnHandler.tscn<>uid://bkij13ik54tlt::::res://assets/ui/menus/characters/skelebob_portrait.png<>uid://dg34tb4xpsc2x::::res://assets/ui/menus/characters/portrait_selected.png<>uid://cm1jv78bnb4gg::::res://assets/ui/menus/characters/catbob_portrait.png<>uid://bb4ce6icpl5o7::::res://assets/ui/menus/characters/amanda_portrait.png<>uid://8x4pwkxa1ury::::res://assets/ui/menus/characters/speech_bubble.png
+CharactersMenu.gd::GDScript::-1::1698952253::0::1::::<>Control<>::
+CharactersMenu.tscn::PackedScene::5665465410274640284::1698952268::0::1::::<><>::res://assets/ui/menus/characters/CharactersMenu.gd<>uid://dwcfgs8oiyuge::::res://assets/ui/menus/multiplayer/lobby/portrait_bg_gray.png<>uid://lsgrvo3ka24r::::res://assets/ui/common/default_font.ttf<>uid://udpbsuq8lmwh::::res://assets/ui/menus/multiplayer/lobby/portrait_bg_green.png<>uid://dbehj3pe803v4::::res://assets/ui/menus/multiplayer/lobby/portrait_bg_orange.png<>uid://d001ap3g0qxww::::res://assets/ui/menus/multiplayer/lobby/portrait_bg_red.png<>uid://cd6pwav6pq6mo::::res://assets/ui/menus/characters/bob_portrait.png<>uid://cy14hlyb888wd::::res://assets/tracks/components/SpawnHandler.tscn<>uid://bkij13ik54tlt::::res://assets/ui/menus/characters/skelebob_portrait.png<>uid://dg34tb4xpsc2x::::res://assets/ui/menus/characters/portrait_selected.png<>uid://cm1jv78bnb4gg::::res://assets/ui/menus/characters/catbob_portrait.png<>uid://bb4ce6icpl5o7::::res://assets/ui/menus/characters/amanda_portrait.png<>uid://8x4pwkxa1ury::::res://assets/ui/menus/characters/speech_bubble.png
 portrait_selected.png::CompressedTexture2D::7639992511284040405::1698861907::1698861914::1::::<><>::
 skelebob_portrait.png::CompressedTexture2D::3105418509190174429::1698863633::1698863654::1::::<><>::
 speech_bubble.png::CompressedTexture2D::2365501280105052122::1698950273::1698950278::1::::<><>::

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cfim0ye6xhest"]
+[gd_scene load_steps=18 format=3 uid="uid://cfim0ye6xhest"]
 
 [ext_resource type="Script" path="res://assets/tracks/Track0.gd" id="1_m7irt"]
 [ext_resource type="PackedScene" uid="uid://cihuamamapxkt" path="res://assets/ui/camera/MainCamera.tscn" id="2_5c5oa"]
@@ -51,6 +51,21 @@ texture = ExtResource("6_3mm7s")
 [sub_resource type="TileSet" id="TileSet_3tcir"]
 sources/1 = SubResource("TileSetAtlasSource_j8gte")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asc4s"]
+size = Vector2(80.5, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnfar"]
+size = Vector2(16, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftwcp"]
+size = Vector2(96, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pt5i"]
+size = Vector2(16, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3a3s"]
+size = Vector2(16, 82)
+
 [node name="Track0" type="Node2D"]
 script = ExtResource("1_m7irt")
 
@@ -74,6 +89,48 @@ tile_set = SubResource("TileSet_3tcir")
 format = 2
 layer_0/tile_data = PackedInt32Array(65548, 65537, 0, 65547, 65537, 0, -655334, 65537, 0, -655335, 65537, 0, -131027, 1, 0, -131026, 1, 0, 589851, 1, 0, 589850, 1, 0, 589849, 1, 0)
 
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint1" type="Area2D" parent="Checkpoints"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="1" type="CollisionShape2D" parent="Checkpoints/Checkpoint1"]
+position = Vector2(199.75, 120)
+shape = SubResource("RectangleShape2D_asc4s")
+
+[node name="Checkpoint2" type="Area2D" parent="Checkpoints"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="2" type="CollisionShape2D" parent="Checkpoints/Checkpoint2"]
+position = Vector2(488, -112)
+shape = SubResource("RectangleShape2D_gnfar")
+
+[node name="Checkpoint3" type="Area2D" parent="Checkpoints"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="3" type="CollisionShape2D" parent="Checkpoints/Checkpoint3"]
+position = Vector2(864, -152)
+shape = SubResource("RectangleShape2D_ftwcp")
+
+[node name="Checkpoint4" type="Area2D" parent="Checkpoints"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="4" type="CollisionShape2D" parent="Checkpoints/Checkpoint4"]
+position = Vector2(664, 24)
+shape = SubResource("RectangleShape2D_4pt5i")
+
+[node name="Finish" type="Area2D" parent="Checkpoints"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Finish" type="CollisionShape2D" parent="Checkpoints/Finish"]
+position = Vector2(488, 201)
+shape = SubResource("RectangleShape2D_x3a3s")
+
 [node name="StartTimer" type="Timer" parent="."]
 
 [node name="SpawnPoints" type="Node2D" parent="."]
@@ -96,4 +153,9 @@ position = Vector2(440, 220)
 position = Vector2(303, 29)
 _base_node = NodePath("../..")
 
+[connection signal="body_entered" from="Checkpoints/Checkpoint1" to="." method="_on_checkpoint_1_body_entered"]
+[connection signal="body_entered" from="Checkpoints/Checkpoint2" to="." method="_on_checkpoint_2_body_entered"]
+[connection signal="body_entered" from="Checkpoints/Checkpoint3" to="." method="_on_checkpoint_3_body_entered"]
+[connection signal="body_entered" from="Checkpoints/Checkpoint4" to="." method="_on_checkpoint_4_body_entered"]
+[connection signal="body_entered" from="Checkpoints/Finish" to="." method="_on_finish_body_entered"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

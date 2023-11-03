@@ -434,6 +434,7 @@ animation = &"SkelePortrait"
 autoplay = "SkelePortrait"
 
 [node name="Label" type="Label" parent="SelectorMenu/CharacterSkeleBob"]
+layout_mode = 0
 offset_top = 75.0
 offset_right = 64.0
 offset_bottom = 95.0
@@ -458,6 +459,7 @@ animation = &"CatPortrait"
 autoplay = "CatPortrait"
 
 [node name="Label" type="Label" parent="SelectorMenu/CharacterCatBob"]
+layout_mode = 0
 offset_top = 75.0
 offset_right = 64.0
 offset_bottom = 95.0
@@ -482,6 +484,7 @@ animation = &"AmandaPortrait"
 autoplay = "AmandaPortrait"
 
 [node name="Label" type="Label" parent="SelectorMenu/CharacterAmanda"]
+layout_mode = 0
 offset_top = 75.0
 offset_right = 64.0
 offset_bottom = 95.0

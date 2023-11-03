@@ -15,7 +15,7 @@ class_name PlayerInputHandler
 
 # Physics process - runs 60 times a second.
 func _physics_process(_delta:float) -> void:
-	if !_player.get_parent().name.contains("Track"): # Don't check for movement if the player is not on a track.
+	if !_player.can_move: # Don't check for movement if the player is not on a track.
 		return
 		
 	if  _player.get_parent().get_node("StartTimer").time_left != 0:	 # Don't check for movement if race hasn't started.

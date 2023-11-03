@@ -60,11 +60,17 @@ func _create_player_list() -> void:
 
 # Update UI elements based on track information.
 func _update_timer(timer:Timer) -> void:
-	if !$StartCountdown: # Cancel update if the countdown has been removed.
+	if get_node_or_null("StartCountdown") == null: # Cancel update if the countdown has been removed.
 		return
+		
 		
 	if timer.time_left == 0: # If the countdown is over, remove the panel.
 		$StartCountdown.free();
 		return;
 		
 	$StartCountdown/Label.text = str(ceil(timer.time_left)); # Update the countdown.
+
+
+# Display/update the leaderboard at the end of the race.
+func display_leaderboard(players_finished:Dictionary):
+	print(players_finished);

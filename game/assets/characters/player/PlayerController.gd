@@ -19,16 +19,19 @@ var Sprites = {
 	GameManager.Characters.CATBOB: "res://assets/characters/sprites/catbob_sprite.png",
 	GameManager.Characters.AMANDA: "res://assets/characters/sprites/amanda_sprite.png",
 }
+var can_move := false;
 
 # On-ready function.
 func _ready() -> void:
 	$MultiplayerSynchronizer.set_multiplayer_authority(int(str(name))); # Only give mult authority when on track.
 	update_sprite(int(GameManager.players[str(name)].character)); # Start on the selected character.
+	if (get_parent().name.contains("Track")):
+		allow_move(true);
 
 
 # Physics process - runs 60 times a second.
 func _physics_process(_delta:float) -> void:
-	if (get_parent().name.contains("Track")): # Only get and set the sync variables if on a track.
+	if (can_move): # Only get and set the sync variables if on a track.
 		# Only move if client is the owner of this player character.
 		if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
 			_update_sync_variables("set");
@@ -56,15 +59,11 @@ func _update_sync_variables(mode:String):
 		global_position = lerp(global_position, sync_pos, 0.5);
 
 
-
-#func change_character(scroll_dir:String):
-#	# Load the sprite based on the character selection.
-#	if scroll_dir == "left" && int(GameManager.players[str(name)].character) > 0:
-#		GameManager.players[str(name)].character = str(int(GameManager.players[str(name)].character) - 1)
-#	elif scroll_dir == "right" && int(GameManager.players[str(name)].character) < GameManager.Characters.size()-1:
-#		GameManager.players[str(name)].character = str(int(GameManager.players[str(name)].character) + 1)
-#	update_sprite(int(GameManager.players[str(name)].character))
-
 # Update character model (sprite).
 func update_sprite(selected_char:int):
 	$PlayerSprite.texture = load(Sprites[selected_char]);
+
+
+# Toggles allowing and disallowing movement.
+func allow_move(state:bool) -> void:
+	can_move = state;
