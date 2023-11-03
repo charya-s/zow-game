@@ -6,6 +6,7 @@ extends Node
 var players := {}; # List of players connected to the lobby.
 var local_player : CharacterBody2D; # Local player.
 var selected_char : Characters = Characters.BOB;
+var rtc_peer : WebRTCPeerConnection;
 
 # Lobby information.
 var lobby_name := ""; # Name of connected lobby.
@@ -51,4 +52,9 @@ func _toggle_fullscreen() -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		
+
+
+# Remove RTC peers.
+#func remove_rtc_peers():
+	for peer in rtc_peer.get_peers():
+		rtc_peer.remove_peer(peer);

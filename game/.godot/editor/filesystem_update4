@@ -11,3 +11,10 @@ res://assets/tracks/components/TrackController.gd
 res://assets/ui/menus/multiplayer/lobby/LobbyMenu.gd
 res://assets/ui/menus/singleplayer/SingleplayerMenu.tscn
 res://assets/ui/menus/singleplayer/SingleplayerMenu.gd
+res://assets/ui/menus/main-menu/MainMenu.tscn
+res://assets/ui/menus/main-menu/MainMenu.gd
+res://assets/tracks/Track0.gd
+res://assets/ui/hud/GameHUD.tscn
+res://assets/ui/hud/GameHUD.gd
+res://assets/globals/GameManager.gd
+res://assets/ui/menus/multiplayer/components/Client.gd

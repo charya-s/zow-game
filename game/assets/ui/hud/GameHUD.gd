@@ -97,3 +97,9 @@ func _on_back_to_menu_pressed():
 	var main_menu_scene = load("res://assets/ui/menus/main-menu/MainMenu.tscn").instantiate();
 	get_tree().root.add_child(main_menu_scene);
 	get_parent().queue_free(); # Remove the track scene from the game.
+
+
+func _on_button_pressed():
+	var main_menu_scene = load("res://assets/ui/menus/main-menu/MainMenu.tscn").instantiate();
+	get_tree().root.add_child(main_menu_scene);
+	get_parent().queue_free(); # Remove the track scene from the game.
