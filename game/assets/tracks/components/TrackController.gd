@@ -37,6 +37,8 @@ func _ready():
 	# Have the camera follow the local player.
 	_main_camera.follow_player(GameManager.local_player);
 
+	# Play music.
+	MusicHandler.play_music("track");
 
 # Physics process - runs 60 times a second.
 func _physics_process(delta) -> void:

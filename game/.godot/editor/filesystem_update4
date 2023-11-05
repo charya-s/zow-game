@@ -5,3 +5,6 @@ res://assets/ui/hud/GameHUD.tscn
 res://assets/tracks/Track0.gd
 res://assets/tracks/components/TrackController.gd
 res://assets/ui/hud/GameHUD.gd
+res://assets/globals/MusicHandler.gd
+res://assets/ui/menus/multiplayer/components/Client.gd
+res://assets/ui/menus/multiplayer/MultiplayerMenu.tscn

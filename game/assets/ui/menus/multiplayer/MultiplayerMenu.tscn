@@ -33,10 +33,10 @@ script = ExtResource("4_0vaio")
 
 [node name="StartServer" type="Button" parent="."]
 layout_mode = 0
-offset_left = 499.0
-offset_top = 17.0
-offset_right = 599.0
-offset_bottom = 42.0
+offset_left = 719.0
+offset_top = 30.0
+offset_right = 819.0
+offset_bottom = 55.0
 theme_override_fonts/font = ExtResource("5_5j1kh")
 theme_override_font_sizes/font_size = 9
 text = "Start Server
@@ -44,10 +44,10 @@ text = "Start Server
 
 [node name="StartClient" type="Button" parent="."]
 layout_mode = 0
-offset_left = 85.0
-offset_top = 22.0
-offset_right = 185.0
-offset_bottom = 47.0
+offset_left = -157.0
+offset_top = 48.0
+offset_right = -57.0
+offset_bottom = 73.0
 theme_override_fonts/font = ExtResource("5_5j1kh")
 theme_override_font_sizes/font_size = 9
 text = "Start Client

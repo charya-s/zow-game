@@ -3,7 +3,7 @@ extends Node
 # Internal variables.
 var MusicStates = {
 	"menu" : "res://assets/other/music/main_menu.wav",
-	"track" : "",
+	"track" : "res://assets/other/music/track0.wav",
 }
 var _min_volume := -30.0; # Maximum volume in dB.
 var _max_volume := 0.0; # Maximum volume in dB.
