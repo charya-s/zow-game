@@ -12,7 +12,7 @@ var Chars = {
 	GameManager.Characters.BOB: {"name": "CharacterBob", "quote": "I'm Bob! Short for Bobe. Like the baseball player."},
 	GameManager.Characters.SKELEBOB: {"name": "CharacterSkeleBob", "quote": "Why was I given no flesh but a voice to scream?"},
 	GameManager.Characters.CATBOB: {"name": "CharacterCatBob", "quote": "I'm not a fucking bobcat! Dick..."},
-	GameManager.Characters.BOBBEE: {"name": "CharacterAmanda", "quote": "My name is Amanda."},
+	GameManager.Characters.BOBBEE: {"name": "CharacterAmanda", "quote": "My name is actually Amanda..."},
 }
 
 # Called when the node enters the scene tree for the first time.

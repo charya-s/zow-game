@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cbym2wtwosrm5"]
+[gd_scene load_steps=39 format=3 uid="uid://cbym2wtwosrm5"]
 
 [ext_resource type="Texture2D" uid="uid://c2uexw4iu0k4o" path="res://assets/ui/menus/main-menu/singleplayer_button_normal.png" id="1_5e0x2"]
 [ext_resource type="Script" path="res://assets/ui/menus/main-menu/MainMenu.gd" id="1_rs8to"]
@@ -72,6 +72,8 @@ expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 1.0
 expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ff5n"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_11ne6"]
 
@@ -163,6 +165,7 @@ scale = Vector2(3, 3)
 theme_override_styles/normal = SubResource("StyleBoxTexture_mp1cj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yxhda")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_45a5r")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_8ff5n")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_11ne6")
 
 [node name="Quit" type="Button" parent="MenuButtons"]

@@ -1,5 +1,7 @@
-res://assets/ui/menus/characters
 C:/Users/charya/Desktop/Misc/Personal Projects/Programming/GameDev/Godot-Python/exported/zow-game/windows
+res://assets/globals
+C:/Users/charya/Desktop/Misc/Personal Projects/Programming/GameDev/Godot-Python/zow-game/game
+res://assets/ui/menus/characters
 C:/Users/charya/Desktop/Misc/Personal Projects/Programming/GameDev/Godot-Python/exported/zow-game/linux
 res://assets/ui/hud/components
 res://assets/ui/common
@@ -11,7 +13,6 @@ res://assets/ui/menus/options
 res://assets/ui/menus/singleplayer
 res://assets/ui/hud
 res://assets/ui/menus/multiplayer/components
-res://assets/globals
 res://assets/ui/menus/multiplayer
 res://assets/ui/menus/multiplayer/lobby
 res://assets/ui/camera

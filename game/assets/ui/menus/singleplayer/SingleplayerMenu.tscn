@@ -226,6 +226,7 @@ offset_bottom = 95.0
 theme_override_fonts/font = ExtResource("6_mxwl3")
 theme_override_font_sizes/font_size = 9
 placeholder_text = "Player name"
+max_length = 8
 
 [node name="Player" type="Panel" parent="."]
 layout_mode = 0

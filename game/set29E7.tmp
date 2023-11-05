@@ -1,0 +1,15 @@
+{
+	"audio_settings":
+		{
+			"mute_music": "0",
+			"volume_music": "0.5",
+			"mute_sounds": "0",
+			"volume_sounds": "0.5",
+		},
+	
+	"video_settings":
+		{
+			"gpu": "Dedicated GPU",
+			"max_fps": "144",
+		}
+}

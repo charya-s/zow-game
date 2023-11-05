@@ -1,0 +1,156 @@
+[gd_scene load_steps=3 format=3 uid="uid://pw23d7rpowpn"]
+
+[ext_resource type="Script" path="res://assets/ui/menus/options/options_panels/AudioOptions.gd" id="1_ayowd"]
+[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="2_u71r7"]
+
+[node name="AudioOptions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ayowd")
+
+[node name="Heading" type="Label" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 20.0
+offset_right = 470.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("2_u71r7")
+theme_override_font_sizes/font_size = 27
+text = "Audio Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 70.0
+offset_right = 570.0
+offset_bottom = 330.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 480.0
+offset_bottom = 220.0
+theme_override_constants/separation = 0
+
+[node name="Mute" type="HBoxContainer" parent="OptionsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(400, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="Music" type="Label" parent="OptionsPanel/VBoxContainer/Mute"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_u71r7")
+theme_override_font_sizes/font_size = 18
+text = "Mute music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MuteMusicCheck" type="CheckBox" parent="OptionsPanel/VBoxContainer/Mute"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="Separator" type="Label" parent="OptionsPanel/VBoxContainer/Mute"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Sounds" type="Label" parent="OptionsPanel/VBoxContainer/Mute"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_u71r7")
+theme_override_font_sizes/font_size = 18
+text = "Mute sounds"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MuteSoundsCheck" type="CheckBox" parent="OptionsPanel/VBoxContainer/Mute"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="Separator" type="HBoxContainer" parent="OptionsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(400, 25)
+layout_mode = 2
+
+[node name="MusicVolume" type="HBoxContainer" parent="OptionsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(400, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="OptionsPanel/VBoxContainer/MusicVolume"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_u71r7")
+theme_override_font_sizes/font_size = 18
+text = "Music volume"
+
+[node name="Separator" type="Label" parent="OptionsPanel/VBoxContainer/MusicVolume"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="MusicVolumeSlider" type="HSlider" parent="OptionsPanel/VBoxContainer/MusicVolume"]
+custom_minimum_size = Vector2(240, 25)
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+
+[node name="Separator2" type="HBoxContainer" parent="OptionsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(400, 25)
+layout_mode = 2
+
+[node name="SoundVolume" type="HBoxContainer" parent="OptionsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(400, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="OptionsPanel/VBoxContainer/SoundVolume"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_u71r7")
+theme_override_font_sizes/font_size = 18
+text = "Sound volume"
+
+[node name="Separator" type="Label" parent="OptionsPanel/VBoxContainer/SoundVolume"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="SoundVolumeSlider" type="HSlider" parent="OptionsPanel/VBoxContainer/SoundVolume"]
+custom_minimum_size = Vector2(240, 25)
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+
+[node name="Separator3" type="HBoxContainer" parent="OptionsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(400, 25)
+layout_mode = 2
+
+[node name="Separator4" type="HBoxContainer" parent="OptionsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(400, 15)
+layout_mode = 2
+
+[node name="SaveAndExit" type="Button" parent="OptionsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_u71r7")
+theme_override_font_sizes/font_size = 18
+text = "Save and Exit"
+
+[connection signal="toggled" from="OptionsPanel/VBoxContainer/Mute/MuteMusicCheck" to="." method="_on_mute_music_check_toggled"]
+[connection signal="toggled" from="OptionsPanel/VBoxContainer/Mute/MuteSoundsCheck" to="." method="_on_mute_sounds_check_toggled"]
+[connection signal="value_changed" from="OptionsPanel/VBoxContainer/MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/VBoxContainer/SoundVolume/SoundVolumeSlider" to="." method="_on_sound_volume_slider_value_changed"]
+[connection signal="pressed" from="OptionsPanel/VBoxContainer/SaveAndExit" to="." method="_on_save_and_exit_pressed"]

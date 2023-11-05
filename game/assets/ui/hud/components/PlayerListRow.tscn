@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbal7cvvvo5a0"]
+
+[ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="1_shelw"]
+
+[node name="PlayerListRow" type="HBoxContainer"]
+custom_minimum_size = Vector2(100, 15)
+offset_right = 100.0
+offset_bottom = 15.0
+theme_override_constants/separation = 0
+
+[node name="Name" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 15)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_shelw")
+theme_override_font_sizes/font_size = 9
+text = "Name"
+vertical_alignment = 1
+
+[node name="Lap" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 15)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_shelw")
+theme_override_font_sizes/font_size = 9
+text = " | Lap 1"
+vertical_alignment = 1

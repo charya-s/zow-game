@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kni4m4004q2"
-path="res://.godot/imported/default_wall_front.png-f55ed2802e4080394ad99df1f3d58383.ctex"
+uid="uid://crwhdof1ndoqb"
+path="res://.godot/imported/video_button_pressed.png-4a73d3bd947287df5f150cf92c638799.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tracks/tilesets/default_wall_front.png"
-dest_files=["res://.godot/imported/default_wall_front.png-f55ed2802e4080394ad99df1f3d58383.ctex"]
+source_file="res://assets/ui/menus/options/video_button_pressed.png"
+dest_files=["res://.godot/imported/video_button_pressed.png-4a73d3bd947287df5f150cf92c638799.ctex"]
 
 [params]
 

@@ -12,6 +12,7 @@ func _init():
 
 # Stop the timer once the countdown ends and the race starts.
 func _on_start_timer_timeout():
+	race_started = true; # Set race started.
 	_timer.stop();
 
 

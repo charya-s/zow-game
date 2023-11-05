@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ngtsojrjphfi" path="res://assets/ui/hud/assets/speedometer_base.png" id="1_qivl6"]
 [ext_resource type="Script" path="res://assets/ui/hud/GameHUD.gd" id="1_wkl5x"]
 [ext_resource type="Texture2D" uid="uid://l67s721rf5ou" path="res://assets/ui/hud/assets/speedometer_needle.png" id="2_feqnw"]
-[ext_resource type="PackedScene" uid="uid://bbal7cvvvo5a0" path="res://assets/ui/hud/PlayerListRow.tscn" id="5_4557b"]
+[ext_resource type="PackedScene" uid="uid://bbal7cvvvo5a0" path="res://assets/ui/hud/components/PlayerListRow.tscn" id="2_iainj"]
 [ext_resource type="PackedScene" uid="uid://cjmwmmqykg4et" path="res://assets/ui/hud/components/LeaderboardRow.tscn" id="6_lvmin"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sddae"]
@@ -19,7 +19,7 @@ bg_color = Color(0, 0, 0, 0.784314)
 
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource("1_wkl5x")
-_player_list_row = ExtResource("5_4557b")
+_player_list_row = ExtResource("2_iainj")
 _leaderboard_row = ExtResource("6_lvmin")
 
 [node name="Speedometer" type="Panel" parent="."]
@@ -53,16 +53,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayerList" type="Panel" parent="."]
-offset_right = 100.0
+offset_right = 110.0
 offset_bottom = 80.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_goj2m")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PlayerList"]
+custom_minimum_size = Vector2(90, 60)
 layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 90.0
-offset_bottom = 70.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 105.0
+offset_bottom = 65.0
 theme_override_constants/separation = 0
 
 [node name="StartCountdown" type="Panel" parent="."]
@@ -140,15 +141,4 @@ theme_override_font_sizes/font_size = 9
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rgy2b")
 text = "Back to Menu"
 
-[node name="Button" type="Button" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -53.0
-offset_bottom = 31.0
-grow_horizontal = 0
-text = "menu
-"
-
 [connection signal="pressed" from="Leaderboard/BackToMenu" to="." method="_on_back_to_menu_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

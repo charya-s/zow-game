@@ -53,8 +53,9 @@ func _update_speedometer(player:CharacterBody2D) -> void:
 func _create_player_list() -> void:
 	for player in GameManager.players:
 		var row = _player_list_row.instantiate();
-		row.text = GameManager.players[player].name + ": Lap 1"; 
 		row.name = str(GameManager.players[player].id);
+		row.get_node("Name").text = GameManager.players[player].name; 
+		row.get_node("Lap").text = " | Lap 1";
 		$PlayerList/VBoxContainer.add_child(row);
 
 
@@ -62,7 +63,7 @@ func _create_player_list() -> void:
 # Called whenever a player finishes a lap.
 func update_player_list(player_laps:Dictionary) -> void:
 	for row in $PlayerList/VBoxContainer.get_children():
-		row.text = GameManager.players[row.name].name + ": Lap " + str(player_laps[row.name].laps+1); 
+		row.get_node("Lap").text = " | Lap " + str(player_laps[row.name].laps+1); 
 
 
 # Update UI elements based on track information.
@@ -86,10 +87,16 @@ func display_leaderboard(players_finished:Dictionary):
 	for player in players_finished:
 		var leader_row = _leaderboard_row.instantiate();
 		leader_row.get_node("Position").text = str(position);
-		leader_row.get_node("Name").text = GameManager.players[players_finished[player]].name;
-		leader_row.get_node("Time").text = "00:00:00";
+		leader_row.get_node("Name").text = GameManager.players[players_finished[player].id].name;
+		leader_row.get_node("Time").text = convert_to_mmss(players_finished[player].time);
 		$Leaderboard/VBoxContainer.add_child(leader_row);
 		position += 1; # Incremement position.
+
+# Function to convert a seconds number in float to a MM:SS string.
+func convert_to_mmss(time:float) -> String:
+	var seconds = int(time) % 60;
+	var minutes = int(time/60) % 60;
+	return "%02d:%02d" % [minutes, seconds];
 
 
 # Send player back to the main menu from the leaderboard.

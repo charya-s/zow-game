@@ -37,6 +37,7 @@ enum Characters {
 func _init() -> void:
 	if "--server" in OS.get_cmdline_args():
 		is_dedicated_server = true;
+	
 
 
 # Physics process.

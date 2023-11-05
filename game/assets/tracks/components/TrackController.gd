@@ -17,6 +17,7 @@ class_name TrackController;
 # Internal variables.
 var player_laps = {}
 var players_finished = {}
+var race_started = false;
 
 # # On-ready function.
 func _ready():
@@ -31,7 +32,7 @@ func _ready():
 	
 	# Set up the player checkpoint and lap count.
 	for player in GameManager.players:
-		player_laps[player] = {"id": player, "checkpoints": 0, "laps": 0};
+		player_laps[player] = {"id": player, "checkpoints": 0, "laps": 0, "time": 0.0};
 	
 	# Have the camera follow the local player.
 	_main_camera.follow_player(GameManager.local_player);
@@ -39,7 +40,9 @@ func _ready():
 
 # Physics process - runs 60 times a second.
 func _physics_process(delta) -> void:
-	pass
+	if race_started: # Update the stopwatch for each player if race started.
+		for player in player_laps: 
+			player_laps[player].time += delta; # Delta is the time in seconds since last update.
 
 
 # Add new reached checkpoint to a player.
@@ -61,7 +64,8 @@ func pass_finish_line(player_id:String) -> void:
 
 # Finish the race for a player - stop movement and hide them completely.
 func finish_race(player_id:String) -> void:
-	players_finished[players_finished.size()] = player_id; # Add the player to the end of the finished list.
+	# Add the player to the end of the finished list.
+	players_finished[players_finished.size()] = {"id": player_id, "time": player_laps[player_id].time}; 
 	for player in get_tree().get_nodes_in_group("Players"):
 		if player.name == player_id:
 			player.allow_move(false);
@@ -72,4 +76,5 @@ func finish_race(player_id:String) -> void:
 	if players_finished.size() != GameManager.players.size():
 		_main_camera.follow_random_player();
 	else: # Else, if all players are finished, send the finished list to the HUD.
+		race_started = false; 
 		_game_hud.display_leaderboard(players_finished);
