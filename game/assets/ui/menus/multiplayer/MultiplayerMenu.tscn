@@ -1,10 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhjv0yad7p5lb"]
+[gd_scene load_steps=17 format=3 uid="uid://dhjv0yad7p5lb"]
 
 [ext_resource type="PackedScene" uid="uid://dk1ar4he7csso" path="res://assets/ui/menus/multiplayer/lobby-browser/LobbyBrowser.tscn" id="1_qe5lc"]
+[ext_resource type="Texture2D" uid="uid://0wcpekxahibe" path="res://assets/ui/menus/common/forms/input_245x25.png" id="2_pq0se"]
 [ext_resource type="PackedScene" uid="uid://dc6y5p8d0w2y8" path="res://assets/ui/menus/multiplayer/lobby/LobbyMenu.tscn" id="2_vvso7"]
+[ext_resource type="Texture2D" uid="uid://c54utqv73s3jo" path="res://assets/ui/menus/common/forms/button_100x25_normal.png" id="3_66y2m"]
 [ext_resource type="Script" path="res://assets/ui/menus/multiplayer/components/Client.gd" id="3_ix1vx"]
 [ext_resource type="Script" path="res://assets/ui/menus/multiplayer/components/Server.gd" id="4_0vaio"]
+[ext_resource type="Texture2D" uid="uid://dxoteh2b6rvs0" path="res://assets/ui/menus/common/forms/button_100x25_pressed.png" id="4_luavv"]
 [ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="5_5j1kh"]
+[ext_resource type="Texture2D" uid="uid://igawikklewiq" path="res://assets/ui/menus/common/forms/button_100x25_disabled.png" id="5_jwoi8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tc5xi"]
+texture = ExtResource("2_pq0se")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1afq"]
+texture = ExtResource("2_pq0se")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04sek"]
+texture = ExtResource("3_66y2m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qyav3"]
+texture = ExtResource("4_luavv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdji5"]
+texture = ExtResource("4_luavv")
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hf4dy"]
+texture = ExtResource("5_jwoi8")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vnat"]
 
 [node name="MultiplayerMenu" type="Control"]
 layout_mode = 3
@@ -16,6 +44,21 @@ grow_vertical = 2
 
 [node name="LobbyBrowser" parent="." instance=ExtResource("1_qe5lc")]
 layout_mode = 1
+
+[node name="PlayerName" parent="LobbyBrowser" index="3"]
+theme_override_styles/normal = SubResource("StyleBoxTexture_tc5xi")
+theme_override_styles/focus = SubResource("StyleBoxTexture_s1afq")
+
+[node name="LobbyName" parent="LobbyBrowser" index="4"]
+theme_override_styles/normal = SubResource("StyleBoxTexture_tc5xi")
+theme_override_styles/focus = SubResource("StyleBoxTexture_s1afq")
+
+[node name="CreateLobby" parent="LobbyBrowser" index="5"]
+theme_override_styles/normal = SubResource("StyleBoxTexture_04sek")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qyav3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fdji5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hf4dy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7vnat")
 
 [node name="LobbyMenu" parent="." instance=ExtResource("2_vvso7")]
 visible = false
@@ -33,23 +76,47 @@ script = ExtResource("4_0vaio")
 
 [node name="StartServer" type="Button" parent="."]
 layout_mode = 0
-offset_left = 719.0
-offset_top = 30.0
-offset_right = 819.0
-offset_bottom = 55.0
+offset_left = 773.0
+offset_top = 57.0
+offset_right = 873.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_focus_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_disabled_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("5_5j1kh")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_04sek")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qyav3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fdji5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hf4dy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7vnat")
 text = "Start Server
 "
 
 [node name="StartClient" type="Button" parent="."]
 layout_mode = 0
-offset_left = -157.0
-offset_top = 48.0
-offset_right = -57.0
-offset_bottom = 73.0
+offset_left = -124.0
+offset_top = 38.0
+offset_right = -24.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_focus_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_disabled_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("5_5j1kh")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_04sek")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qyav3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fdji5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hf4dy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7vnat")
 text = "Start Client
 "
 

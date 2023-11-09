@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cbym2wtwosrm5"]
+[gd_scene load_steps=42 format=3 uid="uid://cbym2wtwosrm5"]
 
 [ext_resource type="Texture2D" uid="uid://c2uexw4iu0k4o" path="res://assets/ui/menus/main-menu/singleplayer_button_normal.png" id="1_5e0x2"]
 [ext_resource type="Script" path="res://assets/ui/menus/main-menu/MainMenu.gd" id="1_rs8to"]
@@ -12,6 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://bxql54egagk0e" path="res://assets/ui/menus/main-menu/quit_button_normal.png" id="9_wggak"]
 [ext_resource type="Texture2D" uid="uid://b5xshmh1xu2se" path="res://assets/ui/menus/main-menu/quit_button_pressed.png" id="10_n20u3"]
 [ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="12_nim7u"]
+[ext_resource type="Texture2D" uid="uid://c54utqv73s3jo" path="res://assets/ui/menus/common/forms/button_100x25_normal.png" id="13_cytdg"]
+[ext_resource type="Texture2D" uid="uid://dxoteh2b6rvs0" path="res://assets/ui/menus/common/forms/button_100x25_pressed.png" id="14_u0htw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqk81"]
+bg_color = Color(0.207843, 0.207843, 0.207843, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10umb"]
 
@@ -92,14 +97,14 @@ expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkfwf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptwos"]
-bg_color = Color(0, 0, 0, 0.25098)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m62ly"]
+texture = ExtResource("13_cytdg")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1ak6"]
-bg_color = Color(0, 0, 0, 0.25098)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q3b0w"]
+texture = ExtResource("14_u0htw")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53vd7"]
-bg_color = Color(0, 0, 0, 0.25098)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sym0b"]
+texture = ExtResource("14_u0htw")
 expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 1.0
@@ -115,6 +120,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rs8to")
+
+[node name="BG" type="Panel" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qqk81")
 
 [node name="MenuButtons" type="Panel" parent="."]
 layout_mode = 0
@@ -192,11 +202,18 @@ offset_right = -10.0
 offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_focus_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_disabled_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("12_nim7u")
 theme_override_font_sizes/font_size = 9
-theme_override_styles/normal = SubResource("StyleBoxFlat_ptwos")
-theme_override_styles/hover = SubResource("StyleBoxFlat_e1ak6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_53vd7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_m62ly")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q3b0w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sym0b")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_sacrg")
 
 [node name="Label" type="Label" parent="PatchNotes"]
@@ -204,9 +221,11 @@ layout_mode = 0
 offset_left = 5.0
 offset_right = 45.0
 offset_bottom = 20.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("12_nim7u")
 theme_override_font_sizes/font_size = 9
-text = "v0.0.5"
+text = "v1.0.0"
 horizontal_alignment = 2
 vertical_alignment = 1
 

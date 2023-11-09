@@ -38,7 +38,8 @@ func _set_displayed_track(track_id:int) -> void:
 	if (track_id < 0 || track_id > TrackList.TRACKS.size()-1): # Avoid underflow and overflow errors.
 		return
 	selected_track = track_id;
-	$MapSelection/TrackName.text = "Track: " + TrackList.TRACKS[track_id].name;
+	$MapSelection/TrackName.text = TrackList.TRACKS[track_id].name;
+	$MapSelection/TrackDifficulty.text = "Dfficulty: " + TrackList.TRACKS[track_id].difficulty + " | Laps: " + TrackList.TRACKS[track_id].laps;
 	$MapSelection/TrackThumbnail.texture = load(TrackList.TRACKS[track_id].img_path);
 
 # Scroll up the track list.

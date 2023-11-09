@@ -1,12 +1,12 @@
 extends TrackController
-
+class_name Track0
 
 # Initialization function to set track variables.
 func _init():
 	friction = 0.5;
 	start_dir = Vector2(-1, 0);
 	_start_timer = 5;
-	lap_count = 1;
+	lap_count = 5;
 
 
 

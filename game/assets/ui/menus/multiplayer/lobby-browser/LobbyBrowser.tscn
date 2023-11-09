@@ -1,16 +1,58 @@
-[gd_scene load_steps=9 format=3 uid="uid://dk1ar4he7csso"]
+[gd_scene load_steps=29 format=3 uid="uid://dk1ar4he7csso"]
 
 [ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="1_eq5rv"]
 [ext_resource type="PackedScene" uid="uid://xxan6uwyuv4y" path="res://assets/ui/menus/multiplayer/lobby-browser/LobbyInfoRow.tscn" id="1_lu2dm"]
 [ext_resource type="Script" path="res://assets/ui/menus/multiplayer/lobby-browser/LobbyBrowser.gd" id="1_umml5"]
+[ext_resource type="Texture2D" uid="uid://c54utqv73s3jo" path="res://assets/ui/menus/common/forms/button_100x25_normal.png" id="4_y3bk4"]
+[ext_resource type="Texture2D" uid="uid://dxoteh2b6rvs0" path="res://assets/ui/menus/common/forms/button_100x25_pressed.png" id="5_w4umb"]
+[ext_resource type="Texture2D" uid="uid://igawikklewiq" path="res://assets/ui/menus/common/forms/button_100x25_disabled.png" id="6_8d1q6"]
+[ext_resource type="Texture2D" uid="uid://0wcpekxahibe" path="res://assets/ui/menus/common/forms/input_245x25.png" id="7_g7ufr"]
+[ext_resource type="Texture2D" uid="uid://b5v3ay601uprg" path="res://assets/ui/menus/common/forms/row_head_left_150x25.png" id="8_ybnsx"]
+[ext_resource type="Texture2D" uid="uid://vsp0qc2bfb61" path="res://assets/ui/menus/common/forms/row_head_middle_1_150x25.png" id="9_0i1jt"]
+[ext_resource type="Texture2D" uid="uid://cquhokxviiff" path="res://assets/ui/menus/common/forms/row_head_middle_2_150x25.png" id="10_pf54c"]
+[ext_resource type="Texture2D" uid="uid://dlnyio7b72ji1" path="res://assets/ui/menus/common/forms/row_head_right_150x25.png" id="11_8eexf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vwcfq"]
-bg_color = Color(0, 0, 0, 0.152941)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1gfox"]
+bg_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ly63j"]
+texture = ExtResource("4_y3bk4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_evigt"]
+texture = ExtResource("5_w4umb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16q21"]
+texture = ExtResource("5_w4umb")
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n75bj"]
+texture = ExtResource("6_8d1q6")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l8jws"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7w6q2"]
+texture = ExtResource("7_g7ufr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_81e26"]
+texture = ExtResource("7_g7ufr")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dk7e4"]
+bg_color = Color(0.027451, 0.0941176, 0.129412, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rbkms"]
+texture = ExtResource("8_ybnsx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mpkw0"]
+texture = ExtResource("9_0i1jt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sq2vo"]
+texture = ExtResource("10_pf54c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_50bhr"]
+texture = ExtResource("11_8eexf")
 
 [sub_resource type="Animation" id="Animation_v46k0"]
 resource_name = "LobbyName"
@@ -88,14 +130,32 @@ grow_vertical = 2
 script = ExtResource("1_umml5")
 _lobby_info_row = ExtResource("1_lu2dm")
 
+[node name="BG" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1gfox")
+
 [node name="BackBtn" type="Button" parent="."]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 70.0
 offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_focus_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_disabled_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("1_eq5rv")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_ly63j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_evigt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16q21")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_n75bj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l8jws")
 text = "Back"
 
 [node name="BrowserTitle" type="Label" parent="."]
@@ -116,9 +176,18 @@ offset_left = 20.0
 offset_top = 55.0
 offset_right = 265.0
 offset_bottom = 80.0002
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_selected_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_uneditable_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_placeholder_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/caret_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("1_eq5rv")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_7w6q2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_81e26")
 placeholder_text = "Player name"
+alignment = 1
 max_length = 8
 
 [node name="LobbyName" type="LineEdit" parent="."]
@@ -127,9 +196,18 @@ offset_left = 270.0
 offset_top = 55.0
 offset_right = 515.0
 offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_selected_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_uneditable_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_placeholder_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/caret_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("1_eq5rv")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_7w6q2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_81e26")
 placeholder_text = "Lobby name"
+alignment = 1
 max_length = 16
 
 [node name="CreateLobby" type="Button" parent="."]
@@ -138,8 +216,20 @@ offset_left = 520.0
 offset_top = 55.0
 offset_right = 620.0
 offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_focus_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_disabled_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("1_eq5rv")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_ly63j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_evigt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16q21")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_n75bj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l8jws")
 text = "Create Lobby"
 
 [node name="LobbyList" type="Panel" parent="."]
@@ -148,6 +238,7 @@ offset_left = 20.0
 offset_top = 90.0
 offset_right = 620.0
 offset_bottom = 340.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dk7e4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LobbyList"]
 layout_mode = 0
@@ -162,9 +253,11 @@ theme_override_constants/separation = 0
 [node name="LobbyNameHeading" type="Label" parent="LobbyList/VBoxContainer/ListHeading"]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("1_eq5rv")
 theme_override_font_sizes/font_size = 9
-theme_override_styles/normal = SubResource("StyleBoxFlat_vwcfq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_rbkms")
 text = "Lobby Name"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -172,9 +265,11 @@ vertical_alignment = 1
 [node name="LobbyHostHeading" type="Label" parent="LobbyList/VBoxContainer/ListHeading"]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("1_eq5rv")
 theme_override_font_sizes/font_size = 9
-theme_override_styles/normal = SubResource("StyleBoxFlat_vwcfq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_mpkw0")
 text = "Host"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -182,9 +277,11 @@ vertical_alignment = 1
 [node name="LobbyCountHeading" type="Label" parent="LobbyList/VBoxContainer/ListHeading"]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("1_eq5rv")
 theme_override_font_sizes/font_size = 9
-theme_override_styles/normal = SubResource("StyleBoxFlat_vwcfq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sq2vo")
 text = "Player Count"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -192,9 +289,11 @@ vertical_alignment = 1
 [node name="LobbyJoinHeading" type="Label" parent="LobbyList/VBoxContainer/ListHeading"]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("1_eq5rv")
 theme_override_font_sizes/font_size = 9
-theme_override_styles/normal = SubResource("StyleBoxFlat_vwcfq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_50bhr")
 text = "Join Lobby"
 horizontal_alignment = 1
 vertical_alignment = 1

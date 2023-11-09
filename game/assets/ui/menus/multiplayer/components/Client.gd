@@ -402,11 +402,11 @@ func _start_game() -> void:
 # Highlights the player name or lobby name field if names don't meet requirements.
 func _show_name_error(field:String) -> void:
 	if (field == "player_name"):
-		_lobby_browser.get_node("PlayerName").modulate = Color("ff0000");
+		_lobby_browser.get_node("PlayerName").modulate = Color("FF7F7F");
 		_lobby_browser.get_node("ErrorShake").play("PlayerName");
 	
 	elif (field == "lobby_name"):
-		_lobby_browser.get_node("LobbyName").modulate = Color("ff0000");
+		_lobby_browser.get_node("LobbyName").modulate = Color("FF7F7F");
 		_lobby_browser.get_node("ErrorShake").play("LobbyName");
 
 

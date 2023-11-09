@@ -1,12 +1,41 @@
-[gd_scene load_steps=28 format=3 uid="uid://dc6y5p8d0w2y8"]
+[gd_scene load_steps=44 format=3 uid="uid://dc6y5p8d0w2y8"]
 
 [ext_resource type="Script" path="res://assets/ui/menus/multiplayer/lobby/LobbyMenu.gd" id="1_6c6vm"]
 [ext_resource type="PackedScene" uid="uid://cy14hlyb888wd" path="res://assets/tracks/components/SpawnHandler.tscn" id="1_7nek3"]
 [ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="2_jbgo8"]
+[ext_resource type="Texture2D" uid="uid://c54utqv73s3jo" path="res://assets/ui/menus/common/forms/button_100x25_normal.png" id="3_76oga"]
 [ext_resource type="Texture2D" uid="uid://dwcfgs8oiyuge" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_gray.png" id="4_7pks1"]
+[ext_resource type="Texture2D" uid="uid://dxoteh2b6rvs0" path="res://assets/ui/menus/common/forms/button_100x25_pressed.png" id="4_85oik"]
 [ext_resource type="Texture2D" uid="uid://udpbsuq8lmwh" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_green.png" id="5_m8r6g"]
 [ext_resource type="Texture2D" uid="uid://dbehj3pe803v4" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_orange.png" id="6_lxsmd"]
 [ext_resource type="Texture2D" uid="uid://d001ap3g0qxww" path="res://assets/ui/menus/multiplayer/lobby/portrait_bg_red.png" id="7_unukq"]
+[ext_resource type="Texture2D" uid="uid://0wcpekxahibe" path="res://assets/ui/menus/common/forms/input_245x25.png" id="9_i4gt7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d0p6"]
+bg_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3fa4s"]
+texture = ExtResource("3_76oga")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b7q6v"]
+texture = ExtResource("4_85oik")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dud7g"]
+texture = ExtResource("4_85oik")
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_irvri"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttjlq"]
+bg_color = Color(0.878431, 0.972549, 0.811765, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.027451, 0.0941176, 0.129412, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbmmw"]
 bg_color = Color(1, 1, 1, 0)
@@ -147,9 +176,38 @@ animations = [{
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1pv3"]
-bg_color = Color(0, 0, 0, 0.333333)
+bg_color = Color(0.027451, 0.0941176, 0.129412, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_beilc"]
+texture = ExtResource("9_i4gt7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h3rae"]
+texture = ExtResource("9_i4gt7")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1sst"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45bhj"]
+bg_color = Color(0.878431, 0.972549, 0.811765, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.027451, 0.0941176, 0.129412, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qj6j1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tvb34"]
+texture = ExtResource("3_76oga")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xdiwp"]
+texture = ExtResource("4_85oik")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_464m5"]
+texture = ExtResource("4_85oik")
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
 
 [node name="LobbyMenu" type="Control" node_paths=PackedStringArray("_spawn_handler")]
 layout_mode = 3
@@ -161,14 +219,31 @@ grow_vertical = 2
 script = ExtResource("1_6c6vm")
 _spawn_handler = NodePath("Compositions/SpawnHandler")
 
+[node name="BG" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3d0p6")
+
 [node name="LeaveLobbyBtn" type="Button" parent="."]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 10.0
 offset_right = 200.0
 offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_focus_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_disabled_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_3fa4s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b7q6v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dud7g")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_irvri")
 text = "Leave Lobby"
 
 [node name="CurrentLobbyInfo" type="Panel" parent="."]
@@ -177,6 +252,7 @@ offset_left = 20.0
 offset_top = 40.0
 offset_right = 200.0
 offset_bottom = 130.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ttjlq")
 
 [node name="LobbyName" type="Label" parent="CurrentLobbyInfo"]
 layout_mode = 0
@@ -184,6 +260,8 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 170.0
 offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 18
 text = "AMVERTON PARKKK"
@@ -199,6 +277,8 @@ offset_left = 10.0
 offset_top = 60.0
 offset_right = 170.0
 offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
 text = "Hosted by "
@@ -256,7 +336,7 @@ autoplay = "gray"
 layout_mode = 0
 offset_left = 20.0
 offset_top = 140.0
-offset_right = 410.0
+offset_right = 400.0
 offset_bottom = 315.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_r1pv3")
 
@@ -275,8 +355,16 @@ layout_mode = 0
 offset_top = 180.0
 offset_right = 285.0
 offset_bottom = 205.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_selected_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_uneditable_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_placeholder_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/caret_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_beilc")
+theme_override_styles/focus = SubResource("StyleBoxTexture_h3rae")
 placeholder_text = "Say hello!"
 max_length = 80
 
@@ -284,38 +372,51 @@ max_length = 80
 layout_mode = 0
 offset_left = 290.0
 offset_top = 180.0
-offset_right = 390.0
+offset_right = 380.0
 offset_bottom = 205.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_focus_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_disabled_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_3fa4s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b7q6v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dud7g")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_irvri")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_c1sst")
 text = "Send"
 
 [node name="MapSelection" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 425.0
+offset_left = 415.0
 offset_top = 140.0
 offset_right = 620.0
 offset_bottom = 315.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_45bhj")
 
 [node name="MapSelectionHeading" type="Label" parent="MapSelection"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
-offset_right = 185.0
-offset_bottom = 40.0
+offset_right = 195.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
 text = "BBBBBBBB is selecting a track:"
-vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="TrackThumbnail" type="TextureRect" parent="MapSelection"]
 layout_mode = 0
 offset_left = 10.0
-offset_top = 45.0
-offset_right = 185.0
-offset_bottom = 145.0
+offset_top = 30.0
+offset_right = 195.0
+offset_bottom = 130.0
 expand_mode = 1
 
 [node name="MapSelectors" type="Control" parent="MapSelection/TrackThumbnail"]
@@ -339,6 +440,7 @@ offset_bottom = 15.0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qj6j1")
 text = "<"
 
 [node name="Right" type="Button" parent="MapSelection/TrackThumbnail/MapSelectors"]
@@ -348,34 +450,63 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -20.0
+offset_left = -10.0
 offset_top = -15.0
+offset_right = 10.0
 offset_bottom = 15.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qj6j1")
 text = ">"
 
 [node name="TrackName" type="Label" parent="MapSelection"]
 layout_mode = 0
 offset_left = 10.0
-offset_top = 145.0
-offset_right = 185.0
-offset_bottom = 165.0
+offset_top = 130.0
+offset_right = 195.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
 text = "Track: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TrackDifficulty" type="Label" parent="MapSelection"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 150.0
+offset_right = 195.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_fonts/font = ExtResource("2_jbgo8")
+theme_override_font_sizes/font_size = 9
+text = "Difficulty: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PlayerReadyBtn" type="Button" parent="MapSelection"]
 layout_mode = 0
 offset_top = 180.0
-offset_right = 195.0
+offset_right = 205.0
 offset_bottom = 205.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_focus_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_disabled_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_3fa4s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b7q6v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dud7g")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_irvri")
 text = "Ready"
 metadata/_edit_lock_ = true
 
@@ -383,10 +514,21 @@ metadata/_edit_lock_ = true
 visible = false
 layout_mode = 0
 offset_top = 180.0
-offset_right = 195.0
+offset_right = 205.0
 offset_bottom = 205.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_focus_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_disabled_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("2_jbgo8")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_tvb34")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xdiwp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_464m5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_irvri")
 text = "Start"
 metadata/_edit_lock_ = true
 

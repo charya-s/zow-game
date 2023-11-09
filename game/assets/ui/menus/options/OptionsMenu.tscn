@@ -1,15 +1,35 @@
-[gd_scene load_steps=28 format=3 uid="uid://isfq0g0opsfm"]
+[gd_scene load_steps=38 format=3 uid="uid://isfq0g0opsfm"]
 
 [ext_resource type="Script" path="res://assets/ui/menus/options/OptionsMenu.gd" id="1_6tkqv"]
 [ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="1_a0hch"]
 [ext_resource type="Texture2D" uid="uid://cexk6bykujghk" path="res://assets/ui/menus/options/general_button_normal.png" id="3_6gh1m"]
+[ext_resource type="Texture2D" uid="uid://c54utqv73s3jo" path="res://assets/ui/menus/common/forms/button_100x25_normal.png" id="3_ku0rf"]
 [ext_resource type="Texture2D" uid="uid://h3iw632qxuwl" path="res://assets/ui/menus/options/general_button_pressed.png" id="4_bb7l0"]
+[ext_resource type="Texture2D" uid="uid://dxoteh2b6rvs0" path="res://assets/ui/menus/common/forms/button_100x25_pressed.png" id="4_gdp2g"]
 [ext_resource type="Texture2D" uid="uid://xgvwf4i26jes" path="res://assets/ui/menus/options/audio_button_normal.png" id="5_idyb7"]
 [ext_resource type="Texture2D" uid="uid://4otaefawyp8u" path="res://assets/ui/menus/options/audio_button_pressed.png" id="6_lgnsp"]
 [ext_resource type="Texture2D" uid="uid://bgtno26ne8ktm" path="res://assets/ui/menus/options/video_button_normal.png" id="7_c5tik"]
 [ext_resource type="Texture2D" uid="uid://crwhdof1ndoqb" path="res://assets/ui/menus/options/video_button_pressed.png" id="8_nt2kv"]
 [ext_resource type="Texture2D" uid="uid://c1rijbe0wgw32" path="res://assets/ui/menus/options/credits_button_normal.png" id="9_i8si2"]
 [ext_resource type="Texture2D" uid="uid://dcxvasl2rbwmo" path="res://assets/ui/menus/options/credits_button_pressed.png" id="10_4kkqs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c0lf"]
+bg_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fus4n"]
+texture = ExtResource("3_ku0rf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ki3og"]
+texture = ExtResource("4_gdp2g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6yglp"]
+texture = ExtResource("4_gdp2g")
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wnp4q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwtto"]
 
@@ -25,6 +45,10 @@ expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 1.0
 expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0nv0p"]
+texture = ExtResource("3_6gh1m")
+modulate_color = Color(0.313726, 0.313726, 0.313726, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7hkr"]
 
@@ -56,6 +80,10 @@ expand_margin_top = 1.0
 expand_margin_right = 1.0
 expand_margin_bottom = 1.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbtkr"]
+texture = ExtResource("7_c5tik")
+modulate_color = Color(0.313726, 0.313726, 0.313726, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u86to"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_05es8"]
@@ -71,6 +99,10 @@ expand_margin_top = 1.0
 expand_margin_right = 1.0
 expand_margin_bottom = 1.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wohx1"]
+texture = ExtResource("9_i8si2")
+modulate_color = Color(0.313726, 0.313726, 0.313726, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qptmu"]
 
 [node name="OptionsMenu" type="Control"]
@@ -81,6 +113,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6tkqv")
+
+[node name="BG" type="Panel" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0c0lf")
 
 [node name="MainOptions" type="Control" parent="."]
 anchors_preset = 0
@@ -93,8 +130,19 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 70.0
 offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_focus_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_disabled_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("1_a0hch")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_fus4n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ki3og")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6yglp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wnp4q")
 text = "Back"
 
 [node name="MenuButtons" type="Panel" parent="MainOptions"]
@@ -113,7 +161,9 @@ scale = Vector2(3, 3)
 theme_override_styles/normal = SubResource("StyleBoxTexture_bmw3b")
 theme_override_styles/hover = SubResource("StyleBoxTexture_003q1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_rju4j")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0nv0p")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_c7hkr")
+disabled = true
 
 [node name="AudioButton" type="Button" parent="MainOptions/MenuButtons"]
 layout_mode = 0
@@ -135,7 +185,9 @@ scale = Vector2(3, 3)
 theme_override_styles/normal = SubResource("StyleBoxTexture_2txjm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_p504x")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_roh3q")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_pbtkr")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u86to")
+disabled = true
 
 [node name="CreditsButton" type="Button" parent="MainOptions/MenuButtons"]
 layout_mode = 0
@@ -146,7 +198,9 @@ scale = Vector2(3, 3)
 theme_override_styles/normal = SubResource("StyleBoxTexture_05es8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jt7d6")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_woifh")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wohx1")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qptmu")
+disabled = true
 
 [connection signal="pressed" from="MainOptions/BackBtn" to="." method="_on_back_btn_pressed"]
 [connection signal="pressed" from="MainOptions/MenuButtons/AudioButton" to="." method="_on_audio_button_pressed"]

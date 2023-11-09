@@ -1,8 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://xxan6uwyuv4y"]
+[gd_scene load_steps=16 format=3 uid="uid://xxan6uwyuv4y"]
 
 [ext_resource type="FontFile" uid="uid://lsgrvo3ka24r" path="res://assets/ui/common/default_font.ttf" id="1_456r2"]
 [ext_resource type="Script" path="res://assets/ui/menus/multiplayer/lobby-browser/LobbyInfoRow.gd" id="1_hyioq"]
+[ext_resource type="Texture2D" uid="uid://cvjmmkswnaq4k" path="res://assets/ui/menus/common/forms/row_left_150x25.png" id="3_i3yj6"]
+[ext_resource type="Texture2D" uid="uid://c54utqv73s3jo" path="res://assets/ui/menus/common/forms/button_100x25_normal.png" id="3_ky61v"]
+[ext_resource type="Texture2D" uid="uid://dxoteh2b6rvs0" path="res://assets/ui/menus/common/forms/button_100x25_pressed.png" id="4_8qgxx"]
+[ext_resource type="Texture2D" uid="uid://d27yywvgoua65" path="res://assets/ui/menus/common/forms/row_middle_1_150x25.png" id="4_17hf4"]
+[ext_resource type="Texture2D" uid="uid://igawikklewiq" path="res://assets/ui/menus/common/forms/button_100x25_disabled.png" id="5_bl2v7"]
+[ext_resource type="Texture2D" uid="uid://p5orv1bgjvp4" path="res://assets/ui/menus/common/forms/row_middle_2_150x25.png" id="5_t7hxc"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6qawb"]
+texture = ExtResource("3_i3yj6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tei3c"]
+texture = ExtResource("4_17hf4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3gnbv"]
+texture = ExtResource("5_t7hxc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fsp76"]
+texture = ExtResource("3_ky61v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qbaoy"]
+texture = ExtResource("4_8qgxx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hawxb"]
+texture = ExtResource("4_8qgxx")
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i1usg"]
+texture = ExtResource("5_bl2v7")
 
 [node name="LobbyInfoRow" type="HBoxContainer" groups=["LobbyInfoRows"]]
 custom_minimum_size = Vector2(600, 25)
@@ -12,8 +42,11 @@ script = ExtResource("1_hyioq")
 [node name="LobbyName" type="Label" parent="."]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("1_456r2")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_6qawb")
 text = "<LobbyName>"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -21,8 +54,11 @@ vertical_alignment = 1
 [node name="LobbyHostName" type="Label" parent="."]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("1_456r2")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_tei3c")
 text = "<HostName>"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -30,8 +66,11 @@ vertical_alignment = 1
 [node name="LobbyPlayerCount" type="Label" parent="."]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("1_456r2")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_3gnbv")
 text = "<PlayerCount>"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -39,8 +78,19 @@ vertical_alignment = 1
 [node name="JoinLobbyBtn" type="Button" parent="."]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_focus_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_disabled_color = Color(0.027451, 0.0941176, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.027451, 0.0941176, 0.129412, 1)
 theme_override_fonts/font = ExtResource("1_456r2")
 theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_fsp76")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qbaoy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hawxb")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_i1usg")
 text = "Join Lobby"
 
 [connection signal="pressed" from="JoinLobbyBtn" to="." method="_on_join_lobby_btn_pressed"]
